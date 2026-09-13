@@ -1,0 +1,425 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Salon Azul | Sales Management</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#9defe3",
+                        "primary-container": "#091426",
+                        "on-secondary-fixed": "#00201d",
+                        "surface-dim": "#d9dadc",
+                        "on-tertiary-container": "#8c8382",
+                        "on-secondary-container": "#0d6f66",
+                        "outline": "#77767b",
+                        "inverse-surface": "#2e3132",
+                        "on-tertiary-fixed": "#1f1a19",
+                        "secondary": "#016a61",
+                        "on-primary-container": "#868587",
+                        "surface-tint": "#5f5e60",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed": "#1b1b1d",
+                        "primary": "#030304",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed": "#a0f1e6",
+                        "primary-fixed": "#e4e2e4",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "on-surface": "#191c1e",
+                        "surface-container": "#edeef0",
+                        "inverse-primary": "#c8c6c8",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#474649",
+                        "surface-container-highest": "#e1e2e4",
+                        "surface": "#ffffff",
+                        "tertiary-fixed": "#ebe0de",
+                        "on-background": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#E8EAED",
+                        "tertiary-fixed-dim": "#cec4c2",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-surface-variant": "#6E6E73",
+                        "surface-variant": "#e1e2e4",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#ffffff",
+                        "tertiary-container": "#211c1b",
+                        "tertiary": "#040302",
+                        "surface-container-low": "#ffffff",
+                        "background": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#84d5ca",
+                        "on-tertiary-fixed-variant": "#4c4544",
+                        "inverse-on-surface": "#f0f1f3",
+                        "surface-container-high": "#f0f1f3"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px",
+                        "main-card": "16px"
+                    },
+                    "spacing": {
+                        "sm": "8px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "xxl": "48px",
+                        "gutter": "24px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "unit": "4px",
+                        "lg": "24px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .nav-shadow { box-shadow: none; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #E8EAED; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #d9dadc; }
+    </style>
+</head>
+<body class="bg-white text-on-surface min-h-screen">
+<!-- 1. Global Navigation Bar -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-80px)] max-w-[1360px] h-[72px] bg-white border border-outline-variant rounded-xl z-50 flex items-center justify-between px-6">
+<!-- Left: Business Selector -->
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[24px]">spa</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1">
+<span class="font-headline-sm text-body-lg font-semibold text-primary">Salon Azul</span>
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Center: Nav Items -->
+<div class="hidden md:flex items-center gap-1">
+<a class="px-6 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Front Desk</a>
+<a class="px-6 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Calendar</a>
+<a class="px-6 py-2 text-label-md font-label-md rounded-full flex items-center gap-2 bg-primary-container text-white" href="#">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">payments</span>
+                Sales
+            </a>
+<a class="px-6 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Chats</a>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[22px]">apps</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors relative">
+<span class="material-symbols-outlined text-[22px]">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-error rounded-full border border-white"></span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant"></div>
+<div class="flex items-center gap-3 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-label-md font-label-md text-primary leading-none">Asad Ullah</span>
+<span class="text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold mt-1">Salon Azul</span>
+</div>
+<div class="w-10 h-10 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed font-bold text-sm">
+                    AU
+                </div>
+</div>
+</div>
+</nav>
+<!-- Main Container -->
+<main class="max-w-[1440px] mx-auto px-10 pt-36 pb-12">
+<!-- 2. Sales Header -->
+<div class="flex flex-col md:flex-row items-end justify-between gap-4 mb-10">
+<div>
+<h1 class="font-headline-lg text-primary mb-1">Sales</h1>
+<p class="text-body-md text-on-surface-variant">Today · 24 sales · Rs 48,250 · 3 unpaid</p>
+</div>
+<button class="h-12 px-8 bg-primary text-white rounded-full text-label-md font-label-md flex items-center gap-2 hover:opacity-90 transition-all active:scale-[0.98] shrink-0">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Sale
+            </button>
+</div>
+<!-- Toolbar -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full h-11 pl-12 pr-4 bg-white border border-outline-variant rounded-full text-body-md font-inter focus:ring-1 focus:ring-primary/20 placeholder:text-on-surface-variant/60" placeholder="Search sales, customers..." type="text">
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-1 md:pb-0">
+<div class="flex items-center bg-surface-container-low/30 p-1 rounded-full border border-outline-variant shrink-0">
+<button class="px-6 py-1.5 text-label-md font-label-md bg-primary text-white rounded-full shadow-sm">All</button>
+<button class="px-6 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Pending</button>
+<button class="px-6 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Unpaid</button>
+<button class="px-6 py-1.5 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-colors">Refunded</button>
+</div>
+<button class="w-11 h-11 flex items-center justify-center rounded-full border border-outline-variant hover:bg-surface-container-high transition-colors shrink-0">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- 3. Redesigned Sales Table -->
+<div class="bg-white rounded-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter">Sale</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter">Customer</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter">Services / Products</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter">Staff</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter">Total</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter">Payment</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter text-center">Status</th>
+<th class="px-6 py-4 text-[11px] font-bold text-on-surface-variant uppercase tracking-widest font-inter text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group h-[72px]">
+<td class="px-6 py-3">
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-primary">#FAB25906</span>
+<span class="text-[11px] text-on-surface-variant">Today · 11:46 PM</span>
+</div>
+</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-[10px] shrink-0">FA</div>
+<span class="text-label-md font-medium text-primary truncate max-w-[140px]">Fayya Aziz</span>
+</div>
+</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant truncate max-w-[200px]">Haircut + Hair Color + Serum</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant">Asad Ullah</td>
+<td class="px-6 py-3 text-label-md font-bold text-primary">Rs 1,697</td>
+<td class="px-6 py-3">
+<span class="inline-flex px-2.5 py-0.5 bg-green-50 text-green-700 text-[11px] font-semibold rounded-md border border-green-100">Paid</span>
+</td>
+<td class="px-6 py-3 text-center">
+<span class="inline-flex px-2.5 py-0.5 bg-[#E8F5E9] text-[#2E7D32] text-[10px] font-bold rounded-full uppercase tracking-wider">Completed</span>
+</td>
+<td class="px-6 py-3 text-right">
+<button class="w-8 h-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group h-[72px]">
+<td class="px-6 py-3">
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-primary">#FAB25905</span>
+<span class="text-[11px] text-on-surface-variant">Today · 07:24 PM</span>
+</div>
+</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-purple-50 text-purple-600 flex items-center justify-center font-bold text-[10px] shrink-0">RB</div>
+<span class="text-label-md font-medium text-primary truncate max-w-[140px]">Rizwan Butt</span>
+</div>
+</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant truncate max-w-[200px]">Hair Color + Treatment</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant">Sana Malik</td>
+<td class="px-6 py-3 text-label-md font-bold text-primary">Rs 3,800</td>
+<td class="px-6 py-3">
+<span class="inline-flex px-2.5 py-0.5 bg-red-50 text-red-700 text-[11px] font-semibold rounded-md border border-red-100">Unpaid</span>
+</td>
+<td class="px-6 py-3 text-center">
+<span class="inline-flex px-2.5 py-0.5 bg-[#FFF8E1] text-[#F57C00] text-[10px] font-bold rounded-full uppercase tracking-wider">Pending</span>
+</td>
+<td class="px-6 py-3 text-right">
+<button class="w-8 h-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group h-[72px]">
+<td class="px-6 py-3">
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-primary">#FAB25904</span>
+<span class="text-[11px] text-on-surface-variant">Today · 03:21 PM</span>
+</div>
+</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center font-bold text-[10px] shrink-0">AE</div>
+<span class="text-label-md font-medium text-primary truncate max-w-[140px]">Asra Erum</span>
+</div>
+</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant truncate max-w-[200px]">Haircut</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant">Asad Ullah</td>
+<td class="px-6 py-3 text-label-md font-bold text-primary">Rs 1,250</td>
+<td class="px-6 py-3">
+<span class="inline-flex px-2.5 py-0.5 bg-green-50 text-green-700 text-[11px] font-semibold rounded-md border border-green-100">Paid</span>
+</td>
+<td class="px-6 py-3 text-center">
+<span class="inline-flex px-2.5 py-0.5 bg-[#E8F5E9] text-[#2E7D32] text-[10px] font-bold rounded-full uppercase tracking-wider">Completed</span>
+</td>
+<td class="px-6 py-3 text-right">
+<button class="w-8 h-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group h-[72px]">
+<td class="px-6 py-3">
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-primary">#FAB25903</span>
+<span class="text-[11px] text-on-surface-variant">Today · 08:19 AM</span>
+</div>
+</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-[10px] shrink-0">AL</div>
+<span class="text-label-md font-medium text-primary truncate max-w-[140px]">Ali Akbar Laghari</span>
+</div>
+</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant truncate max-w-[200px]">Facial</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant">Hira Khan</td>
+<td class="px-6 py-3 text-label-md font-bold text-primary">Rs 1,950</td>
+<td class="px-6 py-3">
+<span class="inline-flex px-2.5 py-0.5 bg-red-50 text-red-700 text-[11px] font-semibold rounded-md border border-red-100">Unpaid</span>
+</td>
+<td class="px-6 py-3 text-center">
+<span class="inline-flex px-2.5 py-0.5 bg-[#FFF8E1] text-[#F57C00] text-[10px] font-bold rounded-full uppercase tracking-wider">Pending</span>
+</td>
+<td class="px-6 py-3 text-right">
+<button class="w-8 h-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group h-[72px]">
+<td class="px-6 py-3">
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-primary">#FAB25902</span>
+<span class="text-[11px] text-on-surface-variant">Yesterday · 04:15 PM</span>
+</div>
+</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-[10px] shrink-0">ZH</div>
+<span class="text-label-md font-medium text-primary truncate max-w-[140px]">Zunaira Khan</span>
+</div>
+</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant truncate max-w-[200px]">Haircut + Styling + Treatment</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant">Asad Ullah</td>
+<td class="px-6 py-3 text-label-md font-bold text-primary">Rs 5,400</td>
+<td class="px-6 py-3">
+<span class="inline-flex px-2.5 py-0.5 bg-green-50 text-green-700 text-[11px] font-semibold rounded-md border border-green-100">Paid</span>
+</td>
+<td class="px-6 py-3 text-center">
+<span class="inline-flex px-2.5 py-0.5 bg-[#E8F5E9] text-[#2E7D32] text-[10px] font-bold rounded-full uppercase tracking-wider">Completed</span>
+</td>
+<td class="px-6 py-3 text-right">
+<button class="w-8 h-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low transition-colors group h-[72px]">
+<td class="px-6 py-3">
+<div class="flex flex-col">
+<span class="text-label-md font-semibold text-primary">#FAB25901</span>
+<span class="text-[11px] text-on-surface-variant">Yesterday · 11:20 AM</span>
+</div>
+</td>
+<td class="px-6 py-3">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded-full bg-slate-50 text-slate-600 flex items-center justify-center font-bold text-[10px] shrink-0">SM</div>
+<span class="text-label-md font-medium text-primary truncate max-w-[140px]">Saba Malik</span>
+</div>
+</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant truncate max-w-[200px]">Hair Styling</td>
+<td class="px-6 py-3 text-body-md text-on-surface-variant">Sana Malik</td>
+<td class="px-6 py-3 text-label-md font-bold text-primary">Rs 850</td>
+<td class="px-6 py-3">
+<span class="inline-flex px-2.5 py-0.5 bg-green-50 text-green-700 text-[11px] font-semibold rounded-md border border-green-100">Paid</span>
+</td>
+<td class="px-6 py-3 text-center">
+<span class="inline-flex px-2.5 py-0.5 bg-surface-container-highest text-on-surface-variant text-[10px] font-bold rounded-full uppercase tracking-wider">Cancelled</span>
+</td>
+<td class="px-6 py-3 text-right">
+<button class="w-8 h-8 rounded-full inline-flex items-center justify-center hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- 5. Pagination -->
+<div class="px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+<p class="text-body-md text-on-surface-variant">Showing <span class="font-bold text-primary">1–25</span> of <span class="font-bold text-primary">124</span> sales</p>
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-2 text-label-md font-bold text-on-surface-variant hover:text-primary transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+                        Previous
+                    </button>
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 flex items-center justify-center bg-primary text-white rounded text-label-sm font-bold">1</span>
+<span class="text-on-surface-variant text-label-sm font-medium">/</span>
+<span class="text-on-surface-variant text-label-sm font-medium">5</span>
+</div>
+<button class="flex items-center gap-2 text-label-md font-bold text-on-surface-variant hover:text-primary transition-colors">
+                        Next
+                        <span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Micro-interactions
+        document.querySelectorAll('tbody tr').forEach(row => {
+            row.addEventListener('click', (e) => {
+                if (!e.target.closest('button')) {
+                    const saleId = row.querySelector('.text-label-md.font-semibold').textContent;
+                    console.log('Viewing sale details:', saleId);
+                }
+            });
+            row.style.cursor = 'pointer';
+        });
+    </script>
+</body></html>

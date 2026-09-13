@@ -1,0 +1,220 @@
+<!-- Salon Azul - Refined Management Hub (Accent Color System) -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ONE NIZAM | Salon Management Hub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#f2f4f6",
+              "surface-container": "#edeef0",
+              "secondary-fixed": "#a0f1e6",
+              "on-primary-container": "#868587",
+              "on-primary": "#ffffff",
+              "surface": "#ffffff", // Forced Pure White per prompt
+              "outline": "#77767b",
+              "surface-container-lowest": "#ffffff",
+              "secondary": "#016a61",
+              "inverse-on-surface": "#f0f1f3",
+              "on-tertiary": "#ffffff",
+              "primary-container": "#1d1d1f",
+              "on-primary-fixed-variant": "#474649",
+              "tertiary-container": "#211c1b",
+              "on-tertiary-fixed": "#1f1a19",
+              "surface-container-highest": "#e1e2e4",
+              "surface-bright": "#f8f9fb",
+              "inverse-primary": "#c8c6c8",
+              "surface-container-high": "#e7e8ea",
+              "inverse-surface": "#2e3132",
+              "surface-dim": "#d9dadc",
+              "on-secondary-fixed": "#00201d",
+              "on-error": "#ffffff",
+              "error-container": "#ffdad6",
+              "surface-tint": "#5f5e60",
+              "primary-fixed": "#e4e2e4",
+              "on-tertiary-fixed-variant": "#4c4544",
+              "tertiary-fixed": "#ebe0de",
+              "on-error-container": "#93000a",
+              "tertiary-fixed-dim": "#cec4c2",
+              "primary": "#030304",
+              "on-surface": "#191c1e",
+              "secondary-container": "#9defe3",
+              "background": "#ffffff", // Forced Pure White
+              "on-secondary-fixed-variant": "#005049",
+              "on-secondary-container": "#0d6f66",
+              "secondary-fixed-dim": "#84d5ca",
+              "tertiary": "#040302",
+              "on-tertiary-container": "#8c8382",
+              "on-background": "#191c1e",
+              "error": "#ba1a1a",
+              "on-primary-fixed": "#1b1b1d",
+              "outline-variant": "#E8E8ED", // Matched to prompt
+              "on-surface-variant": "#6E6E73", // Secondary text per prompt
+              "surface-variant": "#e1e2e4",
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#c8c6c8"
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "card": "16px", // Prompt specified 16px
+              "full": "9999px"
+            },
+            spacing: {
+              "xxl": "48px",
+              "xs": "4px",
+              "xl": "32px",
+              "sm": "8px",
+              "margin-mobile": "16px",
+              "md": "16px",
+              "margin-desktop": "40px",
+              "unit": "4px",
+              "lg": "24px",
+              "gutter": "24px"
+            },
+            fontFamily: {
+              "body-lg": ["Inter", "sans-serif"],
+              "label-sm": ["Inter", "sans-serif"],
+              "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
+              "display-lg": ["Plus Jakarta Sans", "sans-serif"],
+              "headline-md": ["Plus Jakarta Sans", "sans-serif"],
+              "label-md": ["Inter", "sans-serif"],
+              "body-md": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      body {
+        background-color: #FFFFFF;
+        color: #030304;
+        -webkit-font-smoothing: antialiased;
+      }
+      .premium-shadow {
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.03);
+      }
+      .card-hover:hover {
+        background-color: #f8f9fb;
+      }
+      .click-scale:active {
+        transform: scale(0.98);
+      }
+      .transition-all-200 {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-[1280px]">
+<nav class="flex justify-between items-center h-[72px] bg-white border border-outline-variant rounded-[20px] px-lg premium-shadow backdrop-blur-md bg-white/95">
+<!-- Left Nav -->
+<div class="flex items-center gap-2 cursor-pointer group">
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-primary">SALON AZUL</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-y-0.5 transition-transform">expand_more</span>
+</div>
+<!-- Center Nav (Desktop Only) -->
+<div class="hidden md:flex items-center gap-sm">
+<a class="px-md py-1.5 rounded-full bg-primary text-white font-label-md text-label-md transition-all-200" href="#">Front Desk</a>
+<a class="px-md py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-all-200" href="#">Calendar</a>
+<a class="px-md py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-all-200" href="#">Chats</a>
+<a class="px-md py-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-low font-label-md text-label-md transition-all-200" href="#">Customers</a>
+</div>
+<!-- Right Nav -->
+<div class="flex items-center gap-md">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-all-200 text-on-surface-variant">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="relative w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-all-200 text-on-surface-variant">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2.5 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-1"></div>
+<button class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-label-md font-bold text-primary overflow-hidden border border-outline-variant hover:border-primary transition-all-200">
+                    AU
+                </button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-xl px-margin-desktop max-w-[1280px] mx-auto">
+<!-- Main Heading Section -->
+<section class="mb-xl">
+<h1 class="font-headline-lg text-[36px] text-primary mb-1">Good morning, <span class="relative inline-block">Asad<span class="absolute bottom-1 left-0 w-full h-[3px] bg-[#5B8DEF]/30 rounded-full"></span></span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Choose where you want to work.</p>
+</section>
+<!-- Daily Operations Grid -->
+<section class="mb-xxl">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest mb-lg uppercase">CORE WORKSPACES</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Services Card -->
+<div class="bg-white border border-[#E5E7EB] rounded-card p-lg transition-all-200 cursor-pointer click-scale flex flex-col h-[180px] relative overflow-hidden group premium-shadow" style="border-color: #E6E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.025);"><div class="mb-auto"><div class="w-[40px] h-[40px] flex items-center justify-center mb-sm rounded-[12px] bg-[#FFF4EF] text-[#D96F4F]"><span class="material-symbols-outlined text-[24px]">content_cut</span></div><h3 class="font-headline-sm text-headline-sm text-[#030304]">Services</h3><p class="font-body-md text-body-md text-[#6E6E73] mt-1">Menu pricing &amp; duration.</p></div><div class="mt-auto"><span class="inline-block px-2 py-0.5 rounded-full bg-[#FFF4EF] text-[#C76A4D] font-bold text-[13px]">48 <span class="font-normal opacity-80">service types</span></span></div></div>
+<!-- Products Card -->
+<div class="bg-white border border-[#E5E7EB] rounded-card p-lg transition-all-200 cursor-pointer click-scale flex flex-col h-[180px] relative overflow-hidden group premium-shadow" style="border-color: #E6E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.025);"><div class="mb-auto"><div class="w-[40px] h-[40px] flex items-center justify-center mb-sm rounded-[12px] bg-[#F1F6FF] text-[#4F82D9]"><span class="material-symbols-outlined text-[24px]">inventory_2</span></div><h3 class="font-headline-sm text-headline-sm text-[#030304]">Products</h3><p class="font-body-md text-body-md text-[#6E6E73] mt-1">Manage inventory &amp; stock.</p></div><div class="mt-auto"><span class="inline-block px-2 py-0.5 rounded-full bg-[#F1F6FF] text-[#4F78C4] font-bold text-[13px]">245 <span class="font-normal opacity-80">active products</span></span></div></div>
+<!-- Billing Card -->
+<div class="bg-white border border-[#E5E7EB] rounded-card p-lg transition-all-200 cursor-pointer click-scale flex flex-col h-[180px] relative overflow-hidden group premium-shadow" style="border-color: #E6E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.025);"><div class="mb-auto"><div class="w-[40px] h-[40px] flex items-center justify-center mb-sm rounded-[12px] bg-[#F7F2FF] text-[#9366D6]"><span class="material-symbols-outlined text-[24px]">account_balance_wallet</span></div><h3 class="font-headline-sm text-headline-sm text-[#030304]">Billing</h3><p class="font-body-md text-body-md text-[#6E6E73] mt-1">Payments, taxes &amp; invoices.</p></div><div class="mt-auto"><span class="inline-block px-2 py-0.5 rounded-full bg-[#F7F2FF] text-[#8961C5] font-bold text-[13px]">3 <span class="font-normal opacity-80">pending invoices</span></span></div></div>
+<!-- Inventory/Catalog Card -->
+<div class="bg-white border border-[#E5E7EB] rounded-card p-lg transition-all-200 cursor-pointer click-scale flex flex-col h-[180px] relative overflow-hidden group premium-shadow" style="border-color: #E6E7EB; box-shadow: 0 2px 8px rgba(0,0,0,0.025);"><div class="mb-auto"><div class="w-[40px] h-[40px] flex items-center justify-center mb-sm rounded-[12px] bg-[#EFFAF5] text-[#42A982]"><span class="material-symbols-outlined text-[24px]">group</span></div><h3 class="font-headline-sm text-headline-sm text-[#030304]">Customers</h3><p class="font-body-md text-body-md text-[#6E6E73] mt-1">Organize categories &amp; items.</p></div><div class="mt-auto"><span class="inline-block px-2 py-0.5 rounded-full bg-[#EFFAF5] text-[#3D9474] font-bold text-[13px]">12 <span class="font-normal opacity-80">categories</span></span></div></div>
+</div>
+</section>
+<!-- Lower Content: 12-column Grid -->
+<div class="grid grid-cols-12 gap-gutter items-start">
+<!-- Grow Your Business (Cols 1-4) -->
+<section class="col-span-12 lg:col-span-4">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest mb-lg uppercase">Grow Your Business</h2>
+<div class="bg-white border border-[#E5E7EB] rounded-card overflow-hidden premium-shadow">
+<div class="divide-y divide-outline-variant"><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#FDF2F8]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#FDF2F8] flex items-center justify-center"><span class="material-symbols-outlined text-[#D96F8A] text-[20px]">campaign</span></div><span class="font-body-md font-medium text-[#030304]">Offers &amp; Promos</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#FAF5FF]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#FAF5FF] flex items-center justify-center"><span class="material-symbols-outlined text-[#8961C5] text-[20px]">featured_seasonal_and_gifts</span></div><span class="font-body-md font-medium text-[#030304]">Gift Cards</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#EFF6FF]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#EFF6FF] flex items-center justify-center"><span class="material-symbols-outlined text-[#4F78C4] text-[20px]">card_membership</span></div><span class="font-body-md font-medium text-[#030304]">Memberships</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#FFF7ED]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#FFF7ED] flex items-center justify-center"><span class="material-symbols-outlined text-[#C76A4D] text-[20px]">package_2</span></div><span class="font-body-md font-medium text-[#030304]">Packages</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div></div>
+</div>
+</section>
+<!-- Team & Performance (Cols 5-8) -->
+<section class="col-span-12 lg:col-span-4">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest mb-lg uppercase">Management &amp; Insights</h2>
+<div class="bg-white border border-[#E5E7EB] rounded-card overflow-hidden premium-shadow">
+<div class="divide-y divide-outline-variant"><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#ECFDF5]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#ECFDF5] flex items-center justify-center"><span class="material-symbols-outlined text-[#3D9474] text-[20px]">badge</span></div><span class="font-body-md font-medium text-[#030304]">Staff</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#FFFBEB]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#FFFBEB] flex items-center justify-center"><span class="material-symbols-outlined text-[#D9A34F] text-[20px]">star_rate</span></div><span class="font-body-md font-medium text-[#030304]">Reviews</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#EEF2FF]/50 transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#EEF2FF] flex items-center justify-center"><span class="material-symbols-outlined text-[#4F58D9] text-[20px]">bar_chart</span></div><span class="font-body-md font-medium text-[#030304]">Reports</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div></div>
+</div>
+</section>
+<!-- Configuration (Cols 9-12) -->
+<section class="col-span-12 lg:col-span-4">
+<h2 class="font-label-sm text-label-sm text-on-surface-variant tracking-widest mb-lg uppercase">Configuration</h2>
+<div class="bg-white border border-[#E5E7EB] rounded-card overflow-hidden premium-shadow">
+<div class="divide-y divide-outline-variant"><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#ECFEFF] transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#ECFEFF] flex items-center justify-center"><span class="material-symbols-outlined text-[#0891B2] text-[20px]">storefront</span></div><span class="font-body-md font-medium text-[#030304]">Business Setup</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div><div class="flex items-center justify-between px-lg h-[56px] hover:bg-[#F8FAFC] transition-colors cursor-pointer group"><div class="flex items-center gap-md"><div class="w-8 h-8 rounded-[8px] bg-[#F8FAFC] flex items-center justify-center"><span class="material-symbols-outlined text-[#64748B] text-[20px]">settings</span></div><span class="font-body-md font-medium text-[#030304]">Global Settings</span></div><span class="material-symbols-outlined text-[#6E6E73] text-body-lg group-hover:translate-x-1 transition-transform">chevron_right</span></div></div>
+</div>
+</section>
+</div>
+<!-- System Status -->
+<div class="mt-12 text-center">
+<p class="font-body-md text-on-surface-variant text-[13px]"><span class="text-[#22C55E]">●</span> All systems operational · Last synced today at 09:15 AM</p>
+</div>
+<!-- System Message / Atmospheric Footer -->
+<footer class="mt-12 pt-xl flex justify-between items-center text-on-surface-variant font-body-md text-[13px]">
+<div class="">© 2026 Salon Azul</div>
+<div class="flex gap-lg">
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="hover:text-primary transition-colors" href="#">Contact Support</a>
+</div>
+</footer>
+</main>
+<script>
+        // Micro-interaction: Smooth scale and lift on cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            // Simplified for subtlety as requested
+        });
+
+        // Search Bar or Profile Interactions can go here
+        console.log("Salon Management Hub Initialized | Premium UX Layer Active");
+    </script>
+
+
+</body></html>

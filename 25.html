@@ -1,0 +1,345 @@
+
+<!-- ONE NIZAM - Standardized Business Hours Workspace -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ONE NIZAM - Business Hours</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        black: "#030304",
+                        gray: "#6E6E73",
+                        border: "#E8EAED",
+                        surface: "#F5F5F7",
+                        white: "#FFFFFF"
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                        display: ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #E8EAED;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body class="text-black min-h-screen flex flex-col font-sans bg-white">
+<!-- Top Navigation Shell -->
+<div class="px-5 pt-5 pb-8 relative z-50 flex justify-center w-full">
+<header class="w-full max-w-[1440px] bg-white border border-border rounded-[12px] h-[72px] px-6 flex justify-between items-center shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]">architecture</span>
+</div>
+<div class="font-display text-xl font-bold text-black tracking-tight">
+                ONE NIZAM
+            </div>
+</div>
+<nav class="hidden lg:flex items-center space-x-1">
+<a class="px-4 py-2 text-gray font-medium text-sm hover:text-black transition-colors rounded-full" href="#">Front Desk</a>
+<a class="px-4 py-2 text-gray font-medium text-sm hover:text-black transition-colors rounded-full" href="#">Calendar</a>
+<a class="px-4 py-2 text-gray font-medium text-sm hover:text-black transition-colors rounded-full" href="#">Chats</a>
+<a class="px-4 py-2 text-gray font-medium text-sm hover:text-black transition-colors rounded-full" href="#">Customers</a>
+<a class="px-4 py-2 bg-black text-white font-bold text-sm rounded-full" href="#">Business Setup</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="text-gray hover:text-black transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<button class="text-gray hover:text-black transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+<div class="w-[1px] h-8 bg-border"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="hidden md:flex flex-col items-end">
+<span class="text-sm font-semibold text-black group-hover:opacity-80">Admin User</span>
+<span class="text-xs text-gray">System Manager</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-gray">person</span>
+</div>
+</div>
+</div>
+</header>
+</div>
+<!-- Main Container -->
+<main class="flex-grow flex justify-center px-5 pb-12 w-full">
+<div class="w-full max-w-[1440px] flex flex-col lg:flex-row gap-6">
+<!-- Sidebar -->
+<aside class="hidden lg:block w-[300px] flex-shrink-0 bg-white border border-border rounded-[16px] p-6 h-fit sticky top-[112px]">
+<div class="mb-8">
+<h3 class="text-xs font-bold text-gray uppercase tracking-wider mb-4 px-3">General Setup</h3>
+<nav class="flex flex-col gap-1"><a class="px-3 py-2.5 rounded-lg text-sm font-medium text-gray hover:text-black hover:bg-surface transition-colors flex items-center gap-3" href="#"><span class="material-symbols-outlined text-[20px]">group</span>Team Access</a></nav>
+</div>
+<div class="mb-8">
+<h3 class="text-xs font-bold text-gray uppercase tracking-wider mb-4 px-3">Financials</h3>
+<nav class="flex flex-col gap-1">
+<a class="px-3 py-2.5 rounded-lg text-sm font-medium text-gray hover:text-black hover:bg-surface transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+                        Payments
+                    </a>
+<a class="px-3 py-2.5 rounded-lg text-sm font-medium text-gray hover:text-black hover:bg-surface transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+                        Taxes
+                    </a>
+</nav>
+</div>
+<div>
+<h3 class="text-xs font-bold text-gray uppercase tracking-wider mb-4 px-3">Appearance</h3>
+<nav class="flex flex-col gap-1">
+<a class="px-3 py-2.5 rounded-lg text-sm font-medium text-gray hover:text-black hover:bg-surface transition-colors flex items-center gap-3" href="#">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+                        Branding
+                    </a>
+</nav>
+</div>
+</aside>
+<!-- Main Workspace -->
+<div class="flex-1 bg-white border border-border rounded-[16px] flex flex-col overflow-hidden min-h-[600px]">
+<!-- Header Section -->
+<div class="px-8 pt-8 pb-6 border-b border-border">
+<h1 class="font-display text-[28px] font-bold text-black mb-2">Business Hours</h1>
+<p class="text-sm text-gray">Set your regular business hours so customers know when they can book your services.</p>
+<div class="flex items-center gap-2 mt-6"><a href="#" class="rounded-full px-4 py-1.5 text-[13px] font-medium bg-black text-white transition-all">Profile</a><a href="#" class="rounded-full px-4 py-1.5 text-[13px] font-medium bg-surface text-gray hover:text-black transition-all">Contact</a><a href="#" class="rounded-full px-4 py-1.5 text-[13px] font-medium bg-surface text-gray hover:text-black transition-all">Media</a><a href="#" class="rounded-full px-4 py-1.5 text-[13px] font-medium bg-surface text-gray hover:text-black transition-all">Location</a><a href="#" class="rounded-full px-4 py-1.5 text-[13px] font-medium bg-surface text-gray hover:text-black transition-all">Hours</a></div></div>
+<!-- Content -->
+<div class="p-8 flex-grow"><div class="space-y-12">
+<!-- Regular Business Hours Section -->
+<section class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-4"><h2 class="text-[12px] uppercase tracking-wider font-bold text-gray mb-1">REGULAR BUSINESS HOURS</h2>
+<p class="text-[14px] text-gray leading-relaxed">Set the hours when customers can book services at your business.</p></div>
+<div class="col-span-12 lg:col-span-8">
+<div class="flex justify-end mb-2">
+<button class="text-black text-[14px] font-medium underline underline-offset-4 decoration-border hover:decoration-black transition-colors">Apply to weekdays</button>
+</div>
+<div class="space-y-0 bg-white"><!-- Monday -->
+<div class="flex items-center justify-between h-[72px] px-4 border-b border-border bg-white">
+<div class="flex items-center gap-4 w-44">
+<input checked="" class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-black">Monday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-black bg-surface px-2.5 py-1 rounded-full">Open</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="09:00">
+<span class="text-gray text-sm">to</span>
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="20:00">
+</div>
+<div class="flex items-center gap-1 text-gray">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Add break or split hours">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Copy to other days">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Tuesday -->
+<div class="flex items-center justify-between h-[72px] px-4 border-b border-border bg-white">
+<div class="flex items-center gap-4 w-44">
+<input checked="" class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-black">Tuesday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-black bg-surface px-2.5 py-1 rounded-full">Open</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="09:00">
+<span class="text-gray text-sm">to</span>
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="20:00">
+</div>
+<div class="flex items-center gap-1 text-gray">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Add break or split hours">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Copy to other days">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Wednesday -->
+<div class="flex items-center justify-between h-[72px] px-4 border-b border-border bg-white">
+<div class="flex items-center gap-4 w-44">
+<input checked="" class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-black">Wednesday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-black bg-surface px-2.5 py-1 rounded-full">Open</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="09:00">
+<span class="text-gray text-sm">to</span>
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="20:00">
+</div>
+<div class="flex items-center gap-1 text-gray">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Add break or split hours">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Copy to other days">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Thursday -->
+<div class="flex items-center justify-between h-[72px] px-4 border-b border-border bg-white">
+<div class="flex items-center gap-4 w-44">
+<input checked="" class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-black">Thursday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-black bg-surface px-2.5 py-1 rounded-full">Open</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="09:00">
+<span class="text-gray text-sm">to</span>
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="20:00">
+</div>
+<div class="flex items-center gap-1 text-gray">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Add break or split hours">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Copy to other days">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Friday -->
+<div class="flex items-center justify-between h-[72px] px-4 border-b border-border bg-white">
+<div class="flex items-center gap-4 w-44">
+<input checked="" class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-black">Friday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-black bg-surface px-2.5 py-1 rounded-full">Open</span>
+</div>
+<div class="flex items-center gap-3">
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="09:00">
+<span class="text-gray text-sm">to</span>
+<input class="h-[44px] px-4 bg-surface rounded-full border border-transparent focus:border-black focus:bg-white text-black text-[14px] font-medium w-[110px] text-center" type="time" value="20:00">
+</div>
+<div class="flex items-center gap-1 text-gray">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Add break or split hours">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface hover:text-black transition-colors" title="Copy to other days">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Saturday -->
+<div class="flex items-center justify-between h-[72px] px-4 border-b border-border bg-white">
+<div class="flex items-center gap-4 w-44">
+<input class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-gray">Saturday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-gray bg-surface px-2.5 py-1 rounded-full">Closed</span>
+</div>
+<div class="flex items-center gap-3 min-w-[245px] justify-center">
+<span class="text-gray text-[14px] font-medium">Unavailable</span>
+</div>
+<div class="flex items-center gap-1 text-gray opacity-40">
+<button class="w-8 h-8 flex items-center justify-center rounded-full cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Sunday -->
+<div class="flex items-center justify-between h-[72px] px-4 bg-white">
+<div class="flex items-center gap-4 w-44">
+<input class="w-5 h-5 rounded border-border text-black focus:ring-black cursor-pointer" type="checkbox">
+<span class="text-[15px] font-semibold text-gray">Sunday</span>
+</div>
+<div class="hidden sm:flex items-center">
+<span class="text-[12px] font-semibold uppercase tracking-wider text-gray bg-surface px-2.5 py-1 rounded-full">Closed</span>
+</div>
+<div class="flex items-center gap-3 min-w-[245px] justify-center">
+<span class="text-gray text-[14px] font-medium">Unavailable</span>
+</div>
+<div class="flex items-center gap-1 text-gray opacity-40">
+<button class="w-8 h-8 flex items-center justify-center rounded-full cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full cursor-not-allowed" disabled="">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+</div></div>
+</div>
+</section>
+<hr class="border-border">
+<!-- Booking Availability Section -->
+<section class="grid grid-cols-12 gap-8">
+<div class="col-span-12 lg:col-span-4"><h2 class="text-[12px] uppercase tracking-wider font-bold text-gray mb-1">BOOKING AVAILABILITY</h2>
+<p class="text-[14px] text-gray leading-relaxed">Control how customers can book your services online.</p></div>
+<div class="col-span-12 lg:col-span-8">
+<div class="flex items-center justify-between">
+<div class="space-y-0.5"><p class="text-[16px] font-semibold text-black">Accept Online Bookings</p>
+<p class="text-[14px] text-gray">Allow customers to book services online during available hours.</p></div>
+<button class="w-10 h-5 bg-black rounded-full relative transition-colors">
+<div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"></div>
+</button>
+</div>
+</div>
+</section>
+</div></div>
+<!-- Footer Action Bar -->
+<div class="mt-auto border-t border-border px-8 py-4 bg-white flex justify-between items-center">
+<div class="flex items-center gap-2 text-sm text-gray">
+<span class="material-symbols-outlined text-[18px]">check</span>
+                    All changes are automatically drafted
+                </div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-full border border-border text-black text-sm font-bold hover:bg-surface transition-colors">
+                        Cancel
+                    </button>
+<button class="px-6 py-2.5 rounded-full bg-black text-white text-sm font-bold hover:opacity-90 transition-opacity">
+                        Save Changes
+                    </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 left-0 w-full z-50 bg-white border-t border-border flex justify-around items-center px-4 py-3 pb-safe">
+<a class="flex flex-col items-center justify-center text-gray active:bg-surface transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" data-icon="business">business</span>
+<span class="text-[12px] font-medium mt-1">Profile</span>
+</a>
+<a class="flex flex-col items-center justify-center text-black font-bold active:bg-surface transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" data-icon="schedule">schedule</span>
+<span class="text-[12px] font-bold mt-1">Hours</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray active:bg-surface transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="text-[12px] font-medium mt-1">Locations</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray active:bg-surface transition-colors rounded-lg p-2" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-[12px] font-medium mt-1">Team</span>
+</a>
+</nav>
+
+
+</body></html>

@@ -1,0 +1,299 @@
+
+<!-- ONE NIZAM - Universal Resource Management Workspace -->
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salon Azul - Resource Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#030304",
+                        "secondary": "#6E6E73",
+                        "border": "#E8EAED",
+                        "surface": "#FFFFFF",
+                        "surface-container": "#F5F5F7",
+                        "on-surface": "#030304",
+                        "on-surface-variant": "#6E6E73"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #FFFFFF; }
+        .focus-ring:focus { outline: none; border-color: #030304; box-shadow: none; }
+        .soft-badge { background-color: #E7F6F2; color: #006A61; }
+        
+        /* Toggle Switch */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #030304;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #030304;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+<!-- TopNavBar (SalonCore Style) -->
+<nav class="fixed top-[20px] left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1440px] h-[72px] bg-white border border-[#E8EAED] rounded-[12px] shadow-sm z-50 flex items-center justify-between px-[24px]">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]">spa</span>
+</div>
+<span class="font-inter text-[18px] font-bold text-primary tracking-tight">ONE NIZAM</span>
+</div>
+<div class="hidden md:flex items-center gap-2">
+<a class="flex items-center gap-2 text-on-surface-variant px-4 py-2 font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">desktop_windows</span>
+                Front Desk
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant px-4 py-2 font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                Calendar
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant px-4 py-2 font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                Chats
+            </a>
+<a class="flex items-center gap-2 bg-[#091426] text-white rounded-full px-4 py-2 font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">meeting_room</span>
+                Resources
+            </a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="relative text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-px bg-[#E8EAED] mx-1"></div>
+<div class="flex items-center gap-4"><div class="text-right hidden lg:block"><div class="text-[13px] font-bold text-primary">Asad Ullah</div><div class="text-[11px] text-[#6E6E73]">ONE NIZAM</div></div><div class="w-10 h-10 rounded-full bg-[#D8E3FB] flex items-center justify-center text-[13px] font-bold text-[#0D2E6D]">AU</div></div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex w-full max-w-[1320px] mx-auto pt-[110px] pb-12 px-6 gap-6">
+<!-- Left Sidebar -->
+<aside class="w-[300px] border border-[#E8EAED] rounded-[16px] bg-white flex flex-col overflow-hidden sticky top-[110px] h-[calc(100vh-134px)]">
+<div class="p-4 flex items-center justify-between border-b border-[#E8EAED]"><h2 class="font-headline text-[18px] font-bold text-primary">RESOURCES</h2><button class="px-3 py-1.5 bg-primary rounded-full flex items-center gap-1.5 text-white font-headline text-[12px] font-semibold hover:opacity-90 transition-all"><span class="material-symbols-outlined text-[16px]">add</span>Resource</button></div>
+<div class="flex-1 overflow-y-auto py-2 custom-scrollbar"><div class="space-y-6 px-2 py-4">
+<div class="space-y-1"><div class="flex items-center gap-2 px-3 py-2 text-[11px] font-bold text-[#6E6E73] uppercase tracking-[0.05em] cursor-pointer"><span class="material-symbols-outlined text-[18px]">expand_more</span><span class="">SPACES</span></div><div class="flex flex-col space-y-1 ml-2"><button class="w-full text-left py-2.5 px-4 rounded-lg bg-primary text-white font-medium text-[14px] flex justify-between items-center">Treatment Rooms <span class="text-[11px] opacity-60">4</span></button><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Consultation Rooms <span class="text-[11px] opacity-60">3</span></button><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Studios <span class="text-[11px] opacity-60">2</span></button><button class="w-full mt-1 flex items-center justify-center gap-2 py-2.5 border-2 border-dashed border-[#E8EAED] rounded-lg text-[#6E6E73] hover:bg-[#F2F4F6] transition-all"><span class="material-symbols-outlined text-[18px]">add_circle</span><span class="text-[13px] font-medium">Add Resource</span></button></div></div>
+<div class="space-y-1"><div class="flex items-center gap-2 px-3 py-2 text-[11px] font-bold text-[#6E6E73] uppercase tracking-[0.05em] cursor-pointer"><span class="material-symbols-outlined text-[18px]">expand_more</span><span class="">EQUIPMENT</span></div><div class="flex flex-col space-y-1 ml-2"><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Treatment Equipment <span class="text-[11px] opacity-60"></span></button><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Training Equipment <span class="text-[11px] opacity-60"></span></button><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Specialist Equipment <span class="text-[11px] opacity-60"></span></button></div></div>
+<div class="space-y-1"><div class="flex items-center gap-2 px-3 py-2 text-[11px] font-bold text-[#6E6E73] uppercase tracking-[0.05em] cursor-pointer"><span class="material-symbols-outlined text-[18px]">expand_more</span><span class="">FACILITIES</span></div><div class="flex flex-col space-y-1 ml-2"><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Workstations <span class="text-[11px] opacity-60"></span></button><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Training Areas <span class="text-[11px] opacity-60"></span></button><button class="w-full text-left py-2.5 px-4 text-[14px] text-[#6E6E73] hover:text-primary transition-all rounded-lg hover:bg-[#F2F4F6] font-medium flex justify-between items-center">Other <span class="text-[11px] opacity-60"></span></button></div></div>
+</div></div>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-col min-h-[calc(100vh-134px)] bg-white border border-[#E8EAED] rounded-[16px] p-10">
+<!-- Header -->
+<div class="">
+<div class="flex items-start justify-between mb-10">
+<div class="flex items-center gap-6">
+<div class="w-[100px] h-[100px] rounded-xl border border-[#E8EAED] flex items-center justify-center overflow-hidden flex-shrink-0 bg-white">
+<img alt="Treatment Room" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL9dvOlv-ZKnNyvu3_qBLaF9SAN3IfZ-4wuoT8-hzx7_L5Gn2P9yNB1GypbN0ZfzH_xNp_D0C1ZgySlidtD6z2U6mlsmi6QxAz1vL7SXHrF5a7gyba6p43HoC1QkOHwguaOjYGQoDAXXCKNJXS7uMaZwYPFsYKy28ckjwJUwAmD25wm4hEiBBs9vhC9G9AtoW_JPWDK0CCQ1NqJr7woP6yiLONR66C8QAhF7-ykrHsT7I3MjSJxQbv"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="text-[11px] font-bold text-[#6E6E73] tracking-[0.1em] uppercase">SPACES</span>
+<span class="bg-[#F2F4F6] text-[#6E6E73] px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase">ACTIVE</span>
+</div>
+<h1 class="font-headline-lg text-[28px] text-primary mb-2 leading-tight font-bold">Treatment Room 1</h1>
+<div class="font-inter text-[14px] text-[#6E6E73]">Treatment Room · Capacity 1</div>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-lg border border-[#E8EAED] flex items-center justify-center hover:bg-[#F2F4F6] transition-colors text-primary">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+<button class="w-10 h-10 rounded-lg border border-[#E8EAED] flex items-center justify-center hover:bg-[#F2F4F6] transition-colors text-primary">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+</button>
+<button class="w-10 h-10 rounded-lg border border-[#E8EAED] flex items-center justify-center hover:bg-[#F2F4F6] transition-colors text-primary">
+<span class="material-symbols-outlined text-[20px]">more_horiz</span>
+</button>
+</div>
+</div>
+<!-- Tabs -->
+<div class="flex gap-2 mb-8 overflow-x-auto pb-2 no-scrollbar">
+<button class="px-5 py-2 rounded-full bg-primary text-surface font-label-md text-[14px] whitespace-nowrap">Details</button>
+<button class="px-5 py-2 rounded-full bg-[#F5F5F7] hover:bg-[#E8EAED] transition-colors font-label-md text-[14px] text-primary whitespace-nowrap">Availability</button>
+<button class="px-5 py-2 rounded-full bg-[#F5F5F7] hover:bg-[#E8EAED] transition-colors font-label-md text-[14px] text-primary whitespace-nowrap">Services</button>
+<button class="px-5 py-2 rounded-full bg-[#F5F5F7] hover:bg-[#E8EAED] transition-colors font-label-md text-[14px] text-primary whitespace-nowrap">Team</button>
+<button class="px-5 py-2 rounded-full bg-[#F5F5F7] hover:bg-[#E8EAED] transition-colors font-label-md text-[14px] text-primary whitespace-nowrap">Booking Rules</button>
+</div>
+<!-- Content Area (Editorial Grid) -->
+<div class="flex flex-col gap-10 pb-6">
+<!-- Resource Identity -->
+<div class="grid grid-cols-12 gap-6 pt-6 border-t border-border">
+<div class="col-span-4">
+<h3 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-wider mb-2">RESOURCE IDENTITY</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Basic information used to identify and organize this resource across your business.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 gap-6">
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Resource Name</label>
+<input class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary" type="text" value="Treatment Room 1"/>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Resource Type</label>
+<select class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary appearance-none">
+<option>Space</option>
+<option>Equipment</option>
+<option>Facility</option>
+<option>Other</option>
+</select>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Category</label>
+<select class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary appearance-none">
+<option>Treatment Rooms</option>
+<option>Consultation Rooms</option>
+</select>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Resource ID</label>
+<input class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary font-mono text-[13px]" type="text" value="RM-TR-001"/>
+</div>
+</div>
+</div>
+<!-- Resource Information -->
+<div class="grid grid-cols-12 gap-6 pt-6 border-t border-border">
+<div class="col-span-4">
+<h3 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-wider mb-2">RESOURCE INFORMATION</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Define what this resource is and how it can be used within your business.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="block font-label-md text-[13px] text-primary mb-2">Description</label>
+<textarea class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary resize-none" rows="4">Private treatment room equipped for facial, massage, and aesthetic services.</textarea>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Capacity</label>
+<input class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary" type="text" value="1"/>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Location</label>
+<input class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary" type="text" value="Main Floor"/>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Status</label>
+<select class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary appearance-none">
+<option>Active</option>
+<option>Inactive</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Availability -->
+<div class="grid grid-cols-12 gap-6 pt-6 border-t border-border">
+<div class="col-span-4">
+<h3 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-wider mb-2">AVAILABILITY</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Control when this resource can be scheduled and prevent conflicting bookings.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 gap-6">
+<div class="col-span-2 flex items-center justify-between py-2 border-b border-border mb-2">
+<div>
+<label class="block font-label-md text-[14px] text-primary">Available for Booking</label>
+<p class="font-body-md text-[13px] text-on-surface-variant">Allow this resource to be assigned to scheduled appointments</p>
+</div>
+<div class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" id="toggle2" name="toggle2" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer" for="toggle2"></label>
+</div>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Buffer Time</label>
+<select class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary appearance-none">
+<option>15 minutes</option>
+<option>30 minutes</option>
+</select>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<label class="block font-label-md text-[13px] text-primary mb-2">Booking Capacity</label>
+<input class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary" type="number" value="1"/>
+</div>
+</div>
+</div>
+<!-- Resource Assignment -->
+<div class="grid grid-cols-12 gap-6 pt-6 border-t border-border">
+<div class="col-span-4">
+<h3 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-wider mb-2">RESOURCE ASSIGNMENT</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Control which services and team members can use this resource.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 gap-6">
+<div class="col-span-2">
+<label class="block font-label-md text-[13px] text-primary mb-2">Services</label>
+<div class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary flex items-center gap-2 flex-wrap min-h-[42px]">
+<span class="bg-[#F2F4F6] px-2 py-1 rounded text-[13px] flex items-center gap-1">Facials <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<span class="bg-[#F2F4F6] px-2 py-1 rounded text-[13px] flex items-center gap-1">Massage <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<span class="bg-[#F2F4F6] px-2 py-1 rounded text-[13px] flex items-center gap-1">Skin Treatments <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<input class="flex-1 outline-none min-w-[100px] bg-transparent" placeholder="Select services..." type="text"/>
+</div>
+</div>
+<div class="col-span-2">
+<label class="block font-label-md text-[13px] text-primary mb-2">Team</label>
+<div class="w-full px-3 py-2 rounded-md border border-border bg-surface focus-ring font-body-md text-primary flex items-center gap-2 flex-wrap min-h-[42px]">
+<span class="bg-[#F2F4F6] px-2 py-1 rounded text-[13px] flex items-center gap-1">Ayesha Khan <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<span class="bg-[#F2F4F6] px-2 py-1 rounded text-[13px] flex items-center gap-1">Sara Ahmed <span class="material-symbols-outlined text-[14px] cursor-pointer">close</span></span>
+<input class="flex-1 outline-none min-w-[100px] bg-transparent" placeholder="Select team members..." type="text"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Resource Image -->
+<div class="grid grid-cols-12 gap-6 pt-6 border-t border-border">
+<div class="col-span-4">
+<h3 class="font-label-sm text-[12px] text-on-surface-variant uppercase tracking-wider mb-2">RESOURCE IMAGE</h3>
+<p class="font-body-md text-on-surface-variant text-[13px]">Used to identify this resource internally and, when applicable, in customer-facing experiences.</p>
+</div>
+<div class="col-span-8 flex items-start gap-6">
+<div class="w-[100px] h-[100px] rounded-xl border border-border overflow-hidden bg-white">
+<img alt="Treatment Room 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiEblAwXTOPIkeG0iK_ZIeGcD7bhmqkfoPO7Zzk1e6vLTmeV9DSv_Xn3EpvUDIQaR1c1q6pP07wOX_S6J0Xz6wK0h5cOx4lO0R6TcIK2x4i1bU3axcfsIXnr_cT2PIHeQyWlOIvRI4Zyn4_-1gZxI-X_yYFgMnET0rD_C4Af45_tlbc4ZuRWZPN_Qf2lUHmkhixWBVKukkDt3b3YCPqo3XcyAOCQ14ds62Ro5SQ6L4tSpttCjEV1Uk"/>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<button class="px-4 py-2 rounded-md border border-border text-primary font-label-md text-[13px] hover:bg-surface-container transition-colors">Replace Image</button>
+<button class="px-4 py-2 rounded-md text-red-600 font-label-md text-[13px] hover:bg-red-50 transition-colors text-left w-max">Remove</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer inside workspace -->
+<div class="border-t border-border p-6 flex justify-end gap-3 rounded-b-2xl mt-auto"><button class="px-6 py-2.5 rounded-full border border-[#E8EAED] bg-white text-primary font-label-md text-[14px] hover:bg-[#F2F4F6] transition-colors">Cancel</button>
+<button class="px-6 py-2.5 rounded-full bg-[#091426] text-white font-label-md text-[14px] hover:opacity-90 transition-colors">Save Changes</button></div>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,367 @@
+
+<!-- Salon Azul - Refined Staff Management Workspace (SalonCore System) -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Staff Management | Salon Azul</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary": "#030304",
+          "secondary-text": "#6E6E73",
+          "surface": "#FFFFFF",
+          "outline-variant": "#E8EAED",
+          "background": "#FFFFFF",
+          "on-surface": "#030304",
+          "brand-dark": "#1D1D1F",
+          "nav-active": "#091426",
+          "avatar-bg": "#D8E3FB",
+          "notification-red": "#FF3B30",
+          "active-green": "#16a34a"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "xxl": "48px",
+          "xl": "32px",
+          "lg": "24px",
+          "md": "16px",
+          "sm": "8px",
+          "xs": "4px"
+        },
+        "fontFamily": {
+          "headline": ["Plus Jakarta Sans"],
+          "body": ["Inter"]
+        }
+      }
+    }
+  }
+</script>
+<style>
+        body { background-color: #FFFFFF; color: #030304; font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E8EAED; border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+<!-- Floating Navigation Bar -->
+<nav class="fixed top-[20px] left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1440px] h-[72px] bg-[#FFFFFF] border border-[#E8EAED] rounded-[12px] shadow-sm z-50 flex items-center justify-between px-[24px]">
+<!-- Left Section (Business Identity) -->
+<div class="flex items-center gap-[12px] cursor-pointer">
+<div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]" data-icon="spa">spa</span>
+</div>
+<span class="font-body text-[15px] font-[700] text-[#1D1D1F] tracking-tight">Salon Azul</span>
+</div>
+<!-- Center Section (Primary Nav) -->
+<div class="hidden lg:flex items-center gap-[4px]">
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Front Desk</span>
+</a>
+<a class="flex items-center gap-[8px] px-[24px] h-[40px] rounded-full bg-[#091426] text-white transition-all" href="#">
+<span class="font-body text-[14px] font-[700]">Staff</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Calendar</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Chats</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Customers</span>
+</a>
+</div>
+<!-- Right Section (Utility + Profile) -->
+<div class="flex items-center gap-[16px]">
+<div class="flex items-center gap-[12px]">
+<button class="p-2 text-[#6E6E73] hover:bg-[#F2F4F6] rounded-full transition-all">
+<span class="material-symbols-outlined text-[22px]" data-icon="apps">grid_view</span>
+</button>
+<button class="p-2 text-[#6E6E73] hover:bg-[#F2F4F6] rounded-full transition-all relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-[8px] right-[8px] w-[8px] h-[8px] bg-[#FF3B30] border border-white rounded-full"></span>
+</button>
+</div>
+<div class="h-[24px] w-[1px] bg-[#E8EAED]"></div>
+<div class="flex items-center gap-[12px]">
+<div class="text-right hidden sm:block">
+<p class="text-[13px] font-[700] text-[#1D1D1F] leading-tight">Asad Ullah</p>
+<p class="text-[11px] text-[#6E6E73] leading-tight uppercase tracking-wider">Administrator</p>
+</div>
+<div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a male salon administrator with a clean-cut appearance, wearing a crisp white dress shirt against a minimalist grey studio background. The lighting is soft and corporate, conveying trust and professionalism, matching the premium SaaS aesthetic of Salon Azul." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQvXxrpfQZvnY4_cCRCXh2tanBgU6PwOxevlnzFF8qj2RUCRb2sJeFwbDMw81mlsZtPkW51aSSLS5IBdQiMxCOPIIIZkwN5k9px1HY3CmLGGHFi1O-V7il4NTkjp1Et7y382WUgwHwgvi2n8kOM3oJ96mkxAF5qRcUTKVrzPCWgNZ6kLznmapVaDhKAgIrvkOuD0uSJTu1QRb5gJ4nxe5PYZii89UyJjgSzLf-4zO_ktPz4AeSEAUA">
+</div>
+</div>
+</div>
+</nav>
+<div class="pt-[110px] pb-xl max-w-[1320px] mx-auto px-lg flex gap-[24px] min-h-screen bg-white">
+<!-- Container 1: Staff List -->
+<aside class="w-[300px] border border-outline-variant rounded-[16px] bg-white flex flex-col overflow-hidden sticky top-[110px] h-[calc(100vh-134px)]">
+<div class="p-md border-b border-outline-variant flex items-center justify-between">
+<h2 class="font-headline text-[18px] font-bold text-primary">Staff</h2>
+<button class="px-3 py-1.5 bg-primary rounded-full flex items-center gap-1.5 text-white font-headline text-[12px] font-semibold hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span>
+                    Staff
+                </button>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-md">
+<div class="space-y-1">
+<button class="w-full text-left py-2 px-3 flex items-center gap-3 rounded-lg hover:bg-[#F5F5F7] transition-all">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1GU4wHpHwr_rsR5xRs7M5qn9yfJb_EdlFTe-bN-nq2_Qb6Td0ZR0qYGFcsjE0uJeSvRfqA11jHLxXTzNkqd7jtrDMhgcWvNJHkJW9h3Z3jmaBRDdkAnujQjvIB-nVSXfczAdL7z3nMpQEAp2Yxj74v7QOvZOXGfDobjGoKpYc-O4ebvrPPgPlWDEc3X3nnwUz6qbwPeoWFosjlQ-LkXqaQPfbzTZAja3yYp5FojE-mQpl5Inhi6PJ">
+</div>
+<div>
+<p class="font-body text-[14px] font-semibold text-primary">Marcus Thorne</p>
+<p class="text-[12px] text-secondary-text">Senior Stylist</p>
+</div>
+</button>
+<button class="w-full text-left py-2 px-3 flex items-center gap-3 rounded-lg hover:bg-[#F5F5F7] transition-all">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDboj0pzD13VEOjI2wj1lU7oyUWH1dOr6eBvm_Jj5iQtPR-7Dg9sJcXu4iuD-xofGeg3cyw7dkKB5k5EmxqC0c0u4hGMayjfQvmKlaJgZqCpUr7gHjbV8_M7ok1iNu4_iHpr7DtZV05YWMZxoW_wGfKlMPnhd0CIjVmdaEJnp4sFmPqAVJ4My9E15Anupbeg3Rmu0qBZF0hJVe7p_uDn3jPUTlqc3UV7B-bQZnDYokUYM84PfLEUDCy">
+</div>
+<div>
+<p class="font-body text-[14px] font-semibold text-primary">Elena Rodriguez</p>
+<p class="text-[12px] text-secondary-text">Lead Aesthetician</p>
+</div>
+</button>
+<button class="w-full text-left py-2 px-3 flex items-center gap-3 rounded-lg bg-[#F5F5F7] transition-all border border-outline-variant/50">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPXEe0JYIcAQTyOb5O4eO_uoWv5egTMtdmMQV8Xl0K3OTM9ftYKImYAYs9W3z_frKuP7akJdNaSp720Fknd3C6iGg6X2EVzgsXmzlwHFRIUcInFUMyr09FrpaqXD_pkRGeaMNSoDMc1YY7K_NysbUyxdO5wrQP00gKG35-CFFSrnSZbxB6UHs3TtpKyBXzjP9_3pMqLAciXR3cg0HyPdZ8ZLpHHtzwqqfqdEGyMfIPsCNOuoNZ-pEB">
+</div>
+<div>
+<p class="font-body text-[14px] font-semibold text-primary">Sarah Jenkins</p>
+<p class="text-[12px] text-secondary-text">Head Receptionist</p>
+</div>
+<div class="ml-auto w-1.5 h-1.5 bg-active-green rounded-full"></div>
+</button>
+<button class="w-full text-left py-2 px-3 flex items-center gap-3 rounded-lg hover:bg-[#F5F5F7] transition-all">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQZ1dV2PUz0HlFNJo2FWC9vCXqQJy4aaFiI_OOY24RXFpM7Uvhl58Mnv2QCF0w_9JtGotBDwkLhGHmGVbiyJaBUrrXSDFJwsIPYzvVicmTqfyr1SFK54vVh7z8fg3bhS2ErnvHe7Tb2_Bn3p5F2XUJzIRFkY6ttvDNsg47ymzNBn0Yb9tBquOmd5UYDoRVONBF8GyrUngHGluT05YPT4xUVZFdknoSd50qE6OWX7FzXL3xioeNcrSs">
+</div>
+<div>
+<p class="font-body text-[14px] font-semibold text-primary">David Chen</p>
+<p class="text-[12px] text-secondary-text">Barber &amp; Men's Specialist</p>
+</div>
+</button>
+<button class="w-full text-left py-2 px-3 flex items-center gap-3 rounded-lg hover:bg-[#F5F5F7] transition-all">
+<div class="w-8 h-8 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4qOkcV9g7APqyysiPH3H1OX6QdG6TxSd-6X_KV7Yv5TB2vitbh3aOucfOEwh38uvlmL6V_wj7uFPTlr5kON3yRSPCmCEsFgyeq5Ldw6Y5Jf8Ugj6jd4_NzSRPtH3kYrIBwn71OkogB6XZHIIRX8-Bv01Ccr7RzW4CgeiEArQxoW3KJ-Ip2-XX-IpHRKxXDdqK1Ntj2z6yew_DnRLoQgIssrBAIm28BPcmGVVPqQM2MmlTevrFqUlr">
+</div>
+<div>
+<p class="font-body text-[14px] font-semibold text-primary">Rebecca Miller</p>
+<p class="text-[12px] text-secondary-text">Senior Colorist</p>
+</div>
+</button>
+</div>
+</div>
+</aside>
+<!-- Container 2: Staff Profile Workspace -->
+<main class="flex-1 border border-outline-variant rounded-[16px] bg-white flex flex-col overflow-hidden mb-[24px]">
+<!-- Header -->
+<div class="p-lg border-b border-outline-variant flex items-center justify-between">
+<div class="flex items-center gap-md">
+<div class="w-[64px] h-[64px] rounded-lg bg-[#F5F5F7] overflow-hidden">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZqsWvjgk4w5PUWcgogyhXV-0PD_phe4vmDwcTUmjsHDEcWcpm0-Nr5lIOuOgtL8JeK-lcCKcqNBTBko4QGKCbVI5c9mbId038Y0rOGIQeQACkH83H5I3d7C-KSR-U3KHnPEX4rN74eeotc1BPIkRbjf3UUbwGgLL7_6DnACUqPehHFsumjbAzTrPYVZ-SQo6UFGo76jbdxQpIG65YznVbnm5hhdWu_ZxSvtt0U8BllbK7W0wThd94">
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<h1 class="font-headline text-[24px] font-bold text-primary leading-none">Sarah Jenkins</h1>
+<span class="text-[10px] font-bold text-active-green tracking-[0.05em] uppercase">ACTIVE</span>
+</div>
+<p class="text-[14px] text-secondary-text mt-1">Head Receptionist • ID: #EMP-9023 • Joined Jan 12, 2023</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center hover:bg-[#F5F5F7] border border-outline-variant rounded-lg transition-all"><span class="material-symbols-outlined text-primary text-[20px]" data-icon="edit">edit</span></button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-[#F5F5F7] border border-outline-variant rounded-lg transition-all"><span class="material-symbols-outlined text-secondary-text text-[20px]" data-icon="content_copy">content_copy</span></button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-[#F5F5F7] border border-outline-variant rounded-lg transition-all"><span class="material-symbols-outlined text-secondary-text text-[20px]" data-icon="more_horiz">more_horiz</span></button>
+</div>
+</div>
+<!-- Tab Chips -->
+<div class="px-lg py-4 flex gap-2">
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-primary text-white transition-all">Profile</button>
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-[#F5F5F7] text-secondary-text hover:bg-[#E8EAED] hover:text-primary transition-all">Schedule</button>
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-[#F5F5F7] text-secondary-text hover:bg-[#E8EAED] hover:text-primary transition-all">Services</button>
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-[#F5F5F7] text-secondary-text hover:bg-[#E8EAED] hover:text-primary transition-all">Permissions</button>
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-[#F5F5F7] text-secondary-text hover:bg-[#E8EAED] hover:text-primary transition-all">Payroll</button>
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-[#F5F5F7] text-secondary-text hover:bg-[#E8EAED] hover:text-primary transition-all">Performance</button>
+<button class="px-5 py-2 rounded-full font-body text-[14px] font-medium bg-[#F5F5F7] text-secondary-text hover:bg-[#E8EAED] hover:text-primary transition-all">Notifications</button>
+</div>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto custom-scrollbar px-lg pb-[80px]">
+<!-- Personal Information -->
+<section class="grid grid-cols-12 gap-lg py-xl">
+<div class="col-span-4">
+<h3 class="text-[12px] font-bold text-primary uppercase tracking-wider mb-2">PERSONAL INFORMATION</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Basic contact and identification details.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 gap-y-lg gap-x-md">
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Full Legal Name</label>
+<p class="text-[14px] text-primary">Sarah Elizabeth Jenkins</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Email Address</label>
+<p class="text-[14px] text-primary">s.jenkins@onenizam.com</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Phone Number</label>
+<p class="text-[14px] text-primary">+1 (555) 902-3482</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Physical Address</label>
+<p class="text-[14px] text-primary">242 Maplewood Dr, Austin, TX</p>
+</div>
+<div class="col-span-2">
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Emergency Contact</label>
+<p class="text-[14px] text-primary">Michael Jenkins (Spouse) • +1 (555) 123-4567</p>
+</div>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Employment Details -->
+<section class="grid grid-cols-12 gap-lg py-xl">
+<div class="col-span-4">
+<h3 class="text-[12px] font-bold text-primary uppercase tracking-wider mb-2">EMPLOYMENT DETAILS</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Role and status information.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 md:grid-cols-3 gap-y-lg gap-x-md">
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Role</label>
+<p class="text-[14px] text-primary font-medium">Head Receptionist</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Branch</label>
+<p class="text-[14px] text-primary">Downtown Plaza</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Employment Type</label>
+<p class="text-[14px] text-primary">Full-time</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Join Date</label>
+<p class="text-[14px] text-primary">Jan 12, 2023</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Status</label>
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 bg-active-green rounded-full"></div>
+<p class="text-[14px] text-primary">Active</p>
+</div>
+</div>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Assigned Services -->
+<section class="grid grid-cols-12 gap-lg py-xl">
+<div class="col-span-4">
+<h3 class="text-[12px] font-bold text-primary uppercase tracking-wider mb-2">ASSIGNED SERVICES</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Services this staff member can perform.</p>
+</div>
+<div class="col-span-8 flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-[#F5F5F7] border border-outline-variant rounded-[8px] text-[13px] text-primary">Haircut</span>
+<span class="px-3 py-1 bg-[#F5F5F7] border border-outline-variant rounded-[8px] text-[13px] text-primary">Beard Trim</span>
+<span class="px-3 py-1 bg-[#F5F5F7] border border-outline-variant rounded-[8px] text-[13px] text-primary">Blow Dry</span>
+<span class="px-3 py-1 bg-[#F5F5F7] border border-outline-variant rounded-[8px] text-[13px] text-primary">Hair Color</span>
+<span class="px-3 py-1 bg-[#F5F5F7] border border-outline-variant rounded-[8px] text-[13px] text-primary">Signature Styling</span>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Weekly Availability -->
+<section class="grid grid-cols-12 gap-lg py-xl">
+<div class="col-span-4">
+<h3 class="text-[12px] font-bold text-primary uppercase tracking-wider mb-2">WEEKLY AVAILABILITY</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Standard working hours.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 md:grid-cols-4 gap-md">
+<div class="p-3 border border-outline-variant rounded-lg bg-[#F5F5F7]">
+<p class="text-[12px] font-medium text-primary mb-1">Mon - Tue</p>
+<p class="text-[13px] text-secondary-text">09:00 AM - 06:00 PM</p>
+</div>
+<div class="p-3 border border-outline-variant rounded-lg bg-white opacity-50">
+<p class="text-[12px] font-medium text-secondary-text mb-1">Wednesday</p>
+<p class="text-[13px] text-secondary-text italic">Unavailable</p>
+</div>
+<div class="p-3 border border-outline-variant rounded-lg bg-[#F5F5F7]">
+<p class="text-[12px] font-medium text-primary mb-1">Thursday</p>
+<p class="text-[13px] text-secondary-text">10:00 AM - 08:00 PM</p>
+</div>
+<div class="p-3 border border-outline-variant rounded-lg bg-[#F5F5F7]">
+<p class="text-[12px] font-medium text-primary mb-1">Friday</p>
+<p class="text-[13px] text-secondary-text">09:00 AM - 06:00 PM</p>
+</div>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Payroll & Compensation -->
+<section class="grid grid-cols-12 gap-lg py-xl">
+<div class="col-span-4">
+<h3 class="text-[12px] font-bold text-primary uppercase tracking-wider mb-2">PAYROLL &amp; COMPENSATION</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Wage and commission structures.</p>
+</div>
+<div class="col-span-8 grid grid-cols-2 md:grid-cols-4 gap-y-lg gap-x-md">
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Contract</label>
+<p class="text-[14px] text-primary">Hourly</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Structure</label>
+<p class="text-[14px] text-primary">Base + Comm.</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Hourly Rate</label>
+<p class="text-[14px] text-primary font-semibold">$25.00/hr</p>
+</div>
+<div>
+<label class="text-[12px] font-medium text-secondary-text block mb-1">Commission</label>
+<p class="text-[14px] text-primary font-semibold">15%</p>
+</div>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Internal Notes -->
+<section class="grid grid-cols-12 gap-lg py-xl">
+<div class="col-span-4">
+<h3 class="text-[12px] font-bold text-primary uppercase tracking-wider mb-2">INTERNAL NOTES</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Staff context and preferences.</p>
+</div>
+<div class="col-span-8 space-y-3">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-active-green text-[18px]">check_circle</span>
+<p class="text-[14px] text-secondary-text">Preferred morning shifts for childcare flexibility</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-active-green text-[18px]">check_circle</span>
+<p class="text-[14px] text-secondary-text">Certified in advanced balayage techniques</p>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-active-green text-[18px]">check_circle</span>
+<p class="text-[14px] text-secondary-text">Fluent in Spanish and French; assists with international clients</p>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<div class="mt-auto border-t border-outline-variant p-md bg-white flex justify-end items-center gap-md z-10">
+<button class="px-6 py-2 rounded-full text-[14px] font-semibold text-primary border border-outline-variant hover:bg-[#F5F5F7] transition-all">Cancel</button>
+<button class="px-8 py-2 rounded-full text-[14px] font-semibold text-white bg-primary hover:opacity-90 transition-all">Save Changes</button>
+</div>
+</main>
+</div>
+</body></html>

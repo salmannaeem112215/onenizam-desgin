@@ -1,0 +1,214 @@
+
+<!-- Salon Azul - Service Management (Standardized) -->
+<!DOCTYPE html><html class="light" lang="en" style="width: 1280px; height: 1104px; overflow: hidden; position: relative;"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Salon Azul - Service Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#030304",
+                        "secondary": "#6E6E73",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#040302",
+                        "inverse-surface": "#2e3132",
+                        "on-surface-variant": "#46464a",
+                        "on-primary-fixed-variant": "#474649",
+                        "inverse-on-surface": "#f0f1f3",
+                        "on-secondary-fixed-variant": "#005049",
+                        "tertiary-fixed-dim": "#cec4c2",
+                        "surface-variant": "#e1e2e4",
+                        "secondary-container": "#9defe3",
+                        "outline": "#77767b",
+                        "tertiary-fixed": "#ebe0de",
+                        "on-tertiary-fixed": "#1f1a19",
+                        "on-secondary-container": "#0d6f66",
+                        "surface-container-lowest": "#ffffff",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed": "#00201d",
+                        "on-error": "#ffffff",
+                        "surface-container": "#edeef0",
+                        "secondary-fixed-dim": "#84d5ca",
+                        "on-tertiary-fixed-variant": "#4c4544",
+                        "surface-container-highest": "#e1e2e4",
+                        "primary-fixed": "#e4e2e4",
+                        "primary-container": "#1d1d1f",
+                        "surface-bright": "#ffffff",
+                        "surface": "#ffffff",
+                        "secondary-fixed": "#a0f1e6",
+                        "surface-container-high": "#e7e8ea",
+                        "primary-fixed-dim": "#c8c6c8",
+                        "outline-variant": "#c7c6ca",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#5f5e60",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d9dadc",
+                        "tertiary-container": "#211c1b",
+                        "on-primary-fixed": "#1b1b1d",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#8c8382",
+                        "on-primary-container": "#868587",
+                        "on-tertiary": "#ffffff",
+                        "background": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#c8c6c8",
+                        "on-primary": "#ffffff",
+                        "nav-bg": "#091426"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "inter": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            color: #191c1e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E8EAED;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+<!-- Global Navigation: Deconstructed -->
+<nav class="fixed top-2 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1440px] h-[72px] bg-white z-50 px-6 flex justify-between items-center border border-[#E8EAED] rounded-xl">
+<!-- Left: Identity -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]">spa</span>
+</div>
+<span class="font-inter text-[18px] font-bold text-primary tracking-tight">Salon Azul</span>
+</div>
+<!-- Center: Navigation Pills -->
+<div class="hidden md:flex items-center gap-2">
+<a class="flex items-center gap-2 bg-nav-bg text-white rounded-full px-4 py-2 font-label-md text-label-md transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">desktop_windows</span>
+                Front Desk
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant px-4 py-2 font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                Calendar
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant px-4 py-2 font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+                Chats
+            </a>
+<a class="flex items-center gap-2 text-on-surface-variant px-4 py-2 font-label-md text-label-md hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+                Sales
+            </a>
+</div>
+<!-- Right: Actions & User -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="relative text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-px bg-[#E8EAED] mx-1"></div>
+<div class="flex items-center gap-4"><div class="text-right hidden lg:block"><div class="text-[13px] font-bold text-primary">Asad Ullah</div><div class="text-[11px] text-[#6E6E73]">Salon Azul</div></div><div class="w-10 h-10 rounded-full bg-[#D8E3FB] flex items-center justify-center text-[13px] font-bold text-[#0D2E6D]">AU</div></div>
+</div>
+</nav>
+<!-- Main Layout Structure -->
+<main class="max-w-[1320px] mx-auto pt-[110px] pb-12 px-6 flex gap-6">
+<!-- Sidebar: Service Collections - Deconstructed -->
+<aside class="w-[300px] shrink-0 flex flex-col h-[calc(100vh-134px)] sticky top-[110px] overflow-hidden border border-[#E8EAED] rounded-2xl bg-white">
+<div class="p-4 flex items-center justify-between border-b border-[#E8EAED]"><h2 class="text-[18px] font-bold text-primary">Services</h2><button class="bg-primary text-white text-[12px] font-bold px-4 py-2 rounded-full flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">add</span>Category</button></div>
+<div class="flex-1 overflow-y-auto py-2 custom-scrollbar">
+<!-- Category -->
+<div class="mb-6">
+<div class="flex items-center justify-between py-2 mb-2">
+<span class="text-[11px] font-bold text-[#6E6E73] tracking-[0.05em]">HAIRCUTS</span>
+<span class="material-symbols-outlined text-[18px] text-[#6E6E73]">expand_more</span>
+</div>
+<div class="space-y-1">
+<div class="bg-primary text-white px-4 py-2.5 rounded-[8px] flex items-center cursor-pointer">
+<span class="font-inter text-[14px]">Signature Haircut</span>
+</div>
+<div class="hover:bg-surface-container-low px-4 py-2.5 rounded-[8px] flex items-center cursor-pointer transition-colors">
+<span class="font-inter text-[14px] text-primary">Buzz Cut</span>
+</div>
+<div class="hover:bg-surface-container-low px-4 py-2.5 rounded-[8px] flex items-center cursor-pointer transition-colors">
+<span class="font-inter text-[14px] text-primary">Kids Trim</span>
+</div>
+</div>
+</div>
+<!-- Category -->
+<div>
+<div class="flex items-center justify-between py-2 mb-2">
+<span class="text-[11px] font-bold text-[#6E6E73] tracking-[0.05em]">STYLING</span>
+<span class="material-symbols-outlined text-[18px] text-[#6E6E73]">expand_more</span>
+</div>
+<div class="space-y-1">
+<div class="hover:bg-surface-container-low px-4 py-2.5 rounded-[8px] flex items-center cursor-pointer transition-colors">
+<span class="font-inter text-[14px] text-primary">Blowout</span>
+</div>
+<div class="hover:bg-surface-container-low px-4 py-2.5 rounded-[8px] flex items-center cursor-pointer transition-colors">
+<span class="font-inter text-[14px] text-primary">Event Updo</span>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Workspace: Service Management - Deconstructed -->
+<section class="flex-1 flex flex-col min-h-[calc(100vh-134px)] bg-white border border-[#E8EAED] rounded-2xl p-6">
+<!-- Header Section -->
+<div class="max-w-3xl pt-5"><span class="text-[11px] font-bold text-[#6E6E73] tracking-[0.1em] block mb-2 uppercase">SERVICE MANAGEMENT</span><h1 class="font-headline-lg text-[28px] text-primary mb-4 leading-tight font-bold">Manage Your Services</h1><p class="font-inter text-[14px] text-[#6E6E73] leading-relaxed max-w-2xl">Organize your salon's offerings with precision. Define service categories, set specialized pricing, and assign staff members to ensure a seamless booking experience for your clients.</p></div>
+<!-- What You Can Manage Section -->
+<div class="border-t border-[#E8EAED] pt-12"><h3 class="text-[11px] font-bold text-[#6E6E73] tracking-[0.1em] mb-8 uppercase">What you can manage</h3><div class="grid grid-cols-2 gap-x-12 gap-y-8"><div class="pb-6 border-b border-[#E8EAED]"><h4 class="font-inter text-[14px] font-bold text-primary mb-2">Service details</h4><p class="text-[13px] text-[#6E6E73] leading-relaxed">Customize descriptions, names, and visual representations for your online booking page.</p></div><div class="pb-6 border-b border-[#E8EAED]"><h4 class="font-inter text-[14px] font-bold text-primary mb-2">Pricing &amp; Duration</h4><p class="text-[13px] text-[#6E6E73] leading-relaxed">Set tiered pricing models and define precise time slots for each service delivery.</p></div><div class="pb-6 border-b border-[#E8EAED]"><h4 class="font-inter text-[14px] font-bold text-primary mb-2">Staff Assignment</h4><p class="text-[13px] text-[#6E6E73] leading-relaxed">Link specialized stylists to specific services and manage individual team availability.</p></div><div class="pb-6 border-b border-[#E8EAED]"><h4 class="font-inter text-[14px] font-bold text-primary mb-2">Resource Management</h4><p class="text-[13px] text-[#6E6E73] leading-relaxed">Assign required equipment or specialized treatment rooms for specific service types.</p></div><div class="pb-6 border-b border-[#E8EAED]"><h4 class="font-inter text-[14px] font-bold text-primary mb-2">Customizations</h4><p class="text-[13px] text-[#6E6E73] leading-relaxed">Add mandatory add-ons, consultation requirements, or specific post-care notes.</p></div><div class="pb-6 border-b border-[#E8EAED]"><h4 class="font-inter text-[14px] font-bold text-primary mb-2">Performance Analytics</h4><p class="text-[13px] text-[#6E6E73] leading-relaxed">Review popularity and profitability metrics for each of your service categories.</p></div></div></div>
+<!-- Footer Actions -->
+<div class="mt-auto"><button class="text-primary font-bold text-[12px] tracking-wider uppercase flex items-center gap-2 hover:underline">View Service Templates<span class="material-symbols-outlined text-[16px]">arrow_forward</span></button></div>
+</section>
+</main>
+<script>
+        // Navigation micro-interaction
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                document.querySelectorAll('nav a').forEach(l => {
+                    l.classList.remove('bg-nav-bg', 'text-white');
+                    l.classList.add('text-on-surface-variant');
+                });
+                this.classList.remove('text-on-surface-variant');
+                this.classList.add('bg-nav-bg', 'text-white');
+            });
+        });
+    </script>
+<div aria-hidden="true" data-snapdom-sandbox="true" id="snapdom-sandbox" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>

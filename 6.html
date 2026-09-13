@@ -1,0 +1,438 @@
+<!-- Salon Azul - Refined Appointment Modal (Scrollable Schedule) -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Salon Azul - New Appointment</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-bright": "#f8f9fb",
+                      "primary-fixed": "#e4e2e4",
+                      "tertiary-fixed-dim": "#cec4c2",
+                      "inverse-on-surface": "#f0f1f3",
+                      "surface-dim": "#d9dadc",
+                      "inverse-primary": "#c8c6c8",
+                      "on-error": "#ffffff",
+                      "secondary-fixed": "#a0f1e6",
+                      "on-secondary-container": "#0d6f66",
+                      "tertiary-fixed": "#ebe0de",
+                      "on-surface": "#191c1e",
+                      "surface-container-lowest": "#ffffff",
+                      "on-primary": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-container": "#211c1b",
+                      "secondary-fixed-dim": "#84d5ca",
+                      "outline-variant": "#c7c6ca",
+                      "secondary": "#016a61",
+                      "primary-fixed-dim": "#c8c6c8",
+                      "on-tertiary-fixed": "#1f1a19",
+                      "on-primary-container": "#868587",
+                      "on-surface-variant": "#46464a",
+                      "on-tertiary-container": "#8c8382",
+                      "background": "#f8f9fb",
+                      "surface-tint": "#5f5e60",
+                      "tertiary": "#040302",
+                      "on-primary-fixed-variant": "#474649",
+                      "on-tertiary-fixed-variant": "#4c4544",
+                      "surface-container": "#edeef0",
+                      "surface": "#f8f9fb",
+                      "surface-container-high": "#e7e8ea",
+                      "on-error-container": "#93000a",
+                      "error": "#ba1a1a",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-highest": "#e1e2e4",
+                      "surface-variant": "#e1e2e4",
+                      "on-secondary-fixed": "#00201d",
+                      "primary-container": "#1d1d1f",
+                      "on-secondary-fixed-variant": "#005049",
+                      "inverse-surface": "#2e3132",
+                      "secondary-container": "#9defe3",
+                      "on-secondary": "#ffffff",
+                      "primary": "#030304",
+                      "on-primary-fixed": "#1b1b1d",
+                      "error-container": "#ffdad6",
+                      "outline": "#77767b",
+                      "on-background": "#191c1e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xl": "32px",
+                      "unit": "4px",
+                      "margin-mobile": "16px",
+                      "lg": "24px",
+                      "xs": "4px",
+                      "sm": "8px",
+                      "xxl": "48px",
+                      "gutter": "24px",
+                      "md": "16px",
+                      "margin-desktop": "40px"
+              },
+              "fontFamily": {
+                      "headline-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "headline-lg-mobile": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-md": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "headline-sm": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Plus Jakarta Sans"
+                      ],
+                      "label-sm": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.02em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #e1e2e4;
+            border-radius: 20px;
+        }
+        .backdrop-blur-sm {
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface antialiased overflow-hidden font-body-md h-screen w-screen flex">
+<!-- Background Image / Canvas -->
+<div class="fixed inset-0 z-0 bg-[#f4f4f5]">
+<img alt="Background Calendar Screen" class="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbacgnMOrIKDILKC_TsaHS83d_DPFCqPJZrwlw4fZK14NlEiS7WQ5U9co2viNCy684kzuy2eMyQVxIoq3bjmYKFGG-BB8xA2wnfEU8au8HWUG_cx6_MtC0VTm1VWMmRMx5872RqHjGt5Fy60MYB0NBdTrpjX2CtLHDuW6rdGkUQ6-cTC2wc37YSGYG86yyg9SOoKWEdsWFjyjBn9UiOS7ULF5NSDDKpVqAuWZHBbFoF97JW7IQMqir">
+</div>
+<!-- Modal Overlay -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-[#091426]/40 backdrop-blur-sm py-[24px]">
+<!-- Modal Container -->
+<div class="bg-[#FFFFFF] w-full max-w-[920px] max-h-[870px] h-full rounded-[16px] flex flex-col overflow-hidden relative border border-outline-variant/30">
+<!-- Header -->
+<header class="h-[64px] shrink-0 border-b border-outline-variant px-[32px] flex items-center justify-between bg-[#FFFFFF] z-10">
+<div>
+<h2 class="font-headline-sm text-[20px] font-semibold text-[#091426]">New Appointment</h2>
+<p class="font-body-md text-[12px] text-on-surface-variant">Create a new booking</p>
+</div>
+<button class="w-[32px] h-[32px] rounded-full hover:bg-[#F2F4F6] flex items-center justify-center transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+</button>
+</header>
+<!-- Main Content Area -->
+<div class="flex-1 flex flex-col md:flex-row overflow-hidden">
+<!-- Left Column (62%) -->
+<div class="w-full md:w-[62%] px-[32px] py-[24px] flex flex-col gap-[32px] border-b md:border-b-0 md:border-r border-outline-variant bg-[#FFFFFF] overflow-y-auto custom-scrollbar">
+<!-- Client Details -->
+<section class="flex flex-col gap-[12px]">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-[14px] font-medium text-on-surface">Client</h3>
+<button class="font-label-md text-[14px] text-[#091426] font-medium hover:opacity-80 transition-opacity flex items-center gap-[4px]"><span class="material-symbols-outlined text-[16px]" data-icon="add">add</span> New client</button>
+</div>
+<!-- Selected Client Row -->
+<div class="flex items-center justify-between group">
+<div class="flex items-center gap-[12px]">
+<div class="w-[40px] h-[40px] rounded-full overflow-hidden flex-shrink-0 border border-outline-variant/50">
+<img class="w-full h-full object-cover" data-alt="A small, professional circular avatar portrait of a modern woman with stylish hair, in a brightly lit clean environment, high quality, soft studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYnMcihzvXLSAGamASLcffAx9Vqr9vRvrKzXvoGA8pm2bRv_6egERKTRyeKPbg-3r331-29Z3i7fdC2_R8WRIo4v4ej5TO-99SQMgRsbWifsK9iMXa5BtHmbpdiO4m_I3LeHoKOI88QR2_2YI5aslyGp0Wn8zxt_I9XavFNoFs7ctYljmgjDlNfQT7Vml3QfJOtJrGdjP7s9rRYyuDixLdsB16TGtts9y6PHRzN6Hwfn-eKU4N-zFi">
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-label-md text-[14px] text-[#091426] font-medium leading-tight">Jane Doe</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">+1 (555) 0123</p>
+</div>
+</div>
+<button class="font-label-md text-[13px] text-on-surface-variant hover:text-[#091426] transition-colors px-[12px] py-[6px] rounded-full hover:bg-[#F2F4F6]">Change</button>
+</div>
+</section>
+<!-- Schedule -->
+<section class="flex flex-col gap-[16px]">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-[14px] font-medium text-on-surface">Schedule</h3>
+<div class="flex items-center gap-[8px] text-on-surface-variant">
+<button class="hover:text-[#091426] transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span></button>
+<span class="font-label-md text-[13px] text-[#091426] font-medium">October 2023</span>
+<button class="hover:text-[#091426] transition-colors"><span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<!-- Date Selector -->
+<div class="flex gap-[8px] overflow-x-auto flex-nowrap [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-[4px]">
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider opacity-60">Mon</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">16</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] bg-[#091426] text-[#FFFFFF] cursor-pointer transition-colors shadow-sm shrink-0">
+<span class="font-label-sm text-[11px] text-[#FFFFFF]/70 uppercase tracking-wider">Tue</span>
+<span class="font-label-md text-[16px] text-[#FFFFFF] font-semibold">17</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider opacity-60">Wed</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">18</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider opacity-60">Thu</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">19</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider opacity-60">Fri</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">20</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider opacity-60">Sat</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">21</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider opacity-60">Sun</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">22</span>
+</div>
+<div class="flex flex-col items-center justify-center min-w-[60px] h-[64px] rounded-[14px] cursor-pointer hover:bg-[#F2F4F6] transition-colors shrink-0 opacity-40">
+<span class="font-label-sm text-[11px] text-on-surface-variant uppercase tracking-wider">Mon</span>
+<span class="font-label-md text-[16px] text-on-surface font-semibold">23</span>
+</div>
+</div>
+<!-- Available Times Text -->
+<div class="mt-[8px]">
+<span class="font-label-md text-[13px] text-on-surface-variant">Available times</span>
+</div>
+<!-- Time Grid -->
+<div class="flex gap-[8px] overflow-x-auto flex-nowrap [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] pb-[4px]">
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] border border-outline-variant/60 font-label-md text-[13px] text-on-surface hover:border-[#091426] transition-colors bg-[#FFFFFF]">09:00 AM</button>
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] bg-[#091426] border border-[#091426] font-label-md text-[13px] text-[#FFFFFF] shadow-sm">09:30 AM</button>
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] border border-outline-variant/60 font-label-md text-[13px] text-on-surface hover:border-[#091426] transition-colors bg-[#FFFFFF]">10:00 AM</button>
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] border border-outline-variant/30 font-label-md text-[13px] text-on-surface-variant bg-[#FFFFFF] opacity-40 cursor-not-allowed">10:30 AM</button>
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] border border-outline-variant/60 font-label-md text-[13px] text-on-surface hover:border-[#091426] transition-colors bg-[#FFFFFF]">11:00 AM</button>
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] border border-outline-variant/60 font-label-md text-[13px] text-on-surface hover:border-[#091426] transition-colors bg-[#FFFFFF]">11:30 AM</button>
+<button class="min-w-[100px] h-[46px] shrink-0 rounded-[14px] border border-outline-variant/60 font-label-md text-[13px] text-on-surface hover:border-[#091426] transition-colors bg-[#FFFFFF] opacity-40">12:00 PM</button>
+</div>
+</section>
+<!-- Services -->
+<section class="flex flex-col gap-[12px]">
+<div class="flex justify-between items-center">
+<h3 class="font-label-md text-[14px] font-medium text-on-surface">Selected Services</h3>
+<button class="font-label-md text-[14px] text-[#091426] font-medium hover:opacity-80 transition-opacity flex items-center gap-[4px]">
+<span class="material-symbols-outlined text-[16px]" data-icon="add">add</span> Add Service
+                            </button>
+</div>
+<div class="flex flex-col">
+<!-- Service 1 -->
+<div class="flex items-center justify-between py-[12px] border-b border-outline-variant/30 group">
+<div class="flex items-center gap-[12px]">
+<div class="w-[40px] h-[40px] rounded-[6px] bg-[#F2F4F6] overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply" data-alt="A clean, minimalist abstract representation of a signature haircut service, professional salon setting, soft white background, high end photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNgZJSzQgAn1tVdy4wQ8_8xwpLddK_b2POsUXs9MnHnN3TgyKRf6an96-fCZmei2r0i35WDZ5OvoAdEbLtDJioIsV3V9LcoghNms6XSoYOTASyrXIhz1-64Vopk9_ZUZGTAW_FRF-D_4KrroirZqEosSzFSi9AwbsuvmeVAjq7sWXZ9_wXYdZkoRtKx7widiHhoYmCZ8qsGGXfqeBw4I31ZIZaQzZi7TVPbdS6vSgodO60_wYxHF0q">
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-label-md text-[14px] text-[#091426] font-medium leading-tight">Signature Haircut</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">45 min · $80</p>
+</div>
+</div>
+<div class="flex items-center bg-[#F2F4F6] rounded-full px-[8px] py-[4px] gap-[8px]">
+<button class="w-[24px] h-[24px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-[#091426] hover:bg-[#FFFFFF] transition-all"><span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span></button>
+<span class="font-label-md text-[13px] text-[#091426] font-medium w-[12px] text-center">1</span>
+<button class="w-[24px] h-[24px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-[#091426] hover:bg-[#FFFFFF] transition-all"><span class="material-symbols-outlined text-[16px]" data-icon="add">add</span></button>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="flex items-center justify-between py-[12px] group">
+<div class="flex items-center gap-[12px]">
+<div class="w-[40px] h-[40px] rounded-[6px] bg-[#F2F4F6] overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply" data-alt="A clean, minimalist abstract representation of deep conditioning hair treatment, professional salon setting, soft white background, high end photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy3aFRbZya5AdcoW1W56ppiMAS94XeQsqu-ezSyL8xE5J4aDCLXDI9Fu06A9as8R71Fi9zIxoHKqoQ0KCcR_O_WX-bKP97n6dvNh39KXafZ8yxz6EXMpTco3ZbIhDBLx_imjYdANIqVIJXkaK1m9DN2isUwhDqHwZ0uZufjDlZ_SzYGBU1t1N27QRAw-VMQhFACbak6aggOXWL-OZtEA0zF-ffZIDjWosAY262nXFK78l806m6sIZw">
+</div>
+<div class="flex flex-col justify-center">
+<p class="font-label-md text-[14px] text-[#091426] font-medium leading-tight">Deep Conditioning</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">30 min · $50</p>
+</div>
+</div>
+<div class="flex items-center bg-[#F2F4F6] rounded-full px-[8px] py-[4px] gap-[8px]">
+<button class="w-[24px] h-[24px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-[#091426] hover:bg-[#FFFFFF] transition-all"><span class="material-symbols-outlined text-[16px]" data-icon="remove">remove</span></button>
+<span class="font-label-md text-[13px] text-[#091426] font-medium w-[12px] text-center">1</span>
+<button class="w-[24px] h-[24px] flex items-center justify-center rounded-full text-on-surface-variant hover:text-[#091426] hover:bg-[#FFFFFF] transition-all"><span class="material-symbols-outlined text-[16px]" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Internal Notes -->
+<section class="flex flex-col gap-[8px] pb-[16px]">
+<h3 class="font-label-md text-[14px] font-medium text-on-surface">Internal Notes</h3>
+<textarea class="w-full bg-[#F8F9FB] border border-outline-variant/40 rounded-[8px] px-[16px] py-[12px] font-body-md text-[14px] text-on-surface resize-none h-[80px] focus:ring-1 focus:ring-[#091426] focus:border-[#091426] outline-none transition-all placeholder:text-on-surface-variant/60" placeholder="Add any specific requests or client preferences..."></textarea>
+</section>
+</div>
+<!-- Right Column (38%) -->
+<div class="w-full md:w-[38%] bg-[#FFFFFF] flex flex-col relative">
+<!-- Assign Professional -->
+<div class="px-[32px] py-[24px] flex-1 flex flex-col gap-[16px] overflow-y-auto custom-scrollbar">
+<h3 class="font-label-md text-[14px] font-medium text-on-surface">Assign Professional</h3>
+<div class="flex flex-col gap-[4px]">
+<!-- Staff 1 - Selected -->
+<label class="flex items-center p-[12px] rounded-[8px] border border-[#091426]/20 bg-[#F8F9FB] cursor-pointer group transition-all">
+<input checked="" class="hidden" name="staff" type="radio">
+<div class="w-[40px] h-[40px] rounded-full overflow-hidden mr-[12px]">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a male hair stylist named Marcus, modern salon background, confident smile, clean well-lit photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsPWNlF_MTYLv8ig_4UWWbyinme3_W7BSYh4jqNF8GI7I7WYNaha9NDA1t6QPqDdOkJvflrxCKXXyc8d0b4miPnsX6VBh4fcjWMH51Bgn11edidN8PW7h68g9uvDnJJP-598S7dBearZ9OQeS3BnSQMGaIoui3mZUwmUQ6Qg-fvNlleojEfLDQ3-FBbM3PvHpStQKUdc08tXlKJY8qj8v0rMDmYoBj0VF_5grtIabWhreknKKRWPz4">
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<p class="font-label-md text-[14px] text-[#091426] font-medium leading-tight">Marcus</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">Senior Stylist</p>
+</div>
+<span class="material-symbols-outlined text-[#091426] text-[20px]" data-icon="check_circle">check_circle</span>
+</label>
+<!-- Staff 2 -->
+<label class="flex items-center p-[12px] rounded-[8px] border border-transparent hover:bg-[#F2F4F6] cursor-pointer group transition-all">
+<input class="hidden" name="staff" type="radio">
+<div class="w-[40px] h-[40px] rounded-full overflow-hidden mr-[12px] border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female hair stylist named Elena, modern salon background, confident smile, clean well-lit photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC90419ao-lTAEaJ6mvzixiu7UQM70sHrtFGdxpUWXqGrimGbPKOrEOfyU-dh0w0dJ8z1Y7x5tv_-tjrlSzP48MAc4WM2mPxlNMQlCCw2DUzo0HKzpB0n-OR2QaxjzMcPgdVr62xTYi2Y2Mxc8laYDImgxIqtaMXR1x8UQ3oHthduPN46gPglQZ7FFQsNPlIMThlq8cJ7MoMALY73eoUdsh3N1b3jzEPCP3t9St19Fo7im9AhcDutUI">
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<p class="font-label-md text-[14px] text-on-surface font-medium leading-tight group-hover:text-[#091426]">Elena</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">Color Specialist</p>
+</div>
+</label>
+<!-- Staff 3 -->
+<label class="flex items-center p-[12px] rounded-[8px] border border-transparent hover:bg-[#F2F4F6] cursor-pointer group transition-all">
+<input class="hidden" name="staff" type="radio">
+<div class="w-[40px] h-[40px] rounded-full overflow-hidden mr-[12px] border border-outline-variant/30">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a hair stylist named Jordan, modern salon background, confident smile, clean well-lit photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZEyEok6wO6q-hRFbjSwV0n4vXIBJaSgNGyjHsCf1lkmKD7nMDb4scRJNg_nl0kdB5t3D3CO-SmJ6lzrcdAJOKfWd6NY51jgPQbTKYSEFeSdlysp7xtQr-kjumD5NUqy6pKiPJdPzs1-kt_lz5kau-HFdLNyWLsV3ySv4d2vr2pPhwyuwsS9o7uOMusXNdeY65uO6YSJT2J6UYek7w9UOhY6NweNMOUzp2upcLqzmD5_9LQPcFEdIN">
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<p class="font-label-md text-[14px] text-on-surface font-medium leading-tight group-hover:text-[#091426]">Jordan</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">Stylist</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Summary Panel -->
+<div class="px-[32px] pb-[32px] flex flex-col gap-[16px] bg-[#FFFFFF] mt-auto">
+<div class="h-px bg-outline-variant/30 w-full mb-[8px]"></div>
+<h3 class="font-label-md text-[14px] font-medium text-on-surface">Appointment Summary</h3>
+<div class="flex flex-col gap-[12px]">
+<div class="flex justify-between items-center font-body-md text-[13px]">
+<span class="text-on-surface-variant">Client</span>
+<span class="text-[#091426] font-medium">Jane Doe</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-[13px]">
+<span class="text-on-surface-variant">Date &amp; Time</span>
+<span class="text-[#091426] font-medium">Oct 17, 09:30 AM</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-[13px]">
+<span class="text-on-surface-variant">Professional</span>
+<span class="text-[#091426] font-medium">Marcus</span>
+</div>
+<div class="flex justify-between items-center font-body-md text-[13px]">
+<span class="text-on-surface-variant">Services (2)</span>
+<span class="text-[#091426] font-medium">1h 15m</span>
+</div>
+</div>
+<div class="h-px bg-outline-variant/30 w-full my-[4px]"></div>
+<div class="flex justify-between items-end">
+<span class="font-label-md text-[14px] font-medium text-on-surface pb-[4px]">Total Estimated</span>
+<span class="font-headline-sm text-[22px] font-bold text-[#091426] leading-none">$130.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="h-[80px] shrink-0 border-t border-outline-variant/50 px-[32px] flex items-center justify-between bg-[#FFFFFF] z-10">
+<div class="flex flex-col justify-center">
+<span class="font-label-md text-[14px] font-medium text-[#091426]">1h 15m, 2 services</span>
+<span class="font-body-md text-[13px] text-on-surface-variant mt-[2px]">Review details before booking</span>
+</div>
+<div class="flex items-center gap-[16px]">
+<button class="px-[24px] h-[48px] rounded-full font-label-md text-[14px] font-medium text-on-surface-variant hover:text-[#091426] hover:bg-[#F2F4F6] transition-colors">Cancel</button>
+<button class="px-[32px] h-[48px] rounded-full bg-[#091426] font-label-md text-[14px] font-medium text-[#FFFFFF] hover:opacity-90 transition-opacity shadow-sm">Book Appointment</button>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

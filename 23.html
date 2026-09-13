@@ -1,0 +1,297 @@
+
+<!-- Salon Azul - Standardized Subscription Workspace (Master Template) -->
+<!DOCTYPE html><html lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Salon Azul - Subscription &amp; Pricing</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#030304",
+                        "navy-custom": "#091426",
+                        "secondary": "#6E6E73",
+                        "border-custom": "#E8EAED",
+                        "background": "#FFFFFF",
+                        "surface": "#FFFFFF",
+                        "surface-container-low": "#F7F9FB",
+                        "on-surface-variant": "#6E6E73",
+                        "outline-variant": "#E8EAED",
+                        "error": "#ba1a1a",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "margin-desktop": "40px",
+                        "xxl": "48px",
+                        "xl": "32px",
+                        "xs": "4px",
+                        "margin-mobile": "16px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFFFFF; color: #030304; }
+        .font-plus-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .main-card-radius { border-radius: 16px; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid #E8EAED;
+        }
+        .navy-active {
+            background-color: #091426 !important;
+            color: white !important;
+        }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background min-h-screen relative flex flex-col">
+<!-- Global Top Navigation -->
+<header class="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-48px)] max-w-[1440px]">
+<nav class="glass-nav rounded-xl h-[72px] flex items-center justify-between px-6 shadow-sm">
+<!-- Brand Logo -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-navy-custom rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]" data-icon="storefront">storefront</span>
+</div>
+<span class="font-headline-sm text-headline-sm tracking-tight text-navy-custom">Salon Azul</span>
+</div>
+<!-- Center Nav -->
+<div class="hidden md:flex items-center gap-1 bg-surface-container-low p-1 rounded-full border border-outline-variant/30">
+<a class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="#">Front Desk</a>
+<a class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="#">Calendar</a>
+<a class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="#">Reviews</a>
+<a class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-all" href="#">Customers</a>
+</div>
+<!-- Right Side -->
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-[1px] bg-border-custom mx-1"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md text-primary leading-tight">Asad Ullah</p>
+<p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider">Salon Azul</p>
+</div>
+<div class="w-9 h-9 rounded-full overflow-hidden border border-border-custom bg-surface-container-low">
+<img alt="Salon Manager Profile" class="w-full h-full object-cover" data-alt="A professional headshot of an individual with short dark hair, wearing a neutral colored collared shirt. They have a subtle, approachable smile. The lighting is soft and even, highlighting their features against a blurred, light-colored background. The overall tone is modern, clean, and professional, suitable for a business profile picture in a sleek digital interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADhqxuZl5CC7SRd5Lgd-Buxp9sHWDKvFQptFf_-AGvsTlFkZ6wcnqgjYPFanzfnATyEgmzI_lbKXJFNdkyIJ7XQkHK5RnTHDvhvW4LbQks9j0OZDTRv9SMhLFjo5QYKuJ3Hk30IYHPmDmO0TEj9H5s-uvi5QeJ3pbfRUDCke_o2dwHB_qktzTh5FuVqMir58rGg5zRbOXHdFOeRQ142nJWdDAUi5OmBe-L-HCQvDRd0nylHeDjpHpU">
+</div>
+</div>
+</div>
+</nav>
+</header>
+<!-- Main Content Layout -->
+<div class="pt-[112px] pb-6 px-6 max-w-[1440px] mx-auto w-full flex gap-6 h-[calc(100vh-24px)] overflow-hidden">
+<!-- Sidebar (Settings) -->
+<aside class="w-[300px] flex-shrink-0 bg-surface border border-border-custom main-card-radius flex flex-col h-full overflow-y-auto custom-scrollbar p-6">
+<div class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-navy-custom font-plus-jakarta tracking-tight">Settings</h1>
+<p class="text-[14px] text-secondary mt-1">Manage your salon workspace</p>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-secondary hover:bg-surface-container-low font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span>General</span>
+</a>
+<a class="navy-active flex items-center gap-3 px-4 py-2.5 rounded-lg font-label-md transition-colors shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px] text-white" data-icon="workspace_premium">workspace_premium</span>
+<span>Subscription</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-secondary hover:bg-surface-container-low font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+<span>Billing</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-secondary hover:bg-surface-container-low font-label-md transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="hub">hub</span>
+<span>Integrations</span>
+</a>
+</nav>
+</aside>
+<!-- Main Workspace Content -->
+<main class="flex-1 bg-surface border border-border-custom main-card-radius flex flex-col h-full overflow-y-auto custom-scrollbar p-6">
+<!-- Header -->
+<div class="pb-6 border-b border-border-custom mb-6">
+<span class="text-[11px] font-bold text-secondary uppercase tracking-widest block mb-2">SUBSCRIPTION &amp; BILLING</span>
+<h1 class="font-headline-lg text-[32px] text-navy-custom font-plus-jakarta tracking-tight mb-2">Subscription &amp; Pricing</h1>
+<p class="text-[16px] text-secondary">Manage your Salon Azul plan, billing, and included features.</p>
+</div>
+<!-- Current Plan -->
+<div class="pb-6 border-b border-border-custom mb-6">
+<div class="flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-3">
+<h3 class="text-[24px] font-bold text-primary font-plus-jakarta tracking-tight">Professional</h3>
+<div class="w-2 h-2 rounded-full bg-green-500"></div>
+<span class="text-[12px] text-secondary font-medium uppercase tracking-wider">Active</span>
+</div>
+<div class="flex items-baseline gap-1">
+<span class="text-[20px] font-bold text-primary font-plus-jakarta">$79</span>
+<span class="text-[14px] text-secondary">/ month</span>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex flex-col gap-1 text-right">
+<span class="text-[14px] text-primary font-medium">Renews Nov 12, 2026</span>
+<div class="flex items-center gap-3 text-[14px] text-secondary">
+<span>Visa •••• 4242</span>
+<span>Auto-renewal: On</span>
+</div>
+</div>
+<button class="px-4 py-2 border border-border-custom rounded-lg font-label-md text-[14px] hover:bg-surface-container-low transition-colors text-primary">Manage subscription</button>
+</div>
+</div>
+</div>
+<!-- Usage -->
+<div class="pb-6 border-b border-border-custom mb-6">
+<h4 class="text-[11px] font-bold text-secondary uppercase tracking-widest block mb-4">USAGE</h4>
+<div class="flex flex-col gap-6">
+<!-- Team Members -->
+<div>
+<div class="flex justify-between items-baseline mb-2">
+<span class="font-label-md text-[14px] text-primary">Team members</span>
+<span class="text-[20px] font-bold text-primary font-plus-jakarta tracking-tight">4 / 10 <span class="text-[14px] text-secondary font-normal font-inter">· 40% used</span></span>
+</div>
+<div class="h-1.5 bg-border-custom rounded-full overflow-hidden mb-2">
+<div class="h-full bg-navy-custom w-[40%] rounded-full"></div>
+</div>
+<span class="text-[14px] text-secondary">6 members remaining</span>
+</div>
+<!-- Appointments -->
+<div>
+<div class="flex justify-between items-baseline mb-2">
+<span class="font-label-md text-[14px] text-primary">Appointments this month</span>
+<span class="text-[20px] font-bold text-primary font-plus-jakarta tracking-tight">428 / 1,000 <span class="text-[14px] text-secondary font-normal font-inter">· 42.8% used</span></span>
+</div>
+<div class="h-1.5 bg-border-custom rounded-full overflow-hidden mb-2">
+<div class="h-full bg-navy-custom w-[42.8%] rounded-full"></div>
+</div>
+<span class="text-[14px] text-secondary">572 appointments remaining</span>
+</div>
+</div>
+</div>
+<!-- Available Plans -->
+<div class="pb-6 border-b border-border-custom mb-6">
+<h4 class="text-[11px] font-bold text-secondary uppercase tracking-widest block mb-4">AVAILABLE PLANS</h4>
+<div class="grid grid-cols-3 gap-0 border border-border-custom rounded-2xl overflow-hidden">
+<!-- Starter -->
+<div class="p-6 border-r border-border-custom bg-surface flex flex-col">
+<div class="mb-6">
+<h5 class="text-[16px] font-bold text-primary mb-2">Starter</h5>
+<div class="flex items-baseline gap-1 mb-2">
+<span class="text-[24px] font-bold text-primary font-plus-jakarta">$29</span>
+<span class="text-[14px] text-secondary">/ month</span>
+</div>
+<p class="text-[14px] text-secondary h-10">Core scheduling and reporting for solo stylists.</p>
+</div>
+<div class="w-full h-[1px] bg-border-custom mb-6"></div>
+<div class="flex flex-col gap-4 mb-8 flex-1 text-[14px]">
+<div class="flex justify-between"><span class="text-secondary">Team</span><span class="font-medium text-primary">1</span></div>
+<div class="flex justify-between"><span class="text-secondary">Appointments</span><span class="font-medium text-primary">Up to 200</span></div>
+<div class="flex justify-between"><span class="text-secondary">Reporting</span><span class="font-medium text-primary">Basic</span></div>
+<div class="flex justify-between"><span class="text-secondary">Support</span><span class="font-medium text-primary">Standard</span></div>
+<div class="flex justify-between"><span class="text-secondary">Marketing</span><span class="text-border-custom">—</span></div>
+<div class="flex justify-between"><span class="text-secondary">API</span><span class="text-border-custom">—</span></div>
+</div>
+<button class="w-full py-2.5 border border-border-custom rounded-lg font-label-md text-[14px] hover:bg-surface-container-low transition-colors text-primary">Switch to Starter</button>
+</div>
+<!-- Professional -->
+<div class="p-6 border-r border-border-custom bg-surface flex flex-col">
+<div class="mb-6">
+<h5 class="text-[16px] font-bold text-primary mb-2">Professional</h5>
+<div class="flex items-baseline gap-1 mb-2">
+<span class="text-[24px] font-bold text-primary font-plus-jakarta">$79</span>
+<span class="text-[14px] text-secondary">/ month</span>
+</div>
+<p class="text-[14px] text-secondary h-10">Advanced tools for growing salons and small teams.</p>
+</div>
+<div class="w-full h-[1px] bg-border-custom mb-6"></div>
+<div class="flex flex-col gap-4 mb-8 flex-1 text-[14px]">
+<div class="flex justify-between"><span class="text-secondary">Team</span><span class="font-medium text-primary">Up to 10</span></div>
+<div class="flex justify-between"><span class="text-secondary">Appointments</span><span class="font-medium text-primary">Up to 1,000</span></div>
+<div class="flex justify-between"><span class="text-secondary">Reporting</span><span class="font-medium text-primary">Advanced</span></div>
+<div class="flex justify-between"><span class="text-secondary">Support</span><span class="font-medium text-primary">Priority</span></div>
+<div class="flex justify-between"><span class="text-secondary">Marketing</span><span class="font-medium text-primary">Automations</span></div>
+<div class="flex justify-between"><span class="text-secondary">API</span><span class="text-border-custom">—</span></div>
+</div>
+<button class="w-full py-2.5 bg-surface-container-low text-secondary rounded-lg font-label-md text-[14px] cursor-default">Current plan</button>
+</div>
+<!-- Business -->
+<div class="p-6 bg-surface flex flex-col">
+<div class="mb-6">
+<h5 class="text-[16px] font-bold text-primary mb-2">Business</h5>
+<div class="flex items-baseline gap-1 mb-2">
+<span class="text-[24px] font-bold text-primary font-plus-jakarta">$199</span>
+<span class="text-[14px] text-secondary">/ month</span>
+</div>
+<p class="text-[14px] text-secondary h-10">Unlimited capacity and advanced management for multi-location salons.</p>
+</div>
+<div class="w-full h-[1px] bg-border-custom mb-6"></div>
+<div class="flex flex-col gap-4 mb-8 flex-1 text-[14px]">
+<div class="flex justify-between"><span class="text-secondary">Team</span><span class="font-medium text-primary">Unlimited</span></div>
+<div class="flex justify-between"><span class="text-secondary">Appointments</span><span class="font-medium text-primary">Unlimited</span></div>
+<div class="flex justify-between"><span class="text-secondary">Reporting</span><span class="font-medium text-primary">Custom</span></div>
+<div class="flex justify-between"><span class="text-secondary">Support</span><span class="font-medium text-primary">24/7 Dedicated</span></div>
+<div class="flex justify-between"><span class="text-secondary">Marketing</span><span class="font-medium text-primary">Automations</span></div>
+<div class="flex justify-between"><span class="text-secondary">API</span><span class="font-medium text-primary">Access</span></div>
+</div>
+<button class="w-full py-2.5 bg-navy-custom text-white rounded-lg font-label-md text-[14px] hover:bg-opacity-90 transition-colors">Upgrade to Business</button>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="flex justify-between items-center mt-auto pt-4">
+<a class="text-[14px] text-secondary hover:text-primary transition-colors font-medium" href="#">Go to Billing</a>
+<a class="text-[14px] text-[#BA1A1A] hover:opacity-80 transition-opacity font-medium" href="#">Cancel subscription</a>
+</div>
+</main>
+</div>
+</body></html>

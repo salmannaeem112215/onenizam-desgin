@@ -1,0 +1,337 @@
+
+<!-- Salon Azul - Standardized Create Staff Member (SalonCore System) -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Create Staff Member | ONE NIZAM</title>
+<!-- Google Fonts: Plus Jakarta Sans & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#030304",
+                        "secondary-text": "#6E6E73",
+                        "surface": "#FFFFFF",
+                        "outline-variant": "#E8EAED",
+                        "background": "#FFFFFF",
+                        "on-surface": "#030304",
+                        "brand-dark": "#1D1D1F",
+                        "nav-active": "#091426",
+                        "avatar-bg": "#D8E3FB",
+                        "notification-red": "#FF3B30",
+                        "active-green": "#16a34a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "md": "16px",
+                        "sm": "8px",
+                        "xs": "4px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #FFFFFF; color: #030304; font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #E8EAED; border-radius: 10px; }
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+<!-- Floating Navigation Bar -->
+<nav class="fixed top-[20px] left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1440px] h-[72px] bg-[#FFFFFF] border border-[#E8EAED] rounded-[12px] shadow-sm z-50 flex items-center justify-between px-[24px]">
+<!-- Left Section (Business Identity) -->
+<div class="flex items-center gap-[12px] cursor-pointer">
+<span class="font-headline text-[20px] font-[800] text-[#1D1D1F] tracking-tighter uppercase">ONE NIZAM</span>
+</div>
+<!-- Center Section (Primary Nav) -->
+<div class="hidden lg:flex items-center gap-[4px]">
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Dashboard</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Schedule</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Clients</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Marketing</span>
+</a>
+<a class="flex items-center gap-[8px] px-[16px] h-[40px] rounded-[8px] text-[#6E6E73] hover:bg-[#F2F4F6] transition-all" href="#">
+<span class="font-body text-[15px] font-[700]">Reviews</span>
+</a>
+<a class="flex items-center gap-[8px] px-[24px] h-[40px] rounded-full bg-[#091426] text-white transition-all" href="#">
+<span class="font-body text-[14px] font-[700]">Staff</span>
+</a>
+</div>
+<!-- Right Section (Utility + Profile) -->
+<div class="flex items-center gap-[16px]">
+<div class="flex items-center gap-[12px]">
+<button class="p-2 text-[#6E6E73] hover:bg-[#F2F4F6] rounded-full transition-all relative">
+<span class="material-symbols-outlined text-[22px]" data-icon="notifications">notifications</span>
+<span class="absolute top-[8px] right-[8px] w-[8px] h-[8px] bg-[#FF3B30] border border-white rounded-full"></span>
+</button>
+<button class="p-2 text-[#6E6E73] hover:bg-[#F2F4F6] rounded-full transition-all">
+<span class="material-symbols-outlined text-[22px]" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-[24px] w-[1px] bg-[#E8EAED]"></div>
+<div class="flex items-center gap-[12px]">
+<div class="w-[40px] h-[40px] rounded-full overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a boutique manager in a clean, high-end salon environment with minimalist decor and soft studio lighting that creates a premium, calm business atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2B5xCMEkjE_Z8TboMFAjyqx4Q4NRGl9Xu_F39t_vsSdasydApFVBmK9HWzp7cv6K9jhdVX_OrxeQcp7wVpdKctF9cJEM5zsVZsm5Qy5rz8XU55bgoE0LEXyurm22v17C1gl3Mgy-J8zWx7tVbD63adxPZZ-t292OfDbvbJYJBHytVc1Hyo_T-nzg_F2FUAf9klYfe4LoSjftUyg8MfTEhVK_TKqQjKWdtr0huwuksLAYR9PSghKts">
+</div>
+</div>
+</div>
+</nav>
+<div class="pt-[110px] pb-xl max-w-[1320px] mx-auto px-lg flex gap-[24px] min-h-screen bg-white">
+<!-- Container 1: Section Navigation -->
+<aside class="w-[300px] border border-outline-variant rounded-[16px] bg-white flex flex-col sticky top-[110px] h-[calc(100vh-140px)] overflow-hidden"><div class="p-md border-b border-outline-variant flex items-center justify-between">
+    <h2 class="font-headline text-[18px] font-bold text-primary">Staff</h2>
+    <button class="px-3 py-1.5 bg-primary rounded-full flex items-center gap-1.5 text-white font-headline text-[12px] font-semibold hover:opacity-90 transition-all">
+        <span class="material-symbols-outlined text-[16px]">add</span>
+        Staff
+    </button>
+</div>
+<div class="flex-1 overflow-y-auto custom-scrollbar p-2 flex flex-col gap-1">
+    <!-- Marcus Thorne -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">Marcus Thorne</p>
+                <p class="text-[12px] text-[#6E6E73]">Senior Stylist</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+    <!-- Elena Rodriguez -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">Elena Rodriguez</p>
+                <p class="text-[12px] text-[#6E6E73]">Lead Aesthetician</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+    <!-- Sarah Jenkins -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">Sarah Jenkins</p>
+                <p class="text-[12px] text-[#6E6E73]">Head Receptionist</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+    <!-- David Chen -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">David Chen</p>
+                <p class="text-[12px] text-[#6E6E73]">Barber &amp; Men's Specialist</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+    <!-- Rebecca Miller -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">Rebecca Miller</p>
+                <p class="text-[12px] text-[#6E6E73]">Senior Colorist</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+    <!-- Noah Williams -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">Noah Williams</p>
+                <p class="text-[12px] text-[#6E6E73]">Senior Stylist</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+    <!-- Amelia Carter -->
+    <div class="flex items-center justify-between p-2 hover:bg-[#F5F5F7] rounded-[8px] cursor-pointer transition-all">
+        <div class="flex items-center gap-3">
+            <div class="w-[32px] h-[32px] rounded-full bg-[#E8EAED] flex items-center justify-center overflow-hidden">
+                <span class="material-symbols-outlined text-[20px] text-[#6E6E73]">person</span>
+            </div>
+            <div>
+                <p class="text-[14px] font-semibold text-primary">Amelia Carter</p>
+                <p class="text-[12px] text-[#6E6E73]">Aesthetician</p>
+            </div>
+        </div>
+        <div class="w-2 h-2 rounded-full bg-[#16A34A]"></div>
+    </div>
+</div></aside>
+<!-- Container 2: Main Workspace -->
+<main class="flex-1 border border-outline-variant rounded-[16px] bg-white flex flex-col overflow-hidden mb-[24px]">
+<!-- Header -->
+<div class="p-lg border-b border-outline-variant flex items-center justify-between">
+<div>
+<h1 class="font-headline text-[24px] md:text-[28px] font-bold text-primary leading-tight">Create Staff Member</h1>
+<p class="text-[14px] text-secondary-text mt-1">Add a new team member and configure their access, role and service assignments.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-6 py-2.5 rounded-full text-[14px] font-semibold text-primary border border-outline-variant hover:bg-[#F5F5F7] transition-all">Cancel</button>
+<button class="px-8 py-2.5 rounded-full text-[14px] font-semibold text-white bg-nav-active hover:opacity-90 transition-all flex items-center gap-2">
+                        Create Staff Member
+                        <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 overflow-y-auto px-lg pb-[80px]">
+<!-- Personal Information -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-lg py-[48px]" id="personal-info">
+<div class="md:col-span-4">
+<h3 class="text-[14px] font-bold text-primary mb-2">Personal Information</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Basic contact details for the new staff member.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-y-[24px] gap-x-[16px]">
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">First Name</label>
+<input class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[14px]" placeholder="e.g. Sarah" type="text">
+</div>
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">Last Name</label>
+<input class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[14px]" placeholder="e.g. Jenkins" type="text">
+</div>
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">Email Address</label>
+<input class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[14px]" placeholder="sarah.jenkins@onenizam.com" type="email">
+</div>
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">Phone Number</label>
+<input class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[14px]" placeholder="+44 20 7123 4567" type="tel">
+</div>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Employment Details -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-lg py-[48px]" id="employment-details">
+<div class="md:col-span-4">
+<h3 class="text-[14px] font-bold text-primary mb-2">Employment Details</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">System access and basic employment parameters.</p>
+</div>
+<div class="md:col-span-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-y-[24px] gap-x-[16px] mb-[32px]">
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">Gender</label>
+<select class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[14px] appearance-none">
+<option>Female</option>
+<option>Male</option>
+<option>Non-binary</option>
+<option>Prefer not to say</option>
+</select>
+</div>
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">User Type</label>
+<select class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[14px] appearance-none">
+<option>Standard</option>
+<option>Admin</option>
+<option>Manager</option>
+</select>
+</div>
+<div class="sm:col-span-2 sm:max-w-[50%] pr-2">
+<label class="text-[13px] font-medium text-primary block mb-1.5">Time Clock PIN</label>
+<input class="w-full h-[44px] px-3 rounded-[8px] border border-outline-variant bg-white focus:border-nav-active focus:ring-1 focus:ring-nav-active transition-all text-[18px] text-center tracking-[0.5em]" maxlength="4" placeholder="••••" type="password">
+</div>
+</div>
+<!-- Toggle Row -->
+<div class="flex items-center justify-between p-4 bg-[#F5F5F7] rounded-xl border border-outline-variant">
+<div>
+<p class="text-[14px] font-semibold text-primary">Is Service Provider</p>
+<p class="text-[13px] text-secondary-text mt-0.5">Allows this member to be booked for client appointments.</p>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox">
+<div class="w-11 h-6 bg-[#D1D5DB] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-nav-active"></div>
+</label>
+</div>
+</div>
+</section>
+<div class="h-[1px] bg-outline-variant"></div>
+<!-- Roles & Assignments -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-lg py-[48px]" id="roles-assignments">
+<div class="md:col-span-4">
+<h3 class="text-[14px] font-bold text-primary mb-2">Roles &amp; Assignments</h3>
+<p class="text-[13px] text-secondary-text leading-relaxed">Assign branch locations and services.</p>
+</div>
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-[16px]">
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">Branch</label>
+<div class="border border-outline-variant rounded-[8px] px-3 h-[44px] bg-white hover:border-nav-active transition-all cursor-pointer flex items-center justify-between">
+<span class="text-[14px] text-primary">Nizam Main Branch, Mayfair</span>
+<span class="material-symbols-outlined text-secondary-text text-[20px]" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div>
+<label class="text-[13px] font-medium text-primary block mb-1.5">Assigned Services</label>
+<div class="border border-outline-variant rounded-[8px] px-3 h-[44px] bg-white hover:border-nav-active transition-all cursor-pointer flex items-center justify-between">
+<span class="text-[14px] text-secondary-text">Select services...</span>
+<span class="material-symbols-outlined text-nav-active text-[20px]" data-icon="add_circle">add_circle</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- UI Interaction Script -->
+<script>
+        // PIN Input restrict to digits
+        const pinInput = document.querySelector('input[type="password"]');
+        if(pinInput) {
+            pinInput.addEventListener('input', (e) => {
+                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+            });
+        }
+    </script>
+
+
+</body></html>

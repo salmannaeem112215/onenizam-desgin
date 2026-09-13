@@ -1,0 +1,241 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Create New Password - ONE NIZAM</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .req-active {
+            color: #016a61; /* secondary color from config */
+            transition: color 0.3s ease;
+        }
+        .req-active .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+        .req-inactive {
+            color: #75777d; /* outline color from config */
+            transition: color 0.3s ease;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#9defe3",
+                        "on-primary-container": "#7a849b",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#d8e2fc",
+                        "surface-container": "#eceef0",
+                        "surface": "#f8f9fb",
+                        "on-secondary-fixed": "#00201d",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#9d7e62",
+                        "text-muted": "#45474C",
+                        "secondary-fixed": "#a0f1e6",
+                        "tertiary-fixed-dim": "#e5c0a1",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#bcc7df",
+                        "surface-tint": "#545f74",
+                        "on-primary-fixed": "#111c2e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c5c6cd",
+                        "secondary-fixed-dim": "#84d5ca",
+                        "on-tertiary-fixed": "#2a1704",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#45474c",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#111c2e",
+                        "on-secondary-container": "#0d6f66",
+                        "outline-subtle": "#C5C6CD",
+                        "outline": "#75777d",
+                        "tertiary-fixed": "#ffdcc0",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#5b422a",
+                        "secondary": "#016a61",
+                        "primary-fixed-dim": "#bcc7df",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2a1704",
+                        "pure-white": "#FFFFFF",
+                        "tertiary": "#000000",
+                        "on-primary-fixed-variant": "#3d475b",
+                        "background": "#f8f9fb",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9fb"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "otp-width": "52px",
+                        "section-margin": "48px",
+                        "auth-column-width": "400px",
+                        "stack-gap": "24px",
+                        "input-height": "56px"
+                    },
+                    fontFamily: {
+                        "body-base": ["Inter"],
+                        "button-text": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    fontSize: {
+                        "body-base": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+                        "button-text": ["18px", { lineHeight: "24px", fontWeight: "600" }],
+                        "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "label-md": ["16px", { lineHeight: "20px", fontWeight: "600" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "36px", letterSpacing: "-0.02em", fontWeight: "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-pure-white text-on-surface antialiased min-h-screen flex flex-col items-center">
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-[400px] flex flex-col justify-center px-[24px] md:px-0 py-section-margin">
+<form class="flex flex-col w-full" onsubmit="event.preventDefault(); window.location.href='/front-desk';">
+<div class="border border-[#E5E7EB] rounded-[12px] bg-pure-white p-6 flex flex-col gap-4">
+<!-- Header Section -->
+<div class="text-center mb-2">
+<h1 class="font-headline-lg-mobile text-[28px] md:font-headline-lg md:text-[32px] font-[700] tracking-[-0.02em] text-on-surface mb-1">Create new password</h1>
+<p class="font-body-base text-[16px] text-text-muted">Choose a strong password to secure your account.</p>
+</div>
+<!-- Form Section -->
+<div class="flex flex-col gap-4 w-full">
+<!-- New Password Input -->
+<div class="flex flex-col gap-2">
+<div class="relative w-full">
+<label class="sr-only" for="new-password">New password</label>
+<input class="w-full h-input-height bg-surface-container-low border-0 rounded-full px-6 font-body-base text-on-surface placeholder:text-outline focus:ring-1 focus:ring-outline-variant p-0 pr-12 transition-colors" id="new-password" placeholder="New password" type="password">
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors focus:outline-none px-4" onclick="togglePasswordVisibility('new-password', 'toggle-icon-1')" type="button">
+<span class="material-symbols-outlined" data-icon="visibility" id="toggle-icon-1">visibility</span>
+</button>
+</div>
+<!-- Password Checklist -->
+<div class="flex flex-col gap-1 px-2 mt-1">
+<div class="flex items-center gap-2 req-inactive font-body-base text-[14px]" id="req-length">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>At least 8 characters</span>
+</div>
+<div class="flex items-center gap-2 req-inactive font-body-base text-[14px]" id="req-upper">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>One uppercase letter</span>
+</div>
+<div class="flex items-center gap-2 req-inactive font-body-base text-[14px]" id="req-lower">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>One lowercase letter</span>
+</div>
+<div class="flex items-center gap-2 req-inactive font-body-base text-[14px]" id="req-number">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>One number</span>
+</div>
+<div class="flex items-center gap-2 req-inactive font-body-base text-[14px]" id="req-special">
+<span class="material-symbols-outlined text-[16px]" data-icon="check_circle">check_circle</span>
+<span>One special character</span>
+</div>
+</div>
+</div>
+<!-- Confirm Password Input -->
+<div class="relative w-full mt-2">
+<label class="sr-only" for="confirm-password">Confirm password</label>
+<input class="w-full h-input-height bg-surface-container-low border-0 rounded-full px-6 font-body-base text-on-surface placeholder:text-outline focus:ring-1 focus:ring-outline-variant p-0 pr-12 transition-colors" id="confirm-password" placeholder="Confirm password" type="password">
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors focus:outline-none px-4" onclick="togglePasswordVisibility('confirm-password', 'toggle-icon-2')" type="button">
+<span class="material-symbols-outlined" data-icon="visibility" id="toggle-icon-2">visibility</span>
+</button>
+</div>
+</div>
+<div class="mt-2">
+<!-- Primary Button -->
+<button class="w-full h-input-height bg-primary text-pure-white rounded-full font-button-text text-button-text hover:bg-surface-tint transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 flex items-center justify-center gap-2" type="submit">
+                    Update Password
+                </button>
+<!-- Bottom Link -->
+<div class="mt-6 text-center">
+<p class="font-body-base text-body-base text-text-muted">
+Remember your password?
+<a class="font-label-md text-label-md text-on-surface hover:text-surface-tint transition-colors ml-1" href="#signin">Sign In</a>
+</p>
+</div>
+</div>
+</div>
+</form>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-margin bg-transparent flex flex-col items-center justify-center gap-4 max-w-[auth-column-width] mx-auto text-center mt-auto pb-12">
+</footer>
+<script>
+        function togglePasswordVisibility(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = 'visibility_off';
+                icon.setAttribute('data-icon', 'visibility_off');
+            } else {
+                input.type = 'password';
+                icon.textContent = 'visibility';
+                icon.setAttribute('data-icon', 'visibility');
+            }
+        }
+        
+        const passwordInput = document.getElementById('new-password');
+        
+        passwordInput.addEventListener('input', function(e) {
+            const val = e.target.value;
+            
+            // Length >= 8
+            updateRequirement('req-length', val.length >= 8);
+            
+            // Uppercase
+            updateRequirement('req-upper', /[A-Z]/.test(val));
+            
+            // Lowercase
+            updateRequirement('req-lower', /[a-z]/.test(val));
+            
+            // Number
+            updateRequirement('req-number', /[0-9]/.test(val));
+            
+            // Special char
+            updateRequirement('req-special', /[!@#$%^&*(),.?":{}|<>]/.test(val));
+        });
+        
+        function updateRequirement(elementId, isValid) {
+            const el = document.getElementById(elementId);
+            if(isValid) {
+                el.classList.remove('req-inactive');
+                el.classList.add('req-active');
+            } else {
+                el.classList.add('req-inactive');
+                el.classList.remove('req-active');
+            }
+        }
+    </script>
+</body></html>

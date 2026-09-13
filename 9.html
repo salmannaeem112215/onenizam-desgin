@@ -1,0 +1,499 @@
+
+<!-- OneNizam - Universal Front Desk Operations (With Filters) -->
+<!DOCTYPE html>
+
+<html class="light" lang="en" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Salon Azul - Front Desk</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "unconfirmed-bg": "#FEF2F2",
+                        "unconfirmed-border": "#FEE2E2",
+                        "unconfirmed-text": "#991B1B",
+                        "confirmed-bg": "#F0FDF4",
+                        "confirmed-border": "#DCFCE7",
+                        "confirmed-text": "#166534",
+                        "arrived-bg": "#E8F0FE",
+                        "arrived-border": "rgba(25, 103, 210, 0.16)",
+                        "arrived-text": "#1967D2",
+                        "in-service-bg": "#EFF6FF",
+                        "in-service-border": "#DBEAFE",
+                        "in-service-text": "#1E3A8A",
+                        "now-bg": "#FFF6EC",
+                        "now-text": "#D9944A",
+                        "highlight": "#FFA62B",
+                        "surface-soft": "#F8E6A0",
+                        "on-primary-fixed-variant": "#474649",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#8c8382",
+                        "tertiary-fixed-dim": "#cec4c2",
+                        "tertiary": "#040302",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#1b1b1d",
+                        "inverse-on-surface": "#f0f1f3",
+                        "surface-container-low": "#ffffff",
+                        "surface-variant": "#e1e2e4",
+                        "error": "#ba1a1a",
+                        "outline": "#77767b",
+                        "on-tertiary-fixed-variant": "#4c4544",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#a0f1e6",
+                        "outline-variant": "#E8EAED",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary-container": "#0d6f66",
+                        "surface-tint": "#5f5e60",
+                        "primary-fixed": "#e4e2e4",
+                        "inverse-primary": "#c8c6c8",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#46464a",
+                        "on-background": "#191c1e",
+                        "surface-dim": "#d9dadc",
+                        "surface-container": "#edeef0",
+                        "surface-container-highest": "#f0f1f3",
+                        "secondary-container": "#9defe3",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#1f1a19",
+                        "on-primary-container": "#868587",
+                        "tertiary-fixed": "#ebe0de",
+                        "secondary": "#016a61",
+                        "surface-bright": "#ffffff",
+                        "surface": "#ffffff",
+                        "surface-container-high": "#f0f1f3",
+                        "primary": "#030304",
+                        "on-surface": "#191c1e",
+                        "tertiary-container": "#211c1b",
+                        "primary-container": "#1d1d1f",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#84d5ca",
+                        "on-secondary-fixed": "#00201d",
+                        "primary-fixed-dim": "#c8c6c8"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    fontSize: {
+                        "label-md": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        h1, h2, h3, .font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .active-pill { background-color: #030304; color: #ffffff; }
+        .appointment-row:hover { background-color: #fbfbfb; }
+        .thin-divider { border-color: #F0F1F3; }
+        .compact-action { height: 36px; transition: all 0.2s ease; }
+        .compact-action:active { transform: scale(0.98); }
+        .now-indicator { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+    </style>
+</head>
+<body class="bg-white text-on-surface min-h-screen">
+<!-- 1. Refined Global Navigation Bar -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 w-[calc(100%-80px)] max-w-[1360px] h-[60px] bg-white/90 backdrop-blur-md rounded-2xl shadow-sm border border-[#E8EAED] z-50 flex items-center justify-between px-6 py-2.5">
+<!-- Left: Business Selector -->
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-on-primary shadow-xs">
+<span class="material-symbols-outlined text-[18px]" style='font-variation-settings: "FILL" 1;'>hub</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-[15px] font-semibold text-primary">Salon Azul</span>
+<span class="material-symbols-outlined text-[15px] text-[#6E6E73]">unfold_more</span>
+</div>
+<span class="text-[10px] text-[#6E6E73] font-medium leading-none">Beauty &amp; Grooming</span>
+</div>
+</div>
+<!-- Center: Nav Items -->
+<div class="hidden md:flex items-center gap-1.5">
+<a class="px-5 py-2 text-sm font-medium active-pill rounded-full flex items-center shadow-xs" href="#">Front Desk</a>
+<a class="px-4 py-2 text-sm font-medium text-[#6E6E73] hover:text-primary transition-colors rounded-full" href="#">Calendar</a>
+<a class="px-4 py-2 text-sm font-medium text-[#6E6E73] hover:text-primary transition-colors rounded-full" href="#">Sales</a>
+<a class="px-4 py-2 text-sm font-medium text-[#6E6E73] hover:text-primary transition-colors rounded-full" href="#">Chats</a>
+</div>
+<!-- Right: Actions & Profile -->
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-[#6E6E73] hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[20px]">apps</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-[#6E6E73] hover:bg-surface-container-high transition-colors relative">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-1.5 h-1.5 bg-[#ba1a1a] rounded-full border border-white"></span>
+</button>
+</div>
+<div class="h-6 w-[1px] bg-[#E8EAED] mx-1"></div>
+<div class="flex items-center gap-2.5 pl-1">
+<div class="flex flex-col text-right">
+<span class="text-[13px] font-semibold text-primary leading-none">Asad Ullah</span>
+<span class="text-[9px] text-[#6E6E73] uppercase tracking-wider font-bold mt-0.5">Operations Lead</span>
+</div>
+<div class="w-8 h-8 bg-secondary-fixed rounded-full flex items-center justify-center text-on-secondary-fixed font-bold text-[11px]">AU</div>
+</div>
+</div>
+</nav>
+<!-- Main Container -->
+<main class="max-w-[1440px] mx-auto px-10 pt-28 pb-12">
+<!-- 2. Operational Command Toolbar -->
+<div class="flex items-center justify-between gap-4 mb-7 w-full">
+<!-- Left: Navigation Controls & Date -->
+<div class="flex items-center gap-3 flex-shrink-0">
+<div class="flex items-center gap-1 bg-white p-1 rounded-full border border-[#E8EAED] shadow-sm">
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+<button class="px-3.5 py-1 text-[13px] font-medium rounded-full hover:bg-surface-container-low transition-colors">Today</button>
+</div>
+<h1 class="font-headline-sm text-[20px] xl:text-[22px] font-bold text-primary tracking-tight ml-1">Saturday, 27 June, 2026</h1>
+<div class="flex items-center gap-2 bg-[#FFF6EC] border border-[#FDE3C8] px-3.5 py-1.5 rounded-full shadow-xs">
+<span class="w-2 h-2 rounded-full bg-[#D9944A] now-indicator"></span>
+<span class="text-[11px] font-bold tracking-wider uppercase text-[#D9944A]">NOW · 11:42 AM</span>
+</div>
+</div>
+<!-- Center: Segmented Day/Week -->
+<!-- Right: Metrics & Action CTA -->
+<div class="flex items-center gap-3 flex-shrink-0">
+<div class="flex items-center bg-white p-1 rounded-full border border-[#E8EAED] shadow-sm h-10 flex-shrink-0"><button class="px-4 py-1.5 text-[12px] font-semibold bg-primary text-white rounded-full leading-none h-full flex items-center">Day</button><button class="px-4 py-1.5 text-[12px] font-medium text-[#6E6E73] hover:text-primary transition-colors rounded-full leading-none h-full flex items-center">Week</button></div><button class="h-10 px-5 bg-white border border-[#E8EAED] rounded-full flex items-center gap-2 text-sm font-medium text-[#1D1D1F] hover:bg-[#F8F9FA] transition-colors"><span class="material-symbols-outlined text-[18px] text-[#6E6E73]">filter_list</span><span>Filters</span></button><div class="border-r border-[#E8EAED] h-6"></div><button class="h-10 px-5 bg-primary text-white rounded-full text-[13px] font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-sm active:scale-[0.98]">
+<span class="material-symbols-outlined text-[18px]">add</span>
+      New Appointment
+    </button>
+</div>
+</div>
+<!-- 3. Dynamic Command Center Architecture -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-7">
+<!-- Left / Main Area (~70% width: 8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- SPOTLIGHT: ACTIVE NOW APPOINTMENT -->
+<!-- WORKFLOW LANES WITH PASTEL FLOATING CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+<!-- LANE 1: UNCONFIRMED -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #8C3232;"></span>
+<h3 class="text-[12px] font-bold tracking-wider uppercase text-primary">Unconfirmed</h3>
+</div>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgb(248, 217, 213); color: rgb(140, 50, 50);">2</span>
+</div>
+<!-- Card 1 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: #F8D9D5;">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(140, 50, 50);">8:00 AM</span>
+<span class="flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgba(140, 50, 50, 0.12); color: rgb(140, 50, 50);">
+<span class="material-symbols-outlined text-[12px]">warning</span> 15m late
+        </span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(140, 50, 50);">Gerardo Donnelly</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(168, 60, 60);">Women's Haircut</p>
+<p class="text-[11px] mt-2" style="color: rgb(184, 79, 79);">Provider: Asad · 45 min · Station 01</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(140, 50, 50, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgba(184, 79, 79, 0.16); color: rgb(140, 50, 50);">
+        Confirm Appointment
+      </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: #F8D9D5;">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(140, 50, 50);">9:45 AM</span>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full" style="background-color: rgba(140, 50, 50, 0.1); color: rgb(140, 50, 50);">Pending Call</span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(140, 50, 50);">Harrison Rice</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(168, 60, 60);">Men's Styling</p>
+<p class="text-[11px] mt-2" style="color: rgb(184, 79, 79);">Provider: Asad · 30 min · Chair 02</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(140, 50, 50, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgba(184, 79, 79, 0.16); color: rgb(140, 50, 50);">
+        Confirm Appointment
+      </button>
+</div>
+</div>
+</div>
+<!-- LANE 2: CONFIRMED -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #1B5E3C;"></span>
+<h3 class="text-[12px] font-bold tracking-wider uppercase text-primary">Confirmed</h3>
+</div>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgb(214, 242, 228); color: rgb(27, 94, 60);">2</span>
+</div>
+<!-- Card 1 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: #D6F2E4;">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(27, 94, 60);">2:45 PM</span>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full" style="background-color: rgba(27, 94, 60, 0.12); color: rgb(27, 94, 60);">Confirmed</span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(27, 94, 60);">Keara Fay</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(35, 119, 77);">Coloring Treatment</p>
+<p class="text-[11px] mt-2" style="color: rgb(45, 142, 93);">Provider: Sana · 90 min · Room 02</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(27, 94, 60, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgba(27, 94, 60, 0.16); color: rgb(27, 94, 60);">
+        Check In Client
+      </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: #D6F2E4;">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(27, 94, 60);">3:30 PM</span>
+<span class="text-[10px] font-semibold px-2 py-0.5 rounded-full" style="background-color: rgba(27, 94, 60, 0.12); color: rgb(27, 94, 60);">Confirmed</span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(27, 94, 60);">Maryam Ullrich</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(35, 119, 77);">Blowout &amp; Shine</p>
+<p class="text-[11px] mt-2" style="color: rgb(45, 142, 93);">Provider: Hira · 45 min · Station 03</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(27, 94, 60, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgba(27, 94, 60, 0.16); color: rgb(27, 94, 60);">
+        Check In Client
+      </button>
+</div>
+</div>
+</div>
+<!-- LANE 3: ARRIVED -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #A35C24;"></span>
+<h3 class="text-[12px] font-bold tracking-wider uppercase text-primary">Arrived</h3>
+</div>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgb(251, 235, 221); color: rgb(163, 92, 36);">2</span>
+</div>
+<!-- Card 1 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: rgb(251, 235, 221);">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(140, 71, 19);">8:45 AM</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgba(163, 92, 36, 0.12); color: rgb(140, 71, 19);">Lobby · Waiting</span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(105, 51, 9);">Halie Wisoky</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(163, 92, 36);">Styling</p>
+<p class="text-[11px] mt-2" style="color: rgb(189, 111, 51);">Provider: Hira · 60 min · Room 01</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(163, 92, 36, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgba(163, 92, 36, 0.15); color: rgb(140, 71, 19);">
+        Start Service
+      </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: rgb(251, 235, 221);">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(140, 71, 19);">11:15 AM</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgba(163, 92, 36, 0.12); color: rgb(140, 71, 19);">Ready</span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(105, 51, 9);">Clark Schmidt</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(163, 92, 36);">Beard Sculpt</p>
+<p class="text-[11px] mt-2" style="color: rgb(189, 111, 51);">Provider: Asad · 30 min · Chair 01</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(163, 92, 36, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgba(163, 92, 36, 0.15); color: rgb(140, 71, 19);">
+        Start Service
+      </button>
+</div>
+</div>
+</div>
+<!-- LANE 4: IN SERVICE -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full" style="background-color: #3E41A8;"></span>
+<h3 class="text-[12px] font-bold tracking-wider uppercase text-primary">In Progress</h3>
+</div>
+<span class="text-[11px] font-bold px-2 py-0.5 rounded-full" style="background-color: rgb(210, 212, 248); color: rgb(62, 65, 168);">1</span>
+</div>
+<!-- Card 1 -->
+<div class="rounded-2xl p-4 shadow-sm transition-all hover:shadow-md flex flex-col justify-between min-h-[195px]" style="background-color: #D2D4F8;">
+<div>
+<div class="flex items-center justify-between mb-2.5">
+<span class="text-[13px] font-bold tracking-tight" style="color: rgb(38, 39, 104);">11:30 AM</span>
+<span class="text-[10px] font-bold px-2 py-0.5 rounded-full flex items-center gap-1" style="background-color: rgba(62, 65, 168, 0.14); color: rgb(62, 65, 168);">
+<span class="w-1.5 h-1.5 rounded-full bg-[#5052C7] animate-ping"></span> Active
+        </span>
+</div>
+<h4 class="text-[15px] font-bold font-headline-sm leading-snug tracking-tight" style="color: rgb(38, 39, 104);">Dora Jacobi</h4>
+<p class="text-[12px] font-medium mt-0.5" style="color: rgb(62, 65, 168);">Consultation</p>
+<p class="text-[11px] mt-2" style="color: rgb(80, 82, 199);">Provider: Asad · 20 min · Suite A</p>
+</div>
+<div class="pt-3 mt-auto border-t" style="border-color: rgba(62, 65, 168, 0.15);">
+<button class="w-full h-9 rounded-xl text-[12px] font-bold transition-all hover:opacity-90 active:scale-[0.98] flex items-center justify-center" style="background-color: rgb(80, 82, 199); color: rgb(255, 255, 255);">
+        Complete Service
+      </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Area / Side Column (~30% width: 4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Salon Pulse & Capacity Card -->
+<div class="bg-white rounded-2xl p-5 border border-[#E8EAED] shadow-sm">
+<div class="flex items-center justify-between mb-3">
+<h3 class="text-[13px] font-bold uppercase tracking-wider text-primary">Today's Pulse</h3>
+<span class="text-[11px] font-bold text-[#15803D] bg-[#F0FDF4] px-2.5 py-0.5 rounded-full border border-[#DCFCE7]">Optimal Load</span>
+</div>
+<div class="flex items-center justify-between my-2">
+<div>
+<p class="text-[28px] font-bold text-primary leading-none font-headline-sm">82%</p>
+<p class="text-[12px] text-on-surface-variant mt-1 font-medium">Capacity used today</p>
+</div>
+<div class="text-right">
+<p class="text-[14px] font-bold text-primary">3 of 8 Done</p>
+<p class="text-[12px] text-on-surface-variant mt-1 font-medium">5 remaining</p>
+</div>
+</div>
+<div class="w-full bg-[#F0F1F3] h-2 rounded-full overflow-hidden mt-3">
+<div class="bg-primary h-full rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<!-- COMPLETED APPOINTMENTS -->
+<div class="bg-white rounded-2xl p-5 border border-[#E8EAED] shadow-sm flex flex-col flex-1">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-[#15803D]">check_circle</span>
+<h3 class="text-[13px] font-bold uppercase tracking-wider text-primary">Completed Today</h3>
+</div>
+<span class="text-[11px] font-bold text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded-full">3</span>
+</div>
+<div class="flex flex-col gap-3 divide-y divide-[#F0F1F3]">
+<!-- Completed Item 1 -->
+<div class="pt-2.5 first:pt-0 flex items-start justify-between">
+<div>
+<p class="text-[14px] font-semibold text-primary leading-snug">Henry Abshire</p>
+<p class="text-[12px] text-on-surface-variant">Haircut &amp; Treatment</p>
+<p class="text-[11px] text-on-surface-variant/70 mt-0.5">8:00 AM – 8:40 AM</p>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-bold text-primary">Rs 12,000</span>
+<p class="text-[10px] text-[#15803D] font-semibold">Paid</p>
+</div>
+</div>
+<!-- Completed Item 2 -->
+<div class="pt-3 flex items-start justify-between">
+<div>
+<p class="text-[14px] font-semibold text-primary leading-snug">Alysson Kozey</p>
+<p class="text-[12px] text-on-surface-variant">Full Styling · Asad</p>
+<p class="text-[11px] text-on-surface-variant/70 mt-0.5">9:00 AM – 10:15 AM</p>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-bold text-primary">Rs 7,500</span>
+<p class="text-[10px] text-[#15803D] font-semibold">Paid</p>
+</div>
+</div>
+<!-- Completed Item 3 -->
+<div class="pt-3 flex items-start justify-between">
+<div>
+<p class="text-[14px] font-semibold text-primary leading-snug">Iva Gulgowski</p>
+<p class="text-[12px] text-on-surface-variant">Quick Styling</p>
+<p class="text-[11px] text-on-surface-variant/70 mt-0.5">10:30 AM – 11:20 AM</p>
+</div>
+<div class="text-right">
+<span class="text-[13px] font-bold text-primary">Rs 5,300</span>
+<p class="text-[10px] text-[#15803D] font-semibold">Paid</p>
+</div>
+</div>
+</div>
+<button class="mt-5 w-full py-2 bg-surface-bright hover:bg-surface-container-high border border-outline-variant rounded-xl text-[12px] font-bold text-primary transition-colors flex items-center justify-center gap-1.5">
+<span class="">View All Completed Records</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- STAFF ON DUTY MINI RAIL -->
+<div class="bg-white rounded-2xl p-5 border border-[#E8EAED] shadow-sm">
+<div class="flex items-center justify-between mb-3.5">
+<h3 class="text-[13px] font-bold uppercase tracking-wider text-primary">Team Today</h3>
+<span class="text-[11px] font-semibold text-on-surface-variant">3 On Duty</span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold text-[11px] flex items-center justify-center">AU</div>
+<div>
+<p class="text-[13px] font-semibold text-primary leading-none">Asad Ullah <span class="text-[10px] text-on-surface-variant font-normal">· Lead</span></p>
+<p class="text-[11px] text-[#4F46E5] font-medium mt-0.5">In Progress with Dora J.</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-[#4F46E5]"></span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-[#FFE4E6] text-[#9F1239] font-bold text-[11px] flex items-center justify-center">SN</div>
+<div>
+<p class="text-[13px] font-semibold text-primary leading-none">Sana Noor <span class="text-[10px] text-on-surface-variant font-normal">· Specialist</span></p>
+<p class="text-[11px] text-[#15803D] font-medium mt-0.5">Available · Next 2:45 PM</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-[#15803D]"></span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-[#E0F2FE] text-[#075985] font-bold text-[11px] flex items-center justify-center">HR</div>
+<div>
+<p class="text-[13px] font-semibold text-primary leading-none">Hira Riaz <span class="text-[10px] text-on-surface-variant font-normal">· Specialist</span></p>
+<p class="text-[11px] text-[#0284C7] font-medium mt-0.5">Prep for Halie W.</p>
+</div>
+</div>
+<span class="w-2 h-2 rounded-full bg-[#0284C7]"></span>
+</div>
+</div>
+</div>
+</div>
+</div></main>
+<script>
+    // Micro-interactions for smooth feel
+    document.querySelectorAll('.appointment-row').forEach(row => {
+      row.addEventListener('mousedown', () => {
+        row.style.transform = 'scale(0.998)';
+      });
+      row.addEventListener('mouseup', () => {
+        row.style.transform = 'scale(1)';
+      });
+      row.addEventListener('mouseleave', () => {
+        row.style.transform = 'scale(1)';
+      });
+    });
+</script>
+</body></html>

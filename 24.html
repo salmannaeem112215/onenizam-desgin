@@ -1,0 +1,272 @@
+
+<!-- ONE NIZAM - Guided Business Setup (Restored Business Type) -->
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Lumina OS | Business Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#030304",
+                        secondary: "#6E6E73",
+                        border: "#E8EAED",
+                        surface: "#FFFFFF",
+                        "surface-dim": "#F5F5F7"
+                    },
+                    fontFamily: {
+                        heading: ["Plus Jakarta Sans", "sans-serif"],
+                        body: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            color: #030304;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-field {
+            height: 44px;
+            border-radius: 10px;
+            border: 1px solid #E8EAED;
+            background: #FFFFFF;
+            transition: border-color 0.2s ease;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #030304;
+            box-shadow: none;
+        }
+        .textarea-field {
+            border-radius: 10px;
+            border: 1px solid #E8EAED;
+            background: #FFFFFF;
+            transition: border-color 0.2s ease;
+        }
+        .textarea-field:focus {
+            outline: none;
+            border-color: #030304;
+            box-shadow: none;
+        }
+        
+        .pill-checkbox:checked + label {
+            background-color: #030304;
+            color: #FFFFFF;
+            border-color: #030304;
+        }
+        
+        .industry-card {
+            border: 1px solid #E8EAED;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .industry-card:hover {
+            border-color: #030304;
+            background-color: #F9FAFB;
+        }
+        .industry-card.selected {
+            border-color: #030304;
+            background-color: #030304;
+            color: #FFFFFF;
+        }
+        .industry-card.selected .text-secondary {
+            color: #A1A1A5;
+        }
+        .industry-card.selected .material-symbols-outlined {
+            color: #FFFFFF;
+        }
+    </style>
+</head>
+<body class="antialiased text-[#030304]">
+<!-- Floating Global Navigation -->
+<div class="px-5 pt-5 pb-8 relative z-50">
+<header class="max-w-[1440px] mx-auto bg-white border border-[#E8EAED] rounded-[12px] h-[72px] px-6 flex items-center justify-between">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-sm">dashboard</span>
+</div>
+<span class="font-heading text-[15px] font-bold text-primary">Salon Azul</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#6E6E73] font-medium hover:text-primary transition-colors text-[14px]" href="#">Front Desk</a>
+<a class="text-[#6E6E73] font-medium hover:text-primary transition-colors text-[14px]" href="#">Calendar</a>
+<a class="text-[#6E6E73] font-medium hover:text-primary transition-colors text-[14px]" href="#">Chats</a>
+<a class="text-[#6E6E73] font-medium hover:text-primary transition-colors text-[14px]" href="#">Customers</a>
+<a class="bg-[#091426] text-white font-bold px-4 py-1.5 rounded-full text-[14px]" href="#">Business Setup</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center text-[#6E6E73] hover:bg-[#F5F5F7] rounded-full transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center text-[#6E6E73] hover:bg-[#F5F5F7] rounded-full transition-all">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-[#E8EAED]">
+<div class="text-right hidden sm:block">
+<p class="text-[14px] font-semibold leading-none text-primary">Admin User</p>
+<p class="text-[12px] text-[#6E6E73] mt-1">System Manager</p>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#F5F5F7] overflow-hidden border border-[#E8EAED]">
+<img class="w-full h-full object-cover" data-alt="A professional studio headshot of a modern corporate administrator in a light gray blazer, looking friendly and confident. The background is a clean, blurred office interior with soft natural lighting, following a minimalist aesthetic with muted cool tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAg5tKJjyetL4UcJk255ySRUK0iID3roQ6_DYCJNCzF-KnWqHauKbKm0uIJkZuRluPYOY0PLWRp7YKTxyTMYRr0O5WMRcAaT0HQD1_7IGzzc4byf62W6QlYWZCLgkFbELoUTe8e_VtxyPe3208FhZIFYEg3WSCxMYWDg8ubuDjVgJIsvJOCF_cvpnVRQEodBhD3kiUVIUOtt4a4fbK4K4ozaZnS4bJzoDdNpWai1vOi5Wi_s_V7n79a">
+</div>
+</div>
+</div>
+</header>
+</div>
+<!-- Workspace Layout -->
+<div class="max-w-[1440px] mx-auto px-5 pb-32 flex gap-8 items-start">
+<!-- Contextual Sidebar -->
+<aside class="w-[300px] shrink-0 bg-white border border-[#E8EAED] rounded-[16px] py-6 px-4 sticky top-[112px]">
+<div class="mb-4 px-3">
+<h3 class="text-[11px] uppercase tracking-wider text-[#6E6E73] font-bold">General Setup</h3>
+</div>
+<nav class="space-y-1 mb-8"><a class="flex items-center gap-3 px-3 py-2.5 text-[#6E6E73] hover:bg-[#F5F5F7] rounded-[10px] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-[14px] font-medium">Team Access</span>
+</a></nav>
+<div class="mb-4 px-3">
+<h3 class="text-[11px] uppercase tracking-wider text-[#6E6E73] font-bold">Financials</h3>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#6E6E73] hover:bg-[#F5F5F7] rounded-[10px] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="text-[14px] font-medium">Payments</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#6E6E73] hover:bg-[#F5F5F7] rounded-[10px] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+<span class="text-[14px] font-medium">Taxes</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2.5 text-[#6E6E73] hover:bg-[#F5F5F7] rounded-[10px] transition-colors" href="#">
+<span class="material-symbols-outlined text-[20px]">palette</span>
+<span class="text-[14px] font-medium">Branding</span>
+</a>
+</nav>
+</aside>
+<!-- Main Workspace -->
+<main class="flex-1 bg-white border border-[#E8EAED] rounded-[16px] overflow-hidden">
+<!-- Workspace Header -->
+<div class="px-6 pt-6 pb-6 border-b border-[#E8EAED]">
+<h1 class="font-heading text-[28px] font-bold text-primary mb-2">Business Profile</h1>
+<p class="text-[14px] font-body text-[#6E6E73] mb-6">Manage the information customers see about your business across ONE NIZAM.</p>
+<div class="flex gap-2"><a class="px-5 py-2 bg-[#030304] text-white rounded-full text-[14px] font-medium" href="#">Profile</a><a class="px-5 py-2 bg-[#F5F5F7] text-[#6E6E73] hover:text-primary rounded-full text-[14px] font-medium transition-colors" href="#">Contact</a><a class="px-5 py-2 bg-[#F5F5F7] text-[#6E6E73] hover:text-primary rounded-full text-[14px] font-medium transition-colors" href="#">Media</a><a class="px-5 py-2 bg-[#F5F5F7] text-[#6E6E73] hover:text-primary rounded-full text-[14px] font-medium transition-colors" href="#">Location</a><a class="px-5 py-2 bg-[#F5F5F7] text-[#6E6E73] hover:text-primary rounded-full text-[14px] font-medium transition-colors" href="#">Hours</a></div>
+</div>
+<!-- Content Area -->
+<div class="px-6 py-8 space-y-12">
+<!-- Progressive Setup Flow -->
+<section class="max-w-3xl mx-auto space-y-10"><div class="space-y-4 pb-6 border-b border-[#E8EAED]"><div><h2 class="text-[18px] font-heading font-bold text-[#030304]">Business name</h2><p class="text-[14px] text-[#6E6E73] mt-1">Enter the name customers will see across ONE NIZAM.</p></div><div><input class="w-full max-w-md input-field px-4 text-[14px] text-[#030304]" placeholder="Enter business name" style="border-radius: 10px; border: 1px solid #E8EAED; background: #FFFFFF;" type="text" value="ONE NIZAM Digital Solutions"></div></div><div class="space-y-6 py-6 border-b border-[#E8EAED]"><div class="flex items-center justify-between"><div><h3 class="text-[16px] font-bold text-[#030304]">Public visibility</h3><p class="text-[14px] text-[#6E6E73]">Show your business on ONE NIZAM so customers can discover and book your services.</p></div><div class="flex items-center gap-3"><span class="text-[14px] font-medium text-[#030304]">Visible</span><div class="w-10 h-5 bg-[#030304] rounded-full relative cursor-pointer"><div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div></div></div></div><div class="flex items-center justify-between"><div><h3 class="text-[16px] font-bold text-[#030304]">Working status</h3><p class="text-[14px] text-[#6E6E73]">Let customers know whether your business is currently accepting appointments.</p></div><div class="flex items-center gap-3"><span class="text-[14px] font-medium text-[#030304]">Open</span><div class="w-10 h-5 bg-[#030304] rounded-full relative cursor-pointer"><div class="absolute right-0.5 top-0.5 w-4 h-4 bg-white rounded-full"></div></div></div></div></div>
+<!-- STEP 1 -->
+<div class="space-y-4">
+<div>
+<h2 class="text-[18px] font-heading font-bold text-[#030304]">What type of business do you run?</h2>
+<p class="text-[14px] text-[#6E6E73] mt-1">Select the category that best describes your primary industry.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="industry-card selected rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined mt-0.5">face_retouching_natural</span>
+<div>
+<h3 class="font-bold text-[14px] mb-1">Beauty &amp; Grooming</h3>
+<p class="text-[12px] text-secondary leading-relaxed">Salons, barbers, spas, nail, beauty and grooming professionals</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">stethoscope</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Healthcare &amp; Dental</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Clinics, dentists, therapists and healthcare professionals</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">spa</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Aesthetic &amp; Wellness</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Aesthetic clinics, med spas, dermatology and wellness</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">fitness_center</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Fitness</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Trainers, gyms, studios and fitness professionals</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">work</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Professional Services</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Consultants, advisors, legal, financial and business professionals</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">brush</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Creative &amp; Personal Services</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Photographers, artists, tattoo studios and creative professionals</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">school</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Education &amp; Coaching</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Tutors, instructors, teachers and coaches</p>
+</div>
+</div>
+<div class="industry-card rounded-[12px] p-4 flex gap-4 items-start">
+<span class="material-symbols-outlined text-[#6E6E73] mt-0.5">pets</span>
+<div>
+<h3 class="font-bold text-[14px] text-[#030304] mb-1">Pet Services</h3>
+<p class="text-[12px] text-[#6E6E73] leading-relaxed">Veterinarians, groomers, trainers and pet-care professionals</p>
+</div>
+</div>
+</div>
+</div><div class="space-y-4 py-8 border-b border-[#E8EAED]"><div><h2 class="text-[18px] font-heading font-bold text-[#030304]">What best describes your business?</h2><p class="text-[14px] text-[#6E6E73] mt-1">Choose the option that most closely matches your business.</p></div><div class="flex flex-wrap gap-2"><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Barber Shop</button></div><div><button class="px-4 py-2 rounded-full bg-[#030304] text-white text-[13px] font-medium">Hair Salon</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Beauty Salon</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Nail Salon</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Makeup Studio</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Lash &amp; Brow Studio</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Spa</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Massage Business</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Beauty Studio</button></div><div><button class="px-4 py-2 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] hover:bg-[#F5F5F7] transition-colors">Other</button></div></div></div>
+<!-- STEP 2 -->
+<!-- STEP 3 -->
+
+<!-- STEP 4 -->
+<div class="space-y-4 pt-6 border-t border-[#E8EAED]">
+<div>
+<h2 class="text-[18px] font-heading font-bold text-[#030304]">What do you offer?</h2>
+<p class="text-[14px] text-[#6E6E73] mt-1">Select common services for your business type.</p>
+</div>
+<div class="bg-[#F9FAFB] border border-[#E8EAED] rounded-[14px] p-5">
+<div class="flex flex-wrap gap-2"><div><input class="hidden pill-checkbox" id="srv-haircut" type="checkbox"><label class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] cursor-pointer hover:bg-[#F5F5F7] transition-colors" for="srv-haircut">Haircut</label></div><div><input class="hidden pill-checkbox" id="srv-color" type="checkbox"><label class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] cursor-pointer hover:bg-[#F5F5F7] transition-colors" for="srv-color">Hair Coloring</label></div><div><input class="hidden pill-checkbox" id="srv-styling" type="checkbox"><label class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] cursor-pointer hover:bg-[#F5F5F7] transition-colors" for="srv-styling">Blowout &amp; Styling</label></div><div><input class="hidden pill-checkbox" id="srv-extensions" type="checkbox"><label class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] cursor-pointer hover:bg-[#F5F5F7] transition-colors" for="srv-extensions">Hair Extensions</label></div><div><input class="hidden pill-checkbox" id="srv-braiding" type="checkbox"><label class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] cursor-pointer hover:bg-[#F5F5F7] transition-colors" for="srv-braiding">Braiding</label></div><div><input class="hidden pill-checkbox" id="srv-treatments" type="checkbox"><label class="inline-flex items-center px-3 py-1.5 rounded-full border border-[#E8EAED] bg-white text-[13px] font-medium text-[#030304] cursor-pointer hover:bg-[#F5F5F7] transition-colors" for="srv-treatments">Hair Treatments</label></div><div><button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-dashed border-[#6E6E73] bg-transparent text-[13px] font-medium text-[#6E6E73] cursor-pointer hover:bg-[#F5F5F7] transition-colors"><span class="material-symbols-outlined text-[16px]">add</span>Add custom service</button></div></div>
+</div>
+</div>
+</section>
+</div>
+<div class="bg-white border-t border-[#E8EAED] px-6 py-4 flex items-center justify-between">
+<div class="flex items-center gap-2 text-[#6E6E73] text-[14px]">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+                All changes are automatically drafted
+            </div>
+<div class="flex items-center gap-3">
+<button class="px-6 py-2.5 rounded-full font-medium text-[#030304] bg-white border border-[#E8EAED] hover:bg-[#F5F5F7] transition-colors text-[14px]">
+                    Cancel
+                </button>
+<button class="px-6 py-2.5 rounded-full font-medium bg-[#030304] text-white hover:bg-[#1A1A1A] transition-colors text-[14px]">
+                    Save Changes
+                </button>
+</div>
+</div></main>
+</div>
+<!-- Sticky Footer -->
+
+
+
+
+
+
+</body></html>

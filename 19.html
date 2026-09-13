@@ -1,0 +1,575 @@
+
+<!-- Salon Azul - Standardized Customer Reviews (SalonCore System) -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ONE NIZAM | Customer Reviews Workspace</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed-dim": "#84d5ca",
+                "on-tertiary-container": "#8c8382",
+                "on-primary": "#ffffff",
+                "secondary": "#016a61",
+                "on-tertiary-fixed-variant": "#4c4544",
+                "surface-container-high": "#e7e8ea",
+                "surface-container-lowest": "#ffffff",
+                "on-error-container": "#93000a",
+                "tertiary-container": "#211c1b",
+                "tertiary-fixed": "#ebe0de",
+                "on-surface-variant": "#6E6E73",
+                "on-tertiary-fixed": "#1f1a19",
+                "outline-variant": "#c7c6ca",
+                "error-container": "#ffdad6",
+                "on-error": "#ffffff",
+                "tertiary": "#040302",
+                "surface-dim": "#d9dadc",
+                "on-secondary": "#ffffff",
+                "surface-container": "#edeef0",
+                "error": "#ba1a1a",
+                "secondary-fixed": "#a0f1e6",
+                "on-secondary-fixed": "#00201d",
+                "background": "#ffffff",
+                "outline": "#77767b",
+                "inverse-surface": "#2e3132",
+                "inverse-primary": "#c8c6c8",
+                "on-primary-fixed": "#1b1b1d",
+                "on-secondary-container": "#0d6f66",
+                "on-primary-container": "#868587",
+                "surface-tint": "#5f5e60",
+                "primary-fixed": "#e4e2e4",
+                "surface-variant": "#e1e2e4",
+                "surface": "#ffffff",
+                "surface-container-low": "#f2f4f6",
+                "primary-fixed-dim": "#c8c6c8",
+                "inverse-on-surface": "#f0f1f3",
+                "surface-bright": "#ffffff",
+                "primary-container": "#1d1d1f",
+                "on-secondary-fixed-variant": "#005049",
+                "tertiary-fixed-dim": "#cec4c2",
+                "primary": "#030304",
+                "on-surface": "#030304",
+                "secondary-container": "#9defe3",
+                "on-tertiary": "#ffffff",
+                "surface-container-highest": "#e1e2e4",
+                "on-primary-fixed-variant": "#474649",
+                "on-background": "#030304",
+                "navy-custom": "#091426",
+                "light-border": "#E8EAED"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "lg": "24px",
+                "margin-mobile": "16px",
+                "gutter": "24px",
+                "xxl": "48px",
+                "md": "16px",
+                "xs": "4px",
+                "xl": "32px",
+                "sm": "8px",
+                "unit": "4px",
+                "margin-desktop": "40px"
+        },
+        "fontFamily": {
+                "headline-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "display-lg": [
+                        "Plus Jakarta Sans"
+                ],
+                "label-sm": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Plus Jakarta Sans"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Plus Jakarta Sans"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-sm": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: #FFFFFF;
+            color: #030304;
+            font-family: 'Inter', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E8EAED;
+            border-radius: 10px;
+        }
+        .navy-active {
+            background-color: #091426 !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col bg-white">
+<!-- 1. GLOBAL TOP NAVIGATION -->
+<header class="fixed top-[20px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-40px)] max-w-[1440px]">
+<nav class="bg-white border border-light-border rounded-xl h-[72px] flex items-center justify-between px-6 shadow-sm">
+<!-- Logo -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-navy-custom rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]" data-icon="spa" data-weight="fill">spa</span>
+</div>
+<span class="font-headline-sm text-[20px] font-semibold tracking-tight text-navy-custom">Salon Azul</span>
+</div>
+<!-- Center Nav -->
+<div class="hidden md:flex items-center gap-1 bg-surface-container-low p-1 rounded-full border border-light-border">
+<a class="px-5 py-2.5 rounded-full font-label-md text-[14px] text-on-surface-variant hover:bg-surface-container transition-all" href="#">Front Desk</a>
+<a class="px-5 py-2.5 rounded-full font-label-md text-[14px] text-on-surface-variant hover:bg-surface-container transition-all" href="#">Calendar</a>
+<a class="navy-active px-5 py-2.5 rounded-full font-label-md text-[14px] flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" data-weight="fill">star_outline</span>
+                    Reviews
+                </a>
+<a class="px-5 py-2.5 rounded-full font-label-md text-[14px] text-on-surface-variant hover:bg-surface-container transition-all" href="#">Customers</a>
+</div>
+<!-- Right side -->
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="h-8 w-[1px] bg-light-border mx-1"></div>
+<div class="flex items-center gap-3 pl-2">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-[14px] font-medium text-on-surface leading-tight">Asad Ullah</p>
+<p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider">Salon Azul</p>
+</div>
+<div class="w-10 h-10 rounded-full overflow-hidden border border-light-border">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a groomed man in his 30s with a kind expression, wearing a clean charcoal grey polo shirt. The background is a blurred high-end salon interior with soft, warm lighting and minimalist decor. The photographic style is editorial and crisp, perfectly fitting a premium service industry professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-wRKYGpOd1xMVvBe6TDRBM42nzHaAmX_lvfQPxF0kW7EfSDOcGUk4Fkx1C2CG5Ye4Zk-8BuL1aLZtKzDFtqLPzzZRLBFFFhvOkUypx3wduxhQtCMuoBp2UOp3RskPiQijK3AAdfLxghuz8Ps8x2VSh_0yEPksUGGlCE733DUP9mbtURycCuMDVcWPPpO_XxDmZ9x81OfuUQxCrtfMl9nga7uF77qh0nt2Nk1LQ1w5XyRIEiGcrMca">
+</div>
+</div>
+</div>
+</nav>
+</header>
+<!-- MAIN CONTENT WRAPPER -->
+<main class="flex-1 pt-[116px] pb-6 px-6 max-w-[1320px] mx-auto w-full flex justify-center gap-6 h-[calc(100vh-24px)] overflow-hidden">
+<!-- 2. LEFT PANEL (Navigation/Insights) -->
+<aside class="w-[300px] shrink-0 h-full bg-white border border-light-border rounded-[16px] overflow-y-auto custom-scrollbar flex flex-col gap-6 p-6">
+<div class="flex flex-col gap-1">
+<h1 class="font-headline-sm text-[20px] font-semibold text-primary">Customer Reviews</h1>
+<div class="flex items-center gap-3 mt-2">
+<span class="text-[32px] font-bold text-primary leading-none">4.8</span>
+<div class="flex flex-col gap-0.5">
+<div class="flex gap-0.5 text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star_half" data-weight="fill">star_half</span>
+</div>
+<span class="text-[12px] text-on-surface-variant font-medium">248 Total Reviews</span>
+</div>
+</div>
+</div>
+<!-- Nav Links -->
+<nav class="flex flex-col gap-1 mt-2">
+<button class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-surface-container-low text-primary font-medium text-[14px]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="all_inbox">all_inbox</span>
+<span>All Reviews</span>
+</div>
+</button>
+<button class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant font-medium text-[14px] transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="pending_actions">pending_actions</span>
+<span>Awaiting Reply</span>
+</div>
+<span class="bg-navy-custom text-white text-[11px] px-2 py-0.5 rounded-full font-bold">12</span>
+</button>
+<button class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant font-medium text-[14px] transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="chat_bubble">chat_bubble</span>
+<span>Replied</span>
+</div>
+</button>
+<button class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-surface-container-lowest text-on-surface-variant font-medium text-[14px] transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[18px]" data-icon="image">image</span>
+<span>With Photos</span>
+</div>
+</button>
+</nav>
+<div class="h-[1px] bg-light-border mx-1 mt-2"></div>
+<!-- Ratings Breakdown -->
+<div class="flex flex-col gap-3 mt-2">
+<span class="text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Rating Breakdown</span>
+<div class="flex flex-col gap-2">
+<!-- 5 Stars -->
+<div class="flex items-center gap-3 group cursor-pointer hover:bg-surface-container-lowest rounded-md transition-colors py-0.5">
+<span class="text-[12px] font-semibold text-primary w-2">5</span>
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-navy-custom w-[85%]"></div>
+</div>
+<span class="text-[12px] text-on-surface-variant w-6 text-right">212</span>
+</div>
+<!-- 4 Stars -->
+<div class="flex items-center gap-3 group cursor-pointer hover:bg-surface-container-lowest rounded-md transition-colors py-0.5">
+<span class="text-[12px] font-semibold text-primary w-2">4</span>
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-navy-custom w-[10%]"></div>
+</div>
+<span class="text-[12px] text-on-surface-variant w-6 text-right">24</span>
+</div>
+<!-- 3 Stars -->
+<div class="flex items-center gap-3 group cursor-pointer opacity-50 hover:bg-surface-container-lowest rounded-md transition-colors py-0.5">
+<span class="text-[12px] font-semibold text-primary w-2">3</span>
+<div class="flex-1 h-1 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-navy-custom w-[3%]"></div>
+</div>
+<span class="text-[12px] text-on-surface-variant w-6 text-right">8</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- 3. UNIFIED PANEL (List + Detail) -->
+<section class="flex-1 flex flex-col h-full bg-white border border-light-border rounded-[16px] overflow-hidden shrink-0">
+<!-- Toolbar -->
+<div class="p-6 border-b border-light-border flex flex-col sm:flex-row gap-4 items-center justify-between">
+<div class="relative w-full sm:max-w-[400px]">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 h-[44px] bg-white border border-light-border rounded-lg text-[14px] focus:outline-none focus:border-navy-custom focus:ring-1 focus:ring-navy-custom transition-all" placeholder="Search reviews, services or staff..." type="text">
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto">
+<button class="px-3 h-[44px] bg-white border border-light-border rounded-lg text-[14px] font-medium flex items-center gap-2 hover:bg-surface-container-lowest transition-colors whitespace-nowrap text-primary">
+                            Rating: All <span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
+</button>
+<button class="px-3 h-[44px] bg-white border border-light-border rounded-lg text-[14px] font-medium flex items-center gap-2 hover:bg-surface-container-lowest transition-colors whitespace-nowrap text-primary">
+                            Date: Last 30d <span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+</button>
+<button class="w-[44px] h-[44px] bg-white border border-light-border rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-lowest transition-colors ml-auto sm:ml-0">
+<span class="material-symbols-outlined text-[20px]" data-icon="sort">sort</span>
+</button>
+</div>
+</div>
+<!-- List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar px-6">
+<!-- Record 1: Selected / Expanded -->
+<div class="border-b border-light-border flex flex-col">
+<!-- Summary Row -->
+<div class="py-5 flex gap-4 cursor-pointer">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-outline-variant shrink-0 mt-0.5">
+<img class="w-full h-full object-cover" data-alt="Close up portrait of a elegant woman with long wavy chestnut hair and soft makeup. She is smiling gently at the camera against a minimal ivory backdrop. The lighting is soft and flattering, creating an approachable and high-end aesthetic consistent with a premium salon client." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufuM_l4h_3rdz_Bt8bHKt7wH-mjhoQ5Engb9-H1q2kyPxa6MTv_J7WMXlGY5JwE3pO5MbaWlrDUudPuAlhQBmcTZpsNxMPuy8lYZdVJdwXFiuYTrAweYB1eAWsYwH4Mgn6TuxYiV8uOgDPamh-hvANWxG6l9Y4L7ai-lFaQ0XCjYFcIdaz5lUB0jjMD9J_qBVYAVATogvTAKFKvnzhgNSFNpWZpgo55h4d2aZcmk_NZBZitVpk60J">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-[15px] text-primary">Alexandra Vance</h3>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-low border border-light-border text-on-surface-variant rounded font-bold uppercase tracking-wider">WAITING FOR REPLY</span>
+</div>
+<span class="text-[13px] text-on-surface-variant">Oct 12, 2023</span>
+</div>
+<div class="flex items-center gap-3 mb-2 text-[13px] text-on-surface-variant">
+<div class="flex gap-0.5 text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_cut">content_cut</span>
+<span>Signature Balayage &amp; Cut</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="person">person</span>
+<span>Marcus Chen</span>
+</div>
+</div>
+</div>
+<div class="shrink-0 pt-1">
+<span class="material-symbols-outlined text-on-surface-variant transform rotate-180 transition-transform text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Expanded Content -->
+<div class="pb-6 ml-[56px]">
+<p class="text-[14px] leading-relaxed text-primary mb-4">"The best coloring experience I've had in years. Marcus really listened to what I wanted and the results are absolutely stunning. The transition is so seamless and natural. The salon environment was also incredibly calming—exactly what I needed on a Tuesday afternoon. Highly recommend to anyone looking for premium color work!"</p>
+<div class="flex gap-3 mb-6">
+<div class="w-20 h-20 rounded-lg overflow-hidden border border-light-border">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbgqxSAFKFrxBDsA2OFZq_3fhX2MSBM6KTRm25xz2n9fWlL6S9BjPftooh_pvoe19rzAyDkGXfuqUM9t2FXEg35VuZXp1ET_5BKCav4aE5ILfeqM2tupxzGGlmsQ_N8ykXyTcyf-PdUH2mZGgCSYShJxKIV1dumJRY09KYk8XhVQyIKIMSFwVAHKCHkqkMSEaVJ-W6uegghlHNdydNPEME0H6HC0xcmN-AMuVVVtLcr18wAk286IOz">
+</div>
+<div class="w-20 h-20 rounded-lg overflow-hidden border border-light-border">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcCB6M-7NWIfvwXs6XwNYC-7Cs_zoDLm2Tp5sRrhsYjU1pdlo5TPCwJxH2Z4eVHtt5qNJtF9UkeweKXB7nrNtLAsB03ZvsFmCiNDaVfkotqxBN1oiJxs0eMe2YKZk7JH3A2TM5j7aZjBCpgA5puvwbm52gKRpeAKRBrZzsS1RyZ9ryMyGAONespGCyS1dAnjf1yoFMYKAsyL4QzppMrYtJr8wLXx2aqfERp0JmLhmCmGN_EsKPohUD">
+</div>
+</div>
+<div class="flex gap-3 mb-6 items-start">
+<div class="w-8 h-8 rounded-full bg-navy-custom text-white flex items-center justify-center text-[11px] font-bold shrink-0 mt-0.5">MC</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-semibold text-[13px] text-primary">Marcus Chen</span>
+<span class="text-[12px] text-on-surface-variant">— Internal Note</span>
+</div>
+<p class="text-[13px] text-on-surface-variant italic">"Alexandra was looking for a very specific cool-toned honey. We used the new gloss treatment and she was thrilled with the shine. Note for next time: She prefers sparkling water over tea."</p>
+</div>
+</div>
+<!-- Reply Composer Expanded -->
+<div class="border border-light-border rounded-[12px] overflow-hidden bg-white">
+<div class="px-4 py-3 border-b border-light-border flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-medium text-[13px] text-primary">Reply to Customer</span>
+<div class="flex items-center gap-1 px-2 py-0.5 bg-white border border-light-border text-primary rounded text-[11px] font-bold cursor-pointer">
+<span>Salon Azul</span>
+<span class="material-symbols-outlined text-[14px]">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-[10px] font-bold text-on-surface-variant uppercase tracking-wider">AI ASSIST</span>
+<button class="w-8 h-4 bg-navy-custom rounded-full relative transition-colors" id="ai-toggle">
+<div class="absolute top-0.5 left-[16px] w-3 h-3 bg-white rounded-full shadow-sm" id="ai-knob"></div>
+</button>
+</div>
+<button class="flex items-center gap-1.5 text-[12px] font-semibold text-primary hover:bg-surface-container-lowest px-2 py-1 rounded transition-colors border border-light-border">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+                        Generate
+                    </button>
+</div>
+</div>
+<div class="relative bg-white">
+<textarea class="w-full min-h-[120px] p-4 border-none text-[14px] text-primary focus:ring-0 resize-none custom-scrollbar placeholder-on-surface-variant" id="reply-box" placeholder="AI Assistant: Write a thoughtful reply to Alexandra..."></textarea>
+<div class="absolute bottom-3 left-4 flex gap-2 text-on-surface-variant">
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">format_bold</span></button>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">format_italic</span></button>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">link</span></button>
+<button class="hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span></button>
+</div>
+<div class="absolute bottom-3 right-4 flex gap-2">
+<button class="px-3 py-1.5 rounded-md border border-light-border font-medium text-primary hover:bg-surface-container-lowest transition-colors text-[12px]">Save Draft</button>
+<button class="px-3 py-1.5 rounded-md border border-light-border font-medium text-primary hover:bg-surface-container-lowest transition-colors flex items-center gap-1.5 text-[12px]"><span class="material-symbols-outlined text-[14px]">schedule</span>Schedule</button>
+<button class="px-4 py-1.5 bg-navy-custom text-white rounded-md font-medium hover:bg-navy-custom/90 transition-colors flex items-center gap-1.5 text-[12px]">Send <span class="material-symbols-outlined text-[14px]">send</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Record 2 -->
+<div class="py-5 border-b border-light-border flex gap-4 cursor-pointer group">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-outline-variant shrink-0 mt-0.5">
+<img class="w-full h-full object-cover" data-alt="A stylish young man with a modern textured haircut and a short well-groomed beard. He is wearing a minimalist white t-shirt and has a confident, relaxed expression. The studio background is a light neutral gray with professional softbox lighting that emphasizes the clean lines of his hair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZM3b3YytDFbpm0V7BdmDSKtba9UYDTlzbRnUOagDukBKNKdqTLcBZUcvCa0_DvKbGVLzoOR1GnD-CaWFrvFnnhwrPpnTzVc5mNpf7ODc2YwumlJW7HYWbi_ymgQnyWgPuQDHYTqcEWP7wbBxpxLA_tb-_A_xwQI0AQeh89eLqPgo6MCHF1zEfK_44qK1itMhtr8E84BDfCiaOhdmcdPU_BUNYpQtdbvCJsbnTBH5iuGsbQt4qaGyq">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-[15px] text-primary">Julian Thorne</h3>
+<span class="text-[10px] px-2 py-0.5 bg-surface-container-low border border-light-border text-on-surface-variant rounded font-bold uppercase tracking-wider">REPLIED</span>
+</div>
+<span class="text-[13px] text-on-surface-variant">Oct 10, 2023</span>
+</div>
+<div class="flex items-center gap-3 mb-2 text-[13px] text-on-surface-variant">
+<div class="flex gap-0.5 text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_cut">content_cut</span>
+<span>Men's Scissor Cut</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="person">person</span>
+<span>David Miller</span>
+</div>
+</div>
+<p class="text-[14px] text-primary line-clamp-1 truncate mt-1">Precise cut, amazing atmosphere. Will be back next month.</p>
+</div>
+<div class="shrink-0 pt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Record 3 -->
+<div class="py-5 border-b border-light-border flex gap-4 cursor-pointer group">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-outline-variant shrink-0 mt-0.5">
+<img class="w-full h-full object-cover" data-alt="Portrait of a sophisticated woman with shoulder-length dark hair and a bright, friendly smile. She is wearing a professional silk blouse in a muted earth tone. The background is slightly out of focus, showing a glimpse of a bright, high-end retail environment. High contrast, clean aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaxfpg30c_OHYUMuCkp_4I3L-mwWK1ivfdHE8tUmOqq1QD7L6gbu2F9gsRl-_Lj1y_c4Cpi4SLZWdvng3YGQrYuO2tzpCy487O3n9mxjAmy-UPUDNNKtfNvaPuTBM0s-9zYO836W-wW-W7xAjxvjs8m8EFs86Al-d-Z3dsqRUcgU6YqXfmD1LvhYGA1pF1pQFM0AGzoejQKvyRbInDsrNQIhCQLfzeIDVpHJTkh0DredoY-S_UMxOO">
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-2">
+<h3 class="font-semibold text-[15px] text-primary">Elena Rodriguez</h3>
+</div>
+<span class="text-[13px] text-on-surface-variant">Oct 08, 2023</span>
+</div>
+<div class="flex items-center gap-3 mb-2 text-[13px] text-on-surface-variant">
+<div class="flex gap-0.5 text-[#F59E0B]">
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="star_outline" data-weight="fill">star_outline</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="content_cut">content_cut</span>
+<span>Event Styling</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="person">person</span>
+<span>Sarah Jenkins</span>
+</div>
+</div>
+<p class="text-[14px] text-primary line-clamp-1 truncate mt-1">Loved the styling! Just wish the wait time was a bit shorter.</p>
+</div>
+<div class="shrink-0 pt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<script>
+        // AI Toggle Interaction
+        const toggle = document.getElementById('ai-toggle');
+        const knob = document.getElementById('ai-knob');
+        const replyBox = document.getElementById('reply-box');
+        let aiActive = true;
+
+        if(toggle && knob && replyBox) {
+            toggle.addEventListener('click', () => {
+                aiActive = !aiActive;
+                if (aiActive) {
+                    toggle.classList.replace('bg-outline-variant', 'bg-navy-custom');
+                    knob.classList.replace('left-[2px]', 'left-[16px]');
+                    replyBox.placeholder = "AI Assistant: Write a thoughtful reply to Alexandra...";
+                } else {
+                    toggle.classList.replace('bg-navy-custom', 'bg-outline-variant');
+                    knob.classList.replace('left-[16px]', 'left-[2px]');
+                    replyBox.placeholder = "Write a thoughtful reply to Alexandra...";
+                }
+            });
+        }
+
+        // Simple scale interaction for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.96)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = '';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+
+        // Micro-interaction: AI auto-complete simulation
+        let typedText = "Hi Alexandra, thank you so much for the kind words! Marcus and the whole team are delighted to hear you're loving your new color. We can't wait to see you again soon!";
+        
+        if(replyBox) {
+            replyBox.addEventListener('focus', () => {
+                if(aiActive && replyBox.value === "") {
+                    let i = 0;
+                    const type = setInterval(() => {
+                        replyBox.value += typedText[i];
+                        i++;
+                        if(i >= typedText.length) clearInterval(type);
+                    }, 15);
+                }
+            });
+        }
+    </script>
+</body></html>

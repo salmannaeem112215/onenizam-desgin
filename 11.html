@@ -1,0 +1,276 @@
+
+<!-- Salon Azul - Standardized Messages Workspace v2 -->
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Salon Azul | Messages</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #E8EAED;
+            border-radius: 10px;
+        }
+        .active-indicator {
+            box-shadow: inset 3px 0 0 0 #030304;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#030304",
+                        "nav-bg": "#091426",
+                        "secondary": "#6E6E73",
+                        "border-light": "#E8EAED",
+                        "surface-light": "#F2F4F6",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#46464a",
+                        "background": "#ffffff",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "success-green": "#016A61"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white font-body text-on-surface min-h-screen overflow-x-hidden">
+<!-- Global Navigation (Synced with Master Template) -->
+<nav class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1440px] h-[72px] bg-white z-50 px-6 flex justify-between items-center border border-border-light rounded-xl">
+<!-- Left: Identity -->
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-[20px]">spa</span>
+</div>
+<span class="font-headline text-[15px] font-extrabold text-primary tracking-tight">Salon Azul</span>
+</div>
+<!-- Center: Navigation Pills -->
+<div class="hidden md:flex items-center gap-2">
+<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">desktop_windows</span>
+            Front Desk
+        </a>
+<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+            Calendar
+        </a>
+<a class="flex items-center gap-2 bg-nav-bg text-white rounded-full px-6 h-10 font-bold text-[15px] transition-all" href="#">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+            Chats
+        </a>
+<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+            Sales
+        </a>
+</div>
+<!-- Right: Actions & User -->
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">apps</span>
+</button>
+<button class="relative text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+<span class="absolute top-0.5 right-0.5 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<div class="h-6 w-px bg-border-light mx-1"></div>
+<div class="flex items-center gap-4">
+<div class="text-right hidden lg:block">
+<div class="text-[13px] font-bold text-primary leading-none mb-0.5">Asad Ullah</div>
+<div class="text-[11px] text-secondary leading-none">Salon Azul</div>
+</div>
+<div class="w-10 h-10 rounded-full bg-[#D8E3FB] flex items-center justify-center text-[13px] font-bold text-[#0D2E6D]">AU</div>
+</div>
+</div>
+</nav>
+<!-- Main Workspace -->
+<main class="pt-[110px] pb-10 flex max-w-[1320px] mx-auto px-6 gap-6 h-screen">
+<!-- Conversation List -->
+<aside class="w-[320px] border border-border-light rounded-2xl flex flex-col shrink-0 bg-white overflow-hidden h-[calc(100vh-140px)]">
+<div class="p-4 border-b border-border-light">
+
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-10 pr-4 h-11 bg-surface-light border-none rounded-full text-[14px] placeholder:text-secondary focus:ring-0 transition-all" placeholder="Search conversations..." type="text">
+</div>
+</div>
+<!-- List -->
+<div class="flex-1 overflow-y-auto custom-scrollbar">
+<!-- Active Item -->
+<div class="relative flex items-center gap-3 px-6 py-4 bg-surface-light active-indicator cursor-pointer border-b border-border-light">
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-border-light">
+<img alt="Marcus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCY4ttuCP-yI2qM4f5yO6J9VtHnbGNPQTomTfhk5L4S6MdduO3A6kwQo1FGL5jF_sXrFd4dcdNg84xeHMdKWqsofF3DaVf05Ew4dwQAIt_JwlXFqYlD-vNa4PmdBkpop1sROk24fTGL73Zd5vBLwKQlQPNua5Fq_YNBWt6AJtie66hJsCYx_XULlVfFke0ZUtWSAQLc1tMCiBE7nkB9OrqX4Nb-dqtTPLz4qJLUeNqEpreEH1EFUREl">
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[14px] font-bold text-primary truncate">Marcus Chen</h3>
+<span class="text-[11px] text-secondary">10:24 AM</span>
+</div>
+<p class="text-[14px] text-secondary truncate">This looks excellent, Marcus...</p>
+</div>
+</div>
+<!-- Regular Item -->
+<div class="flex items-center gap-3 px-6 py-4 hover:bg-surface-light transition-colors cursor-pointer border-b border-border-light">
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-border-light">
+<img alt="Sarah" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCpxLqbss6Zsx0E4qYB7_WhZSBuMNYybzZtrmEQMBwsTD-8ZdhB4pKuDwq4lrH6Q-ndirUKsgPS4SUvwg0fCuSSTI-CYVkrX_LHtJC9DfDyH5HyjlR51yzPsK74IIHeS1Ot8-4LVXuormoXep5Z_k0GFB-5cKs-FDyr2iHOFHVYQunbRKzV9qY0iXxOpNK_Q3VBKD_9k7zKHopyAR0Ep_ZreBdx-wjyKwhf3koHPcyojoXxXkJWMId">
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[14px] font-bold text-primary truncate">Sarah Jenkins</h3>
+<span class="text-[11px] text-secondary">9:15 AM</span>
+</div>
+<p class="text-[14px] text-secondary truncate">Is the 3 PM slot still available...</p>
+</div>
+</div>
+<!-- Regular Item -->
+<div class="flex items-center gap-3 px-6 py-4 hover:bg-surface-light transition-colors cursor-pointer border-b border-border-light">
+<div class="relative flex-shrink-0">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-border-light">
+<img alt="Alex" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfXSKiupIvmRajpRebEx_OOWJrpqdic3D3wzt5k5yWJtpsFCxbS6KjyNfowgBoxB6BtzneysfqXEb4npfCspxLn3FkgMrDrD-0ruf7gmPta-3K-c8sO8dZA0crpkNW7ex_agj-7j7bnK7bK3IeTwB0VWDFZi-dopqTllExr9yxheLUwROMMsw26kc4Oz4nEb1qhHuPYEtdQBlvGhMxavFa3Poo2iX8qqW3PPD0CN7fGSMwKUi0fbXg">
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-baseline mb-0.5">
+<h3 class="text-[14px] font-bold text-primary truncate">Alex Rivera</h3>
+<span class="text-[11px] text-secondary">Monday</span>
+</div>
+<p class="text-[14px] text-secondary truncate">Thanks for the update on the...</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Active Chat Area -->
+<section class="flex-1 flex flex-col bg-white border border-border-light rounded-2xl overflow-hidden h-[calc(100vh-140px)]">
+<!-- Chat Header -->
+<header class="h-[72px] px-6 border-b border-border-light flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-border-light">
+<img alt="Marcus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaM5Ds91X4QiCweFfB9Z9P8hfyZ9qTEH7am4tc6r_6vezQ3VkBo9DXCPEzgwuKnGPOVxl5xsRDwZWsu9OT98ITSAHpARI8fDk-gGJ1bvK7OMueowMW31Edir32tRwIu1u4V0eTNz6sT6C2cXoUVvHK-oFqgLfx1aan7zExiCB2HZOGqT_HOHpuTao1bcNl6MV7hk1agt9qPrtTrmjD8X_uxqfiamEbEAxeSFp0u2nnkf5mQ46AP2Ij">
+</div>
+<div>
+<h2 class="font-headline text-[16px] font-bold text-primary leading-tight">Marcus Chen</h2>
+<span class="text-[11px] text-success-green font-bold">Online</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-light transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">videocam</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-light transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">call</span>
+</button>
+<div class="w-px h-6 bg-border-light mx-1"></div>
+<button class="p-2 rounded-full hover:bg-surface-light transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[22px]">info</span>
+</button>
+</div>
+</header>
+<!-- Messages List -->
+<div class="flex-1 overflow-y-auto p-8 flex flex-col gap-8 custom-scrollbar">
+<!-- Date Separator -->
+<div class="flex items-center gap-4">
+<div class="flex-1 h-[1px] bg-border-light"></div>
+<span class="text-[11px] font-bold text-secondary tracking-[0.1em] uppercase">Today</span>
+<div class="flex-1 h-[1px] bg-border-light"></div>
+</div>
+<!-- Incoming Message -->
+<div class="flex gap-4 max-w-[75%]">
+<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-border-light mt-1">
+<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb0JRwNL1LGS0nK0qTUYXFGLHGKT9bdWrrtLIPcDItVYmjB6F1Q0KYKJYkgAU90HvK6xW67pLU8f0egZ7Pvr6poC4lOZiGcZ2iir-h6HkpKfjrJjrh5XYf6Lr9ugTNHIVT6tQ2_Dw3FcZzKKV36JwoNUctL3tT1S-HG1KaYtxKqP_PQ9DkpI0pT5qFmhE4Wa2ya-Dq8Oy0rirtJYuyS2L0zQas-1VhwN-nMp855zFlkTBp77_P1BaQ">
+</div>
+<div class="flex flex-col gap-2">
+<div class="bg-surface-light text-primary p-4 rounded-xl rounded-tl-none text-[14px] leading-relaxed">
+                        The quarterly revenue reports are ready for your review. I've attached the full breakdown below. Let me know if you have any questions before the meeting.
+                    </div>
+<!-- Attachment -->
+<div class="bg-white border border-border-light p-3 rounded-xl flex items-center gap-3 hover:bg-surface-light transition-colors cursor-pointer group w-64">
+<div class="w-9 h-9 rounded bg-error-container/50 flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: &quot;FILL&quot; 1;">picture_as_pdf</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="text-[13px] font-bold text-primary truncate">Q3_Revenue_Report.pdf</p>
+<p class="text-[10px] text-secondary font-bold">4.2 MB • PDF</p>
+</div>
+<span class="material-symbols-outlined text-secondary group-hover:text-primary transition-colors text-[20px]">download</span>
+</div>
+<span class="text-[10px] text-secondary font-bold ml-1">10:18 AM</span>
+</div>
+</div>
+<!-- Outgoing Message -->
+<div class="flex flex-col items-end gap-2 max-w-[75%] self-end">
+<div class="bg-primary text-white p-4 rounded-xl rounded-tr-none text-[14px] leading-relaxed">
+                    This looks excellent, Marcus. I'll take a look through the data and we can discuss the growth metrics first thing tomorrow.
+                </div>
+<div class="flex items-center gap-1.5 mr-1">
+<span class="text-[10px] text-secondary font-bold">10:24 AM</span>
+<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Composer -->
+<footer class="p-6 border-t border-border-light bg-white">
+<div class="flex gap-4 items-center">
+<div class="flex-1 bg-surface-light rounded-full px-6 py-2 flex items-center gap-3 h-12">
+<button class="p-1 rounded-full hover:bg-white transition-colors text-on-surface-variant flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+</button>
+<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-[14px] resize-none h-6 p-0 custom-scrollbar overflow-hidden placeholder:text-secondary" placeholder="Type a message..." rows="1"></textarea>
+<div class="flex items-center gap-2 flex-shrink-0">
+<button class="p-1 rounded-full hover:bg-white transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">attach_file</span>
+</button>
+<button class="p-1 rounded-full hover:bg-white transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px]">image</span>
+</button>
+</div>
+</div>
+<button class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center hover:opacity-90 active:scale-95 transition-all flex-shrink-0">
+<span class="material-symbols-outlined text-[22px] ml-0.5">send</span>
+</button>
+</div>
+</footer>
+</section>
+</main>
+<script>
+    const textarea = document.querySelector('textarea');
+    textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+        if(this.scrollHeight > 120) {
+            this.style.height = '120px';
+            this.classList.add('overflow-y-auto');
+        } else {
+            this.classList.remove('overflow-y-auto');
+        }
+    });
+</script>
+
+
+</body></html>
