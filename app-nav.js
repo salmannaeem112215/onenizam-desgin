@@ -28,10 +28,10 @@
     28: ['Media', '/media']
   };
   const primary = [
-    ['Front Desk', '/front-desk', 9],
-    ['Calendar', '/calendar', 7],
-    ['Sales', '/sales', 4],
-    ['Chats', '/messages', 11]
+    ['Front Desk', '/front-desk', 9, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M3.5 6.5h17v11h-17z"/><path d="M7 6.5v11M11 10h2v4h-2zM17 9.5v.01M17 13v.01"/></svg>'],
+    ['Calendar', '/calendar', 7, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="1.5"/><path d="M8 3.5v3M16 3.5v3M4 10h16"/></svg>'],
+    ['Chats', '/messages', 11, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M4 5.5h16v11H8l-4 3v-14z"/></svg>'],
+    ['Sales', '/sales', 4, '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3.5" y="7" width="17" height="10" rx="1.5"/><circle cx="8" cy="12" r="1.7"/><path d="M16 10v4"/></svg>']
   ];
 
   function hidePreviousNavigation() {
@@ -43,11 +43,11 @@
     if (oldNavigation) oldNavigation.classList.add('one-nav-replaced');
   }
 
-  function tab(label, href, active, context = false) {
+  function tab(label, href, active, context = false, icon = '') {
     const link = document.createElement('a');
     link.className = `one-nav-tab${context ? ' one-nav-context' : ''}`;
     link.href = href;
-    link.textContent = label;
+    link.innerHTML = icon ? `<span class="one-nav-tab-icon">${icon}</span><span>${label}</span>` : label;
     if (active) link.setAttribute('aria-current', 'page');
     return link;
   }
@@ -76,7 +76,7 @@
       </div>`;
 
     const tabs = nav.querySelector('.one-nav-tabs');
-    primary.forEach(([label, href, page]) => tabs.append(tab(label, href, screen === page)));
+    primary.forEach(([label, href, page, icon]) => tabs.append(tab(label, href, screen === page, false, icon)));
     if (!primary.some(([, , page]) => page === screen)) {
       const [label, href] = pages[screen];
       tabs.append(tab(label, href, true, true));

@@ -69,8 +69,44 @@
 
         .sculpted-circle {
             background: #FFFFFF;
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 16px 32px -20px rgba(9, 17, 76, 0.34);
             border: 1px solid #F2F2F2;
+        }
+
+        .logo-aura {
+            position: relative;
+            display: grid;
+            place-items: center;
+            width: 300px;
+            height: 300px;
+            isolation: isolate;
+        }
+
+        .logo-aura::before,
+        .logo-aura::after {
+            content: "";
+            position: absolute;
+            inset: 22px;
+            z-index: -1;
+            border-radius: 50%;
+            filter: blur(24px);
+            opacity: 0.9;
+        }
+
+        .logo-aura::before {
+            background: conic-gradient(from 215deg, #173cff 0deg, #294cff 105deg, #13d8d1 190deg, #87f4ee 245deg, transparent 300deg);
+            transform: rotate(-16deg) scale(1.12);
+        }
+
+        .logo-aura::after {
+            inset: 38px;
+            background: radial-gradient(circle at 30% 24%, rgba(58, 238, 226, 0.95), transparent 48%), radial-gradient(circle at 72% 76%, rgba(30, 50, 255, 0.9), transparent 56%);
+            filter: blur(34px);
+            opacity: 0.72;
+        }
+
+        @media (max-width: 640px) {
+            .logo-aura { transform: scale(0.86); }
         }
 
         .hide-scrollbar::-webkit-scrollbar {
@@ -103,7 +139,7 @@
 <!-- Central Content -->
 <div class="relative z-10 w-full min-h-screen max-content-width text-center">
 <!-- Centerpiece -->
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+<div class="logo-aura absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
 <div class="sculpted-circle w-[140px] h-[140px] rounded-full flex items-center justify-center relative overflow-hidden bg-white pointer-events-auto">
 <img alt="ONE NIZAM Logo" class="w-[120px] h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnIhNd_h0mE1krL5ZPXqdFieMM1WdSFCblwlJnezn5Wry3j0fEd8eveE4zEKVqhdJDebeJWmrNE7QeAmU_XH4raHO7oSUvIaiO0bMKTv_Y1VNEnFNrtlhzbKzkJu-je4dpdaibEvvjUtb__omrFTKHE1BVlA-Dp5nOjDUpG9j-cdMPfaCjihGiuv8PqwGwhGVgsEgmQrwZXsThKSP1moKWEajn2d50AjXi2jU11C6hm-5bqGD-wZpwXJx3_GhpvsNJkg">
 </div>
