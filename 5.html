@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="light" lang="en" style="width: 1280px; height: 724px; overflow: hidden; position: relative;"><head>
+<!DOCTYPE html><html class="light" lang="en"><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Checkout Workspace</title>
@@ -84,12 +84,12 @@
         }
     </script>
 </head>
-<body class="bg-surface text-primary font-body-md antialiased min-h-screen pt-[56px] md:pt-[80px]">
+<body class="bg-surface text-primary font-body-md antialiased min-h-screen">
 <!-- Navbar Suppression (Transactional Intent - Checkout) -->
 <!-- As per instructions, navigation shell is suppressed for linear/transactional flows like Checkout -->
-<main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg grid grid-cols-1 md:grid-cols-12 gap-lg md:gap-xl">
+<main class="w-full max-w-[1376px] mx-auto px-6 pt-[110px] pb-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
 <!-- Left Side (Order Summary) - 65% -->
-<section class="md:col-span-8 flex flex-col gap-lg">
+<section class="lg:col-span-8 min-w-0 flex flex-col gap-lg">
 <header>
 <h2 class="font-headline-sm text-headline-sm uppercase tracking-widest text-brand-gray text-[12px] mb-sm">Checkout / Order Summary</h2>
 </header>
@@ -125,11 +125,11 @@
 </div>
 <div class="flex justify-between items-center text-brand-gray font-body-md text-body-md">
 <span>Discount</span>
-<span>-PKR 5,000</span>
+<span id="discount-summary">-PKR 5,000</span>
 </div>
 <div class="flex justify-between items-center text-primary font-headline-sm text-headline-sm mt-sm pt-sm border-t border-brand-border">
 <span>Total</span>
-<span>PKR 15,000</span>
+<span id="total-summary">PKR 15,000</span>
 </div>
 <div class="mt-xl">
 
@@ -138,8 +138,8 @@
 </div>
 </section>
 <!-- Right Side (Payment) - 35% -->
-<aside class="md:col-span-4">
-<div class="bg-surface rounded-2xl border border-brand-border p-lg flex flex-col gap-lg h-full">
+<aside class="lg:col-span-4 w-full min-w-0 justify-self-end">
+<div class="w-full bg-surface rounded-2xl border border-brand-border p-lg flex flex-col gap-lg h-full">
 <!-- Customer Row -->
 <div class="flex items-center justify-between pb-md border-b border-brand-border">
 <div class="flex items-center gap-sm">
@@ -159,60 +159,113 @@
 <div class="flex flex-col gap-sm">
 <h3 class="font-headline-sm text-headline-sm text-primary uppercase tracking-widest text-[12px] text-brand-gray">Payment</h3>
 <div class="relative">
-<input class="w-full bg-surface border border-brand-border rounded-lg py-md px-lg pl-[60px] font-headline-lg text-headline-lg text-primary focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-all" type="text" value="15,000.00">
+<input id="payment-amount" class="w-full bg-surface border border-brand-border rounded-lg py-md px-lg pl-[60px] font-headline-lg text-headline-lg text-primary focus:outline-none focus:border-brand-navy focus:ring-1 focus:ring-brand-navy transition-all" type="text" value="15,000.00" readonly>
 <span class="absolute left-md top-1/2 -translate-y-1/2 font-headline-sm text-headline-sm text-brand-gray">PKR</span>
+</div>
+</div>
+<!-- Discount Control -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-[12px] uppercase tracking-widest text-brand-gray" for="discount-value">Discount</label>
+<div class="flex items-center rounded-full bg-surface-container-low p-1" role="group" aria-label="Discount type">
+<button id="discount-percent" class="discount-type h-7 min-w-8 px-2 rounded-full bg-brand-navy text-white text-[12px] font-semibold" type="button" data-type="percent">%</button>
+<button id="discount-fixed" class="discount-type h-7 min-w-12 px-2 rounded-full text-brand-gray text-[12px] font-semibold" type="button" data-type="fixed">PKR</button>
+</div>
+</div>
+<div class="relative">
+<input id="discount-value" class="w-full h-11 rounded-lg border border-brand-border bg-white px-md pr-14 text-[14px] font-semibold focus:border-brand-navy focus:ring-1 focus:ring-brand-navy" type="number" min="0" max="100" step="1" value="25">
+<span id="discount-suffix" class="absolute right-md top-1/2 -translate-y-1/2 text-[12px] font-semibold text-brand-gray">%</span>
 </div>
 </div>
 <!-- Payment Methods Grid -->
 <div class="grid grid-cols-2 gap-sm">
-<!-- Methods list from prompt -->
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
-<span class="material-symbols-outlined text-[20px] text-brand-gray">link</span>
-                        Pay By Link
-                    </button>
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
-<span class="material-symbols-outlined text-[20px] text-brand-gray">credit_card</span>
-                        Mada
-                    </button>
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
-<span class="material-symbols-outlined text-[20px] text-brand-gray">receipt</span>
-                        Check
-                    </button>
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
-<span class="material-symbols-outlined text-[20px] text-brand-gray">room_service</span>
-                        Room Charge
-                    </button>
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
-<span class="material-symbols-outlined text-[20px] text-brand-gray">sell</span>
-                        Groupon
-                    </button>
-<!-- Selected State -->
-<button class="bg-surface border-2 border-brand-navy rounded-lg py-sm px-md flex items-center gap-2 font-label-md text-label-md text-primary relative overflow-hidden">
+<button class="payment-method bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary relative overflow-hidden" type="button" data-method="Card">
 <span class="material-symbols-outlined text-[20px] text-brand-navy">credit_card</span>
                         Card
-                        <span class="material-symbols-outlined text-[16px] text-brand-navy ml-auto" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+                        <span class="payment-check material-symbols-outlined text-[16px] text-brand-navy ml-auto hidden" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
 </button>
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
+<button class="payment-method bg-surface border-2 border-brand-navy rounded-lg py-sm px-md flex items-center gap-2 font-label-md text-label-md text-primary relative overflow-hidden" type="button" data-method="Cash">
 <span class="material-symbols-outlined text-[20px] text-brand-gray">payments</span>
                         Cash
-                    </button>
-<button class="bg-surface border border-brand-border rounded-lg py-sm px-md flex items-center gap-2 hover:bg-surface-container-low transition-colors font-label-md text-label-md text-primary">
-<span class="material-symbols-outlined text-[20px] text-brand-gray">redeem</span>
-                        Voucher
+                        <span class="payment-check material-symbols-outlined text-[16px] text-brand-navy ml-auto" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
                     </button>
 </div>
 <!-- Action Area -->
 <div class="mt-auto pt-lg flex flex-col gap-md text-center">
-<button class="w-full bg-brand-navy text-on-primary rounded-full py-md font-headline-sm text-headline-sm hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
-                        Charge PKR 15,000 <span class="opacity-50">·</span> Card
-                    </button>
-<button class="font-label-md text-label-md text-brand-gray hover:text-primary transition-colors">
-                        More options
+<button id="charge-button" class="w-full bg-brand-navy text-on-primary rounded-full py-md font-headline-sm text-headline-sm hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+                        Charge PKR 15,000 <span class="opacity-50">·</span> Cash
                     </button>
 </div>
 </div>
 </aside>
 </main>
+<script>
+const subtotal = 20000;
+const discountInput = document.getElementById('discount-value');
+const discountSuffix = document.getElementById('discount-suffix');
+const discountSummary = document.getElementById('discount-summary');
+const totalSummary = document.getElementById('total-summary');
+const paymentAmount = document.getElementById('payment-amount');
+const chargeButton = document.getElementById('charge-button');
+let discountType = 'percent';
+let paymentMethod = 'Cash';
 
+const formatMoney = value => new Intl.NumberFormat('en-PK', {
+    maximumFractionDigits: 0
+}).format(value);
 
+const getDiscount = () => {
+    const value = Math.max(0, Number(discountInput.value) || 0);
+    return discountType === 'percent'
+        ? Math.min(subtotal, subtotal * Math.min(value, 100) / 100)
+        : Math.min(subtotal, value);
+};
+
+const updateCheckout = () => {
+    const discount = getDiscount();
+    const total = Math.max(0, subtotal - discount);
+    discountSummary.textContent = `-PKR ${formatMoney(discount)}`;
+    totalSummary.textContent = `PKR ${formatMoney(total)}`;
+    paymentAmount.value = `${formatMoney(total)}.00`;
+    chargeButton.innerHTML = `Charge PKR ${formatMoney(total)} <span class="opacity-50">·</span> ${paymentMethod}`;
+};
+
+document.querySelectorAll('.discount-type').forEach(button => {
+    button.addEventListener('click', () => {
+        const currentDiscount = getDiscount();
+        discountType = button.dataset.type;
+        discountInput.max = discountType === 'percent' ? '100' : String(subtotal);
+        discountInput.value = discountType === 'percent'
+            ? String(Math.round(currentDiscount / subtotal * 100))
+            : String(Math.round(currentDiscount));
+        discountSuffix.textContent = discountType === 'percent' ? '%' : 'PKR';
+        document.querySelectorAll('.discount-type').forEach(option => {
+            const active = option === button;
+            option.classList.toggle('bg-brand-navy', active);
+            option.classList.toggle('text-white', active);
+            option.classList.toggle('text-brand-gray', !active);
+        });
+        updateCheckout();
+    });
+});
+
+discountInput.addEventListener('input', updateCheckout);
+
+document.querySelectorAll('.payment-method').forEach(button => {
+    button.addEventListener('click', () => {
+        paymentMethod = button.dataset.method;
+        document.querySelectorAll('.payment-method').forEach(option => {
+            const active = option === button;
+            option.classList.toggle('border-2', active);
+            option.classList.toggle('border-brand-navy', active);
+            option.classList.toggle('border', !active);
+            option.classList.toggle('border-brand-border', !active);
+            option.querySelector('.payment-check').classList.toggle('hidden', !active);
+        });
+        updateCheckout();
+    });
+});
+
+updateCheckout();
+</script>
 <div id="snapdom-sandbox" data-snapdom-sandbox="true" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; width: 0px; height: 0px; overflow: hidden;"></div></body></html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify email - ONE NIZAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/shared-auth.css">
+<script src="/auth-flow.js" defer></script>
+</head><body class="auth-page"><main class="auth-screen">
+<section class="auth-card auth-stack">
+<div><h1 class="auth-title">Verify your email</h1><p class="auth-subtitle">Enter the 6-digit verification code sent to your email address.</p><p id="verification-email" class="auth-email"></p></div>
+<form id="verify-form" class="auth-stack">
+<div class="auth-code-row" role="group" aria-label="6-digit verification code">
+<input class="auth-code" aria-label="Digit 1" inputmode="numeric" type="text" pattern="[0-9]" maxlength="1" required autocomplete="one-time-code"><input class="auth-code" aria-label="Digit 2" inputmode="numeric" type="text" pattern="[0-9]" maxlength="1" required autocomplete="off"><input class="auth-code" aria-label="Digit 3" inputmode="numeric" type="text" pattern="[0-9]" maxlength="1" required autocomplete="off"><input class="auth-code" aria-label="Digit 4" inputmode="numeric" type="text" pattern="[0-9]" maxlength="1" required autocomplete="off"><input class="auth-code" aria-label="Digit 5" inputmode="numeric" type="text" pattern="[0-9]" maxlength="1" required autocomplete="off"><input class="auth-code" aria-label="Digit 6" inputmode="numeric" type="text" pattern="[0-9]" maxlength="1" required autocomplete="off">
+</div>
+<button class="auth-primary-button" id="verify-button" type="submit" disabled>Verify Email</button>
+<a class="auth-secondary-button" id="use-another-email" href="/forgot-password">Use another email</a>
+</form></section>
+</main></body></html>

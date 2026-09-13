@@ -101,24 +101,27 @@
             font-variation-settings: 'FILL' 1;
         }
     </style>
+<link rel="stylesheet" href="/shared-auth.css">
 </head>
-<body class="bg-pure-white min-h-screen flex items-center justify-center font-body-base text-body-base px-6">
-<main class="w-full max-w-[400px] bg-pure-white border border-[#E5E7EB] rounded-[12px] p-8 flex flex-col items-center text-center">
+<body class="auth-page bg-pure-white text-on-surface">
+<main class="auth-screen">
+<div class="auth-card flex flex-col items-center text-center">
 <!-- Success Indicator -->
 <div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-[20px] text-on-surface" data-icon="check" data-weight="fill">check</span>
 </div>
 <!-- Heading -->
-<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-3">
+<h1 class="auth-title">
             Password updated
         </h1>
 <!-- Description -->
-<p class="font-body-base text-body-base text-on-surface-variant mb-8">
+<p class="auth-subtitle auth-success-description">
             Your password has been successfully updated. Sign in with your new password to continue.
         </p>
 <!-- Primary Action -->
-<button class="w-full h-input-height rounded-full bg-primary text-on-primary font-button-text text-button-text hover:opacity-90 transition-opacity flex items-center justify-center" onclick="window.location.href='/front-desk';" type="button">
+<button class="auth-primary-button" onclick="window.location.href='/login';" type="button">
         Continue
     </button>
+</div>
 </main>
 </body></html>

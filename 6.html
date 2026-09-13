@@ -194,13 +194,41 @@
         .backdrop-blur-sm {
             backdrop-filter: blur(4px);
         }
+        .appointment-backdrop {
+            background: #17191d;
+            overflow: hidden;
+        }
+        .appointment-backdrop::before {
+            content: '';
+            position: absolute;
+            inset: -15%;
+            background:
+                radial-gradient(circle at 18% 22%, rgba(255,255,255,.20), transparent 26%),
+                radial-gradient(circle at 78% 70%, rgba(255,255,255,.12), transparent 30%),
+                linear-gradient(135deg, #101114 0%, #34363a 48%, #151619 100%);
+            filter: blur(38px);
+            transform: scale(1.1);
+        }
+        .embedded-modal {
+            background: transparent !important;
+        }
+        .embedded-modal .appointment-backdrop,
+        .embedded-modal .appointment-backdrop::before {
+            background: transparent;
+        }
+        .embedded-modal .appointment-backdrop::before {
+            display: none;
+        }
     </style>
 </head>
 <body class="bg-background text-on-surface antialiased overflow-hidden font-body-md h-screen w-screen flex">
-<!-- Background Image / Canvas -->
-<div class="fixed inset-0 z-0 bg-[#f4f4f5]">
-<img alt="Background Calendar Screen" class="w-full h-full object-cover opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbacgnMOrIKDILKC_TsaHS83d_DPFCqPJZrwlw4fZK14NlEiS7WQ5U9co2viNCy684kzuy2eMyQVxIoq3bjmYKFGG-BB8xA2wnfEU8au8HWUG_cx6_MtC0VTm1VWMmRMx5872RqHjGt5Fy60MYB0NBdTrpjX2CtLHDuW6rdGkUQ6-cTC2wc37YSGYG86yyg9SOoKWEdsWFjyjBn9UiOS7ULF5NSDDKpVqAuWZHBbFoF97JW7IQMqir">
-</div>
+<script>
+if (new URLSearchParams(window.location.search).has('modal')) {
+    document.body.classList.add('embedded-modal');
+}
+</script>
+<!-- Neutral modal backdrop -->
+<div class="appointment-backdrop fixed inset-0 z-0"></div>
 <!-- Modal Overlay -->
 <div class="fixed inset-0 z-50 flex items-center justify-center bg-[#091426]/40 backdrop-blur-sm py-[24px]">
 <!-- Modal Container -->
@@ -211,7 +239,7 @@
 <h2 class="font-headline-sm text-[20px] font-semibold text-[#091426]">New Appointment</h2>
 <p class="font-body-md text-[12px] text-on-surface-variant">Create a new booking</p>
 </div>
-<button class="w-[32px] h-[32px] rounded-full hover:bg-[#F2F4F6] flex items-center justify-center transition-colors text-on-surface-variant">
+<button class="w-[32px] h-[32px] rounded-full hover:bg-[#F2F4F6] flex items-center justify-center transition-colors text-on-surface-variant" type="button" onclick="window.top.location.href='/calendar'">
 <span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
 </button>
 </header>
@@ -316,7 +344,7 @@
 </div>
 <div class="flex flex-col justify-center">
 <p class="font-label-md text-[14px] text-[#091426] font-medium leading-tight">Signature Haircut</p>
-<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">45 min · $80</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">45 min · PKR 80</p>
 </div>
 </div>
 <div class="flex items-center bg-[#F2F4F6] rounded-full px-[8px] py-[4px] gap-[8px]">
@@ -333,7 +361,7 @@
 </div>
 <div class="flex flex-col justify-center">
 <p class="font-label-md text-[14px] text-[#091426] font-medium leading-tight">Deep Conditioning</p>
-<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">30 min · $50</p>
+<p class="font-body-md text-[13px] text-on-surface-variant leading-tight mt-[2px]">30 min · PKR 50</p>
 </div>
 </div>
 <div class="flex items-center bg-[#F2F4F6] rounded-full px-[8px] py-[4px] gap-[8px]">
@@ -417,7 +445,7 @@
 <div class="h-px bg-outline-variant/30 w-full my-[4px]"></div>
 <div class="flex justify-between items-end">
 <span class="font-label-md text-[14px] font-medium text-on-surface pb-[4px]">Total Estimated</span>
-<span class="font-headline-sm text-[22px] font-bold text-[#091426] leading-none">$130.00</span>
+<span class="font-headline-sm text-[22px] font-bold text-[#091426] leading-none">PKR 130.00</span>
 </div>
 </div>
 </div>
@@ -429,8 +457,8 @@
 <span class="font-body-md text-[13px] text-on-surface-variant mt-[2px]">Review details before booking</span>
 </div>
 <div class="flex items-center gap-[16px]">
-<button class="px-[24px] h-[48px] rounded-full font-label-md text-[14px] font-medium text-on-surface-variant hover:text-[#091426] hover:bg-[#F2F4F6] transition-colors">Cancel</button>
-<button class="px-[32px] h-[48px] rounded-full bg-[#091426] font-label-md text-[14px] font-medium text-[#FFFFFF] hover:opacity-90 transition-opacity shadow-sm">Book Appointment</button>
+<button class="px-[24px] h-[48px] rounded-full font-label-md text-[14px] font-medium text-on-surface-variant hover:text-[#091426] hover:bg-[#F2F4F6] transition-colors" type="button" onclick="window.top.location.href='/calendar'">Cancel</button>
+<button class="px-[32px] h-[48px] rounded-full bg-[#091426] font-label-md text-[14px] font-medium text-[#FFFFFF] hover:opacity-90 transition-opacity shadow-sm" type="button" onclick="window.top.location.href='/calendar'">Book Appointment</button>
 </div>
 </footer>
 </div>

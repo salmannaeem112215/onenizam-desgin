@@ -70,19 +70,19 @@
 </div>
 <!-- Center: Navigation Pills -->
 <div class="hidden md:flex items-center gap-2">
-<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="#">
+<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="/front-desk">
 <span class="material-symbols-outlined text-[18px]">desktop_windows</span>
             Front Desk
         </a>
-<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="#">
+<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="/calendar">
 <span class="material-symbols-outlined text-[18px]">calendar_today</span>
             Calendar
         </a>
-<a class="flex items-center gap-2 bg-nav-bg text-white rounded-full px-6 h-10 font-bold text-[15px] transition-all" href="#">
+<a class="flex items-center gap-2 bg-nav-bg text-white rounded-full px-6 h-10 font-bold text-[15px] transition-all" href="/messages">
 <span class="material-symbols-outlined text-[18px]">chat_bubble</span>
             Chats
         </a>
-<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="#">
+<a class="flex items-center gap-2 text-secondary px-4 py-2 font-bold text-[15px] hover:text-primary transition-colors" href="/sales">
 <span class="material-symbols-outlined text-[18px]">payments</span>
             Sales
         </a>
@@ -131,7 +131,11 @@
 <h3 class="text-[14px] font-bold text-primary truncate">Marcus Chen</h3>
 <span class="text-[11px] text-secondary">10:24 AM</span>
 </div>
-<p class="text-[14px] text-secondary truncate">This looks excellent, Marcus...</p>
+<p class="text-[14px] text-secondary truncate flex items-center gap-1">
+<span class="font-semibold">You:</span>
+<span class="material-symbols-outlined text-[15px] text-secondary">check</span>
+<span>I’ll send the final notes shortly.</span>
+</p>
 </div>
 </div>
 <!-- Regular Item -->
@@ -146,7 +150,11 @@
 <h3 class="text-[14px] font-bold text-primary truncate">Sarah Jenkins</h3>
 <span class="text-[11px] text-secondary">9:15 AM</span>
 </div>
-<p class="text-[14px] text-secondary truncate">Is the 3 PM slot still available...</p>
+<p class="text-[14px] text-secondary truncate flex items-center gap-1">
+<span class="font-semibold">You:</span>
+<span class="material-symbols-outlined text-[15px] text-secondary">done_all</span>
+<span>Your 3 PM slot is confirmed.</span>
+</p>
 </div>
 </div>
 <!-- Regular Item -->
@@ -161,7 +169,11 @@
 <h3 class="text-[14px] font-bold text-primary truncate">Alex Rivera</h3>
 <span class="text-[11px] text-secondary">Monday</span>
 </div>
-<p class="text-[14px] text-secondary truncate">Thanks for the update on the...</p>
+<p class="text-[14px] text-secondary truncate flex items-center gap-1">
+<span class="font-semibold">You:</span>
+<span class="material-symbols-outlined text-[15px] text-success-green">done_all</span>
+<span>Thanks for the update.</span>
+</p>
 </div>
 </div>
 </div>
@@ -181,13 +193,6 @@
 </div>
 <div class="flex items-center gap-2">
 <button class="p-2 rounded-full hover:bg-surface-light transition-colors text-on-surface-variant">
-<span class="material-symbols-outlined text-[22px]">videocam</span>
-</button>
-<button class="p-2 rounded-full hover:bg-surface-light transition-colors text-on-surface-variant">
-<span class="material-symbols-outlined text-[22px]">call</span>
-</button>
-<div class="w-px h-6 bg-border-light mx-1"></div>
-<button class="p-2 rounded-full hover:bg-surface-light transition-colors text-on-surface-variant">
 <span class="material-symbols-outlined text-[22px]">info</span>
 </button>
 </div>
@@ -201,10 +206,7 @@
 <div class="flex-1 h-[1px] bg-border-light"></div>
 </div>
 <!-- Incoming Message -->
-<div class="flex gap-4 max-w-[75%]">
-<div class="w-8 h-8 rounded-full overflow-hidden flex-shrink-0 border border-border-light mt-1">
-<img alt="Avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDb0JRwNL1LGS0nK0qTUYXFGLHGKT9bdWrrtLIPcDItVYmjB6F1Q0KYKJYkgAU90HvK6xW67pLU8f0egZ7Pvr6poC4lOZiGcZ2iir-h6HkpKfjrJjrh5XYf6Lr9ugTNHIVT6tQ2_Dw3FcZzKKV36JwoNUctL3tT1S-HG1KaYtxKqP_PQ9DkpI0pT5qFmhE4Wa2ya-Dq8Oy0rirtJYuyS2L0zQas-1VhwN-nMp855zFlkTBp77_P1BaQ">
-</div>
+<div class="flex max-w-[75%]">
 <div class="flex flex-col gap-2">
 <div class="bg-surface-light text-primary p-4 rounded-xl rounded-tl-none text-[14px] leading-relaxed">
                         The quarterly revenue reports are ready for your review. I've attached the full breakdown below. Let me know if you have any questions before the meeting.
@@ -230,24 +232,44 @@
                 </div>
 <div class="flex items-center gap-1.5 mr-1">
 <span class="text-[10px] text-secondary font-bold">10:24 AM</span>
-<span class="material-symbols-outlined text-[14px] text-success-green" style="font-variation-settings: &quot;FILL&quot; 1;">check_circle</span>
+<span class="material-symbols-outlined text-[14px] text-success-green">done_all</span>
+</div>
+</div>
+<!-- Outgoing Message: Received -->
+<div class="flex flex-col items-end gap-2 max-w-[75%] self-end">
+<div class="bg-primary text-white p-4 rounded-xl rounded-tr-none text-[14px] leading-relaxed">
+                    Your appointment details have been updated. Please check that everything looks right.
+                </div>
+<div class="flex items-center gap-1.5 mr-1">
+<span class="text-[10px] text-secondary font-bold">10:26 AM</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">done_all</span>
+</div>
+</div>
+<!-- Outgoing Message: Sent -->
+<div class="flex flex-col items-end gap-2 max-w-[75%] self-end">
+<div class="bg-primary text-white p-4 rounded-xl rounded-tr-none text-[14px] leading-relaxed">
+                    I’ll send the final notes shortly.
+                </div>
+<div class="flex items-center gap-1.5 mr-1">
+<span class="text-[10px] text-secondary font-bold">10:28 AM</span>
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span>
 </div>
 </div>
 </div>
 <!-- Composer -->
 <footer class="p-6 border-t border-border-light bg-white">
 <div class="flex gap-4 items-center">
-<div class="flex-1 bg-surface-light rounded-full px-6 py-2 flex items-center gap-3 h-12">
-<button class="p-1 rounded-full hover:bg-white transition-colors text-on-surface-variant flex-shrink-0">
-<span class="material-symbols-outlined text-[20px]">sentiment_satisfied</span>
+<div class="flex-1 bg-surface-light rounded-[24px] px-4 py-3 flex items-end gap-3 min-h-12">
+<button class="w-8 h-8 rounded-full hover:bg-white transition-colors text-on-surface-variant flex-shrink-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px] leading-none block">sentiment_satisfied</span>
 </button>
-<textarea class="flex-1 bg-transparent border-none focus:ring-0 text-[14px] resize-none h-6 p-0 custom-scrollbar overflow-hidden placeholder:text-secondary" placeholder="Type a message..." rows="1"></textarea>
-<div class="flex items-center gap-2 flex-shrink-0">
-<button class="p-1 rounded-full hover:bg-white transition-colors text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px]">attach_file</span>
+<textarea id="message-input" class="flex-1 self-center bg-transparent border-none focus:ring-0 text-[14px] leading-6 resize-none min-h-6 max-h-[120px] p-0 custom-scrollbar overflow-y-hidden placeholder:text-secondary" placeholder="Type a message..." rows="1"></textarea>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button class="w-8 h-8 rounded-full hover:bg-white transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px] leading-none block">attach_file</span>
 </button>
-<button class="p-1 rounded-full hover:bg-white transition-colors text-on-surface-variant">
-<span class="material-symbols-outlined text-[20px]">image</span>
+<button class="w-8 h-8 rounded-full hover:bg-white transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px] leading-none block">image</span>
 </button>
 </div>
 </div>
@@ -256,21 +278,20 @@
 </button>
 </div>
 </footer>
+<script>
+const messageInput = document.getElementById('message-input');
+if (messageInput) {
+    const maxMessageHeight = 120;
+    const resizeMessageInput = () => {
+        messageInput.style.height = '24px';
+        const nextHeight = Math.min(messageInput.scrollHeight, maxMessageHeight);
+        messageInput.style.height = `${nextHeight}px`;
+        messageInput.style.overflowY = messageInput.scrollHeight > maxMessageHeight ? 'auto' : 'hidden';
+    };
+    messageInput.addEventListener('input', resizeMessageInput);
+    resizeMessageInput();
+}
+</script>
 </section>
 </main>
-<script>
-    const textarea = document.querySelector('textarea');
-    textarea.addEventListener('input', function() {
-        this.style.height = 'auto';
-        this.style.height = (this.scrollHeight) + 'px';
-        if(this.scrollHeight > 120) {
-            this.style.height = '120px';
-            this.classList.add('overflow-y-auto');
-        } else {
-            this.classList.remove('overflow-y-auto');
-        }
-    });
-</script>
-
-
 </body></html>
