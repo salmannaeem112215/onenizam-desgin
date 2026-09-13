@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-[#F8F9FA]" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Review Setup - ONE NIZAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#1D1D1F',
+                        secondary: '#6E6E73',
+                        surface: '#FFFFFF',
+                        background: '#F8F9FA',
+                        border: '#E8EAED',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-primary h-full font-sans antialiased flex flex-col relative pt-[112px]">
+<!-- Floating Global Navbar -->
+<header class="fixed top-5 left-1/2 -translate-x-1/2 w-[calc(100%-40px)] max-w-[1440px] h-[72px] bg-surface rounded-2xl shadow-sm border border-border z-50 flex items-center justify-between px-6">
+<!-- Left: Wordmark -->
+<div class="font-display font-bold text-xl tracking-tight text-primary">
+            ONE NIZAM
+        </div>
+<!-- Center: Nav Items -->
+<nav class="hidden md:flex items-center gap-1">
+<a class="px-4 py-2 bg-gray-100 text-primary font-medium text-sm rounded-full transition-colors" href="#">Front Desk</a>
+<a class="px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 font-medium text-sm rounded-full transition-colors" href="#">Calendar</a>
+<a class="px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 font-medium text-sm rounded-full transition-colors" href="#">Chats</a>
+<a class="px-4 py-2 text-secondary hover:text-primary hover:bg-gray-50 font-medium text-sm rounded-full transition-colors" href="#">Sales</a>
+</nav>
+<!-- Right: Actions & User -->
+<div class="flex items-center gap-4">
+<button class="text-secondary hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="text-secondary hover:text-primary transition-colors flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-50 relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-surface"></span>
+</button>
+<div class="w-px h-6 bg-border mx-1"></div>
+<button class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+<div class="text-right hidden sm:block">
+<div class="text-sm font-medium text-primary">Salon Azul</div>
+</div>
+<div class="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">storefront</span>
+</div>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-[1440px] mx-auto px-5 pb-24">
+<!-- White Container -->
+<div class="bg-surface border border-border rounded-2xl shadow-sm overflow-hidden flex flex-col min-h-[calc(100vh-140px)]">
+<!-- Header Section -->
+<div class="px-8 md:px-12 pt-12 pb-10">
+<span class="text-[11px] font-bold tracking-wider text-secondary uppercase mb-3 block">04 â€” REVIEW</span>
+<h1 class="font-display text-[32px] font-bold text-primary mb-2 tracking-tight leading-tight">You're almost ready.</h1>
+<p class="text-[16px] text-secondary">Review your setup before making your business live.</p>
+</div>
+<!-- Onboarding Tabs -->
+<nav class="w-full h-[56px] border-y border-border flex items-center px-8 md:px-12 gap-8 overflow-x-auto scrollbar-hide shrink-0 bg-surface"><a class="px-4 py-2 text-secondary hover:text-primary font-medium text-sm rounded-full transition-colors" href="#">Business</a><a class="px-4 py-2 text-secondary hover:text-primary font-medium text-sm rounded-full transition-colors" href="#">Services</a><a class="px-4 py-2 text-secondary hover:text-primary font-medium text-sm rounded-full transition-colors" href="#">Team</a><a class="px-4 py-2 bg-gray-100 text-primary font-semibold text-sm rounded-full" href="#">Review</a></nav>
+<!-- Review Content Grid -->
+<div class="flex-1 flex flex-col lg:flex-row px-8 md:px-12 py-10 gap-12 lg:gap-24"><div class="flex-1 max-w-[800px] mx-auto w-full"><div class="mb-8"><p class="text-sm font-medium text-primary">Ready to go</p><p class="text-sm text-secondary">All required information has been provided.</p></div><div class="space-y-0 border-t border-border"><!-- Business --><div class="flex items-center justify-between py-8 border-b border-border"><div class="flex gap-24"><div class="w-32 shrink-0"><span class="text-[11px] font-bold text-secondary uppercase tracking-widest">BUSINESS</span></div><div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-secondary">storefront</span></div><div><p class="text-sm font-medium text-primary">Azul Salon</p><p class="text-sm text-secondary">Lahore, Pakistan</p></div></div></div><a class="text-primary font-semibold text-sm hover:underline" href="#">Edit</a></div><!-- Services --><div class="flex items-center justify-between py-8 border-b border-border"><div class="flex gap-24"><div class="w-32 shrink-0"><span class="text-[11px] font-bold text-secondary uppercase tracking-widest">SERVICES</span></div><div><p class="text-sm font-medium text-primary">3 services configured</p><p class="text-sm text-secondary">Starting from PKR 1,500</p></div></div><a class="text-primary font-semibold text-sm hover:underline" href="#">Edit</a></div><!-- Team --><div class="flex items-center justify-between py-8 border-b border-border"><div class="flex gap-24"><div class="w-32 shrink-0"><span class="text-[11px] font-bold text-secondary uppercase tracking-widest">TEAM</span></div><div class="flex items-center gap-3"><div class="flex -space-x-2"><div class="w-8 h-8 rounded-full bg-gray-100 border-2 border-surface flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-[16px]">person</span></div><div class="w-8 h-8 rounded-full bg-gray-100 border-2 border-surface flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-[16px]">person</span></div></div><p class="text-sm font-medium text-primary">2 team members</p></div></div><a class="text-primary font-semibold text-sm hover:underline" href="#">Edit</a></div><!-- Availability --><div class="flex items-start justify-between py-8 border-b border-border"><div class="flex gap-24"><div class="w-32 shrink-0"><span class="text-[11px] font-bold text-secondary uppercase tracking-widest">AVAILABILITY</span></div><ul class="space-y-2 text-sm min-w-[200px]"><li class="flex justify-between gap-8"><span class="text-secondary">Monâ€“Fri</span> <span class="font-medium text-primary">10:00â€“20:00</span></li><li class="flex justify-between gap-8"><span class="text-secondary">Saturday</span> <span class="font-medium text-primary">09:00â€“21:00</span></li><li class="flex justify-between gap-8"><span class="text-secondary">Sunday</span> <span class="text-secondary">Closed</span></li></ul></div><a class="text-primary font-semibold text-sm hover:underline" href="#">Edit</a></div></div></div></div>
+<!-- Footer Action Bar -->
+<div class="border-t border-border px-8 md:px-12 py-6 bg-surface flex flex-col sm:flex-row items-center justify-between gap-4 mt-auto rounded-b-2xl"><button class="text-secondary hover:text-primary font-medium text-sm px-4 py-2 transition-colors">Back</button><div class="flex items-center gap-4"><button class="px-6 py-2.5 rounded-full font-medium text-sm text-secondary hover:text-primary transition-colors">Save as draft</button><button class="px-8 py-2.5 rounded-full font-medium text-sm text-white bg-primary hover:bg-primary/90 transition-colors flex items-center gap-2">Make business live<span class="material-symbols-outlined text-[18px]">arrow_forward</span></button></div></div>
+</div>
+</main>
+</body></html>
+
+<!-- ONE NIZAM - Business Basics (Progressive Onboarding) -->

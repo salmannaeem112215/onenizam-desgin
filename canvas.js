@@ -4,7 +4,8 @@
     [10,'Salon hub','hub'],[9,'Front desk','front-desk'],[7,'Calendar','calendar'],[6,'New appointment','appointment'],[4,'Sales','sales'],[5,'Checkout','checkout'],
     [11,'Messages','messages'],[12,'Services','services'],[13,'Resources','resources'],[14,'Service details','14'],[21,'New service','service-new'],[16,'Staff','staff'],
     [15,'Create staff','staff-create'],[17,'Customers','customers'],[18,'Add customer','customer-add'],[19,'Reviews','reviews'],[20,'Reports','reports'],[22,'Settings','settings'],
-    [23,'Billing','billing'],[24,'Business setup','business-setup'],[25,'Business hours','business-hours'],[26,'Contact details','contact-details'],[27,'Location setup','location-setup'],[28,'Media','media']
+    [23,'Billing','billing'],[24,'Business setup','business-setup'],[25,'Business hours','business-hours'],[26,'Contact details','contact-details'],[27,'Location setup','location-setup'],[28,'Media','media'],
+    ['B1','Landing page','B1'],['B2','App selection','B2'],['B3','Email verification','B3'],['B4','Bookable services','B4'],['B5','Business basics','B5'],['B6','Setup review','B6'],['B7','Business photos','B7'],['B8','Create account','B8'],['B9','Staff setup','B9'],['B10','Plan selection','B10']
   ];
   const viewport = document.getElementById('viewport'), world = document.getElementById('world');
   const key = 'onenizam-canvas-v1';

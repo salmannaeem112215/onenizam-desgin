@@ -1,0 +1,268 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>ONE NIZAM - Landing Page</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Plus+Jakarta+Sans:wght@700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00042a",
+                        "on-surface": "#1b1b20",
+                        "outline": "#767681",
+                        "background": "#ffffff",
+                        "surface": "#ffffff",
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "16px",
+                        "margin": "80px",
+                        "lg": "64px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "xl": "128px",
+                        "xs": "8px",
+                        "md": "32px"
+                    },
+                    "fontFamily": {
+                        "body": ["Inter", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"],
+                        "geist": ["Geist", "sans-serif"],
+                        "brand": ["Plus Jakarta Sans", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        @font-face {
+            font-family: 'Geist';
+            src: url('https://cdn.jsdelivr.net/font-geist/1.0.0/Geist-Variable.woff2') format('woff2');
+        }
+        
+        body {
+            background-color: #FFFFFF;
+            overflow-x: hidden;
+            font-family: 'Inter', sans-serif;
+            color: #000000;
+        }
+
+        .max-content-width {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .sculpted-circle {
+            background: #FFFFFF;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.04);
+            border: 1px solid #F2F2F2;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .atmospheric-glow {
+            background: radial-gradient(circle at center, rgba(11, 25, 87, 0.035) 0%, rgba(255, 255, 255, 0) 60%);
+        }
+
+        .nav-pill {
+            height: 36px;
+            background: #000000;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- Top Navigation -->
+<header class="fixed top-[28px] left-0 w-full z-50 flex justify-center pointer-events-none">
+<nav class="nav-pill px-[32px] flex items-center gap-[32px] pointer-events-auto shadow-sm"><a class="text-white/90 hover:text-white transition-all text-[14px] font-medium uppercase tracking-[0.08em]" href="#products" style="font-family: &quot;JetBrains Mono&quot;, monospace;">Products</a><a class="text-white/90 hover:text-white transition-all text-[14px] font-medium uppercase tracking-[0.08em]" href="#reviews" style="font-family: &quot;JetBrains Mono&quot;, monospace;">Reviews</a><a class="text-white/90 hover:text-white transition-all text-[14px] font-medium uppercase tracking-[0.08em]" href="#contact" style="font-family: &quot;JetBrains Mono&quot;, monospace;">Contact</a><a class="text-white/90 hover:text-white transition-all text-[14px] font-medium uppercase tracking-[0.08em]" href="/login" style="font-family: &quot;JetBrains Mono&quot;, monospace;">Sign In</a></nav>
+</header>
+<!-- Hero Section -->
+<main class="relative min-h-screen w-full flex flex-col items-center bg-white">
+<!-- Atmospheric Background -->
+<!-- Central Content -->
+<div class="relative z-10 w-full min-h-screen max-content-width text-center">
+<!-- Centerpiece -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
+<div class="sculpted-circle w-[140px] h-[140px] rounded-full flex items-center justify-center relative overflow-hidden bg-white pointer-events-auto">
+<img alt="ONE NIZAM Logo" class="w-[120px] h-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnIhNd_h0mE1krL5ZPXqdFieMM1WdSFCblwlJnezn5Wry3j0fEd8eveE4zEKVqhdJDebeJWmrNE7QeAmU_XH4raHO7oSUvIaiO0bMKTv_Y1VNEnFNrtlhzbKzkJu-je4dpdaibEvvjUtb__omrFTKHE1BVlA-Dp5nOjDUpG9j-cdMPfaCjihGiuv8PqwGwhGVgsEgmQrwZXsThKSP1moKWEajn2d50AjXi2jU11C6hm-5bqGD-wZpwXJx3_GhpvsNJkg">
+</div>
+</div>
+<!-- Hero Text -->
+<div class="flex flex-col items-center" style="position: absolute; top: 75vh; left: 50%; transform: translateX(-50%); width: 100%;"><span class="text-[16px] font-medium text-[#111111] uppercase tracking-[0.25em] mb-sm leading-[1.2]" style="font-family: Geist, sans-serif;">YOUR TECH PARTNER</span><h1 class="text-[64px] font-bold text-[#111111] tracking-[-0.02em] leading-none mb-md" style="font-family: Geist, sans-serif;">ONENIZAM</h1><p class="max-w-[560px] text-[17px] font-normal leading-[1.6] text-black text-center" style="font-family: Inter, sans-serif;">ONE NIZAM exists to simplify how modern businesses operate. We build thoughtful technology that brings people, operations, and decisions into one intelligent system. Designed with clarity, precision, and purpose, our products help businesses work smarter, scale confidently, and focus on delivering exceptional experiences.</p></div>
+</div>
+</main>
+<!-- Products Section -->
+<section class="relative z-10 w-full bg-white pb-[128px] mt-[240px]" id="products">
+<div class="max-content-width">
+<div class="flex flex-col items-center text-center mb-[80px] pt-[48px]">
+<span class="text-[14px] uppercase text-[#333333] tracking-[0.1em] mb-1" style="font-family: &quot;JetBrains Mono&quot;, monospace;">PRODUCTS</span>
+<p class="text-[15px] leading-[1.4] text-[#757575]" style="font-family: Inter, sans-serif;">Select product for your business.</p>
+</div>
+<div class="grid grid-cols-2 gap-[32px]">
+<!-- Product Card 1 -->
+<div class="bg-white border border-[#F2F2F2] rounded-[12px] overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-sm group">
+<div class="w-full h-[280px] overflow-hidden">
+<img alt="Salon Management" class="w-full h-full object-cover transition-transform duration-[700ms] group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCEq-Edx718K_oYOZw0ayWRFw6KBPy8Q-Mto0TPR2biad4CtKnKb6et28950-_pWWBHGQEGuCx4nPyBzgxwAU1pcjoAQ2NgN9kRqvlX36_FYOqS4psdJ8PyYS-4wUikz41750ZdkiemodJjYqUYBFYvu-V7bSYEvk9K6T5RctF3pNxDr_0wha5JZnMCP2FRNf7z7lmEOytS86P8DuaMPrUlphUxPvaljUTeLTXwH7IMtBwrysGLYf7sKfBd5u5eT49BQ">
+</div>
+<div class="p-[40px] flex flex-col gap-6 relative">
+<h3 class="text-[18px] font-bold tracking-tight text-black" style="font-family: Geist, sans-serif;">Salon Management</h3>
+<p class="text-[#757575] text-[14px] leading-[1.6]" style="font-family: Inter, sans-serif;">Elevate your client experience with premium booking, staff management, and seamless payments.</p>
+<span class="material-symbols-outlined absolute bottom-[32px] right-[32px] text-[20px] font-[300] text-[#757575] group-hover:translate-x-1 group-hover:text-black transition-all">arrow_outward</span>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white border border-[#F2F2F2] rounded-[12px] overflow-hidden cursor-pointer transition-all duration-300 hover:shadow-sm group">
+<div class="w-full h-[280px] overflow-hidden">
+<img alt="Restaurant Management" class="w-full h-full object-cover transition-transform duration-[700ms] group-hover:scale-[1.03]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6xvQdlmG-P8hcsljsLJXQG12vf6PPbozEVjU2kpIpiBwWVzsZlU8DgZAIeTgUzCueNI5Ef-zLys5ROpOEs3sljFZSSmNwEa2hpMHR2pKKhBDjv4V_uRX1VSPHJ3ooB0HXi4BFhIblXSN1JIpRx4YKnlaVTyAZQI3HZJxOrgJgZYN-X6HdEIyeR181JMymp8NpdRRXxaQ17dAnM5DIF6gcMI0KAjSjoHzWC6ZLHN6PJwbbU-FKUPo7TFeB94lDC7TNmQ">
+</div>
+<div class="p-[40px] flex flex-col gap-6 relative">
+<h3 class="text-[18px] font-bold tracking-tight text-black" style="font-family: Geist, sans-serif;">Restaurant Management</h3>
+<p class="text-[#757575] text-[14px] leading-[1.6]" style="font-family: Inter, sans-serif;">A complete operating system for modern dining. From kitchen workflows to table-side excellence.</p>
+<span class="material-symbols-outlined absolute bottom-[32px] right-[32px] text-[20px] font-[300] text-[#757575] group-hover:translate-x-1 group-hover:text-black transition-all">arrow_outward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="relative z-10 w-full bg-white py-[160px] overflow-hidden" id="reviews">
+<div class="max-content-width">
+<div class="flex flex-col items-center text-center mb-16">
+<span class="text-[14px] uppercase tracking-[0.1em] text-[#1a1a1a] mb-4" style="font-family: &quot;JetBrains Mono&quot;, monospace;">REVIEWS</span>
+<p class="text-[15px] text-[#757575]" style="font-family: Inter, sans-serif;">Trusted by businesses building exceptional experiences.</p>
+</div>
+<div class="flex flex-nowrap gap-6 overflow-x-auto hide-scrollbar cursor-grab active:cursor-grabbing snap-x">
+<!-- Review Card 1 -->
+<div class="min-w-[380px] bg-white border border-[#E5E5E5] p-[40px] rounded-[16px] flex flex-col justify-between gap-[64px] snap-start">
+<p class="text-[16px] text-[#1a1a1a] leading-[1.6]" style="font-family: Inter, sans-serif;">"ONE NIZAM has completely transformed how we handle our operations. The precision and speed of the platform are unmatched."</p>
+<div class="flex flex-col">
+<span class="text-[14px] font-bold text-black" style="font-family: Inter, sans-serif;">Sarah Jenkins</span>
+<span class="text-[14px] text-[#757575]" style="font-family: Inter, sans-serif;">Owner, Lumina Salon</span>
+</div>
+</div>
+<!-- Review Card 2 -->
+<div class="min-w-[380px] bg-white border border-[#E5E5E5] p-[40px] rounded-[16px] flex flex-col justify-between gap-[64px] snap-start">
+<p class="text-[16px] text-[#1a1a1a] leading-[1.6]" style="font-family: Inter, sans-serif;">"The restaurant management module is a game-changer. Our kitchen efficiency has improved by 40% since we switched."</p>
+<div class="flex flex-col">
+<span class="text-[14px] font-bold text-black" style="font-family: Inter, sans-serif;">Marcus Chen</span>
+<span class="text-[14px] text-[#757575]" style="font-family: Inter, sans-serif;">Director, Azure Dining</span>
+</div>
+</div>
+<!-- Review Card 3 -->
+<div class="min-w-[380px] bg-white border border-[#E5E5E5] p-[40px] rounded-[16px] flex flex-col justify-between gap-[64px] snap-start">
+<p class="text-[16px] text-[#1a1a1a] leading-[1.6]" style="font-family: Inter, sans-serif;">"Finally, a tech partner that understands the nuances of high-end service. The interface is clean, intuitive, and powerful."</p>
+<div class="flex flex-col">
+<span class="text-[14px] font-bold text-black" style="font-family: Inter, sans-serif;">Elena Rodriguez</span>
+<span class="text-[14px] text-[#757575]" style="font-family: Inter, sans-serif;">Operations Lead, Vibe Studios</span>
+</div>
+</div>
+<!-- Review Card 4 -->
+<div class="min-w-[380px] bg-white border border-[#E5E5E5] p-[40px] rounded-[16px] flex flex-col justify-between gap-[64px] snap-start">
+<p class="text-[16px] text-[#1a1a1a] leading-[1.6]" style="font-family: Inter, sans-serif;">"Scaling our multi-location business was a nightmare until we found ONE NIZAM. It's the backbone of our growth strategy."</p>
+<div class="flex flex-col">
+<span class="text-[14px] font-bold text-black" style="font-family: Inter, sans-serif;">David Thompson</span>
+<span class="text-[14px] text-[#757575]" style="font-family: Inter, sans-serif;">CEO, Urban Collective</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="relative z-10 w-full bg-white py-[160px]" id="contact">
+<div class="max-content-width">
+<div class="max-w-[720px] mx-auto">
+<div class="flex flex-col items-center text-center mb-16">
+<span class="text-[14px] uppercase tracking-[0.1em] text-[#1a1a1a] mb-4" style="font-family: 'JetBrains Mono', monospace;">CONTACT</span>
+<h2 class="text-[32px] font-bold text-black tracking-tight mb-4" style="font-family: Geist, sans-serif;">Letâ€™s build something together.</h2>
+<p class="text-[16px] text-[#757575]" style="font-family: Inter, sans-serif;">Tell us what youâ€™re working on and how we can help.</p>
+</div>
+<form class="flex flex-col gap-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="flex flex-col gap-2">
+<label class="text-[12px] font-medium text-black uppercase tracking-wider" style="font-family: Inter, sans-serif;">Your name</label>
+<input class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-[12px] text-black placeholder-[#757575] focus:outline-none focus:border-black transition-colors" placeholder="Name" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[12px] font-medium text-black uppercase tracking-wider" style="font-family: Inter, sans-serif;">Email address</label>
+<input class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-[12px] text-black placeholder-[#757575] focus:outline-none focus:border-black transition-colors" placeholder="you@company.com" type="email">
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[12px] font-medium text-black uppercase tracking-wider" style="font-family: Inter, sans-serif;">Company name</label>
+<input class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-[12px] text-black placeholder-[#757575] focus:outline-none focus:border-black transition-colors" placeholder="Company" type="text">
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-[12px] font-medium text-black uppercase tracking-wider" style="font-family: Inter, sans-serif;">Message</label>
+<textarea class="w-full px-4 py-3 bg-white border border-[#E5E5E5] rounded-[12px] text-black placeholder-[#757575] focus:outline-none focus:border-black transition-colors resize-none" placeholder="Tell us a little about what you need..." rows="4"></textarea>
+</div>
+<div class="flex justify-center mt-4">
+<button class="bg-black text-white px-12 py-3 rounded-full text-[14px] font-medium uppercase tracking-[0.08em] hover:opacity-90 transition-all" style="font-family: 'JetBrains Mono', monospace;" type="submit">Send message</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full bg-white border-t border-[#F2F2F2] py-[80px] relative z-10">
+<div class="max-content-width flex justify-between items-center">
+<!-- Left Side -->
+<div class="flex flex-col gap-1">
+<span class="text-[20px] font-bold text-black" style="font-family: &quot;Plus Jakarta Sans&quot;, sans-serif;">ONE NIZAM</span>
+<span class="text-[12px] text-[#45474c]" style="font-family: Inter, sans-serif;">Â© 2024 ONE NIZAM Business Solutions. All rights reserved.</span>
+</div>
+<!-- Right Side -->
+<div class="flex gap-[32px]">
+<a class="text-[12px] font-medium text-[#45474c] hover:text-black transition-colors" href="#" style="font-family: Inter, sans-serif;">Privacy Policy</a>
+<a class="text-[12px] font-medium text-[#45474c] hover:text-black transition-colors" href="#" style="font-family: Inter, sans-serif;">Terms of Service</a>
+<a class="text-[12px] font-medium text-[#45474c] hover:text-black transition-colors" href="#" style="font-family: Inter, sans-serif;">Contact Support</a>
+<a class="text-[12px] font-medium text-[#45474c] hover:text-black transition-colors" href="#" style="font-family: Inter, sans-serif;">Global Offices</a>
+</div>
+</div>
+</footer>
+<script>
+    // Simple drag scroll for reviews
+    const scrollContainer = document.querySelector('.hide-scrollbar');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    scrollContainer.addEventListener('mousedown', (e) => {
+        isDown = true;
+        scrollContainer.classList.add('active');
+        startX = e.pageX - scrollContainer.offsetLeft;
+        scrollLeft = scrollContainer.scrollLeft;
+    });
+    scrollContainer.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    scrollContainer.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    scrollContainer.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - scrollContainer.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollContainer.scrollLeft = scrollLeft - walk;
+    });
+</script>
+</body></html>

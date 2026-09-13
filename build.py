@@ -8,12 +8,12 @@ from server import ROOT, ROUTE_MAP, build_screen_nav
 def build():
     output = ROOT / "dist"
     output.mkdir(exist_ok=True)
-    screens = sorted(ROOT.glob("[0-9]*.html"))
+    screens = sorted([*ROOT.glob("[0-9]*.html"), *ROOT.glob("B*.html")])
     for source in screens:
-        number = int(source.stem)
+        number = int(source.stem) if source.stem.isdigit() else None
         html = source.read_text(encoding="utf-8")
         injection = build_screen_nav(source.name)
-        if 4 <= number <= 28 and number != 6:
+        if number is not None and 4 <= number <= 28 and number != 6:
             injection = (
                 '<link rel="stylesheet" href="/app-nav.css">'
                 f'<script src="/app-nav.js" data-screen="{number}"></script>'

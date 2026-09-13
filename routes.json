@@ -1,6 +1,6 @@
 {
-  "/": "9.html",
-  "/index": "9.html",
+  "/": "B1.html",
+  "/index": "B1.html",
   "/canvas": "canvas.html",
   "/login": "1.html",
   "/forgot-password": "29.html",
@@ -30,5 +30,14 @@
   "/business-hours": "25.html",
   "/contact-details": "26.html",
   "/location-setup": "27.html",
-  "/media": "28.html"
+  "/media": "28.html",
+  "/app-selection": "B2.html",
+  "/email-verification": "B3.html",
+  "/bookable-services": "B4.html",
+  "/onboarding-basics": "B5.html",
+  "/setup-review": "B6.html",
+  "/onboarding-photos": "B7.html",
+  "/account-create-new": "B8.html",
+  "/onboarding-staff": "B9.html",
+  "/plan-selection": "B10.html"
 }

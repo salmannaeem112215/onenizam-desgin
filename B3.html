@@ -1,0 +1,169 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Verify your email - ONE NIZAM</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#9defe3",
+                        "on-primary-container": "#7a849b",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#d8e2fc",
+                        "surface-container": "#eceef0",
+                        "surface": "#f8f9fb",
+                        "on-secondary-fixed": "#00201d",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#9d7e62",
+                        "text-muted": "#45474C",
+                        "secondary-fixed": "#a0f1e6",
+                        "tertiary-fixed-dim": "#e5c0a1",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "inverse-primary": "#bcc7df",
+                        "surface-tint": "#545f74",
+                        "on-primary-fixed": "#111c2e",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c5c6cd",
+                        "secondary-fixed-dim": "#84d5ca",
+                        "on-tertiary-fixed": "#2a1704",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#45474c",
+                        "on-surface": "#191c1e",
+                        "primary-container": "#111c2e",
+                        "on-secondary-container": "#0d6f66",
+                        "outline-subtle": "#C5C6CD",
+                        "outline": "#75777d",
+                        "tertiary-fixed": "#ffdcc0",
+                        "surface-container-high": "#e6e8ea",
+                        "primary": "#000000",
+                        "on-tertiary-fixed-variant": "#5b422a",
+                        "secondary": "#016a61",
+                        "primary-fixed-dim": "#bcc7df",
+                        "surface-container-low": "#f2f4f6",
+                        "on-secondary-fixed-variant": "#005049",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#2a1704",
+                        "pure-white": "#FFFFFF",
+                        "tertiary": "#000000",
+                        "on-primary-fixed-variant": "#3d475b",
+                        "background": "#f8f9fb",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d8dadc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "otp-width": "52px",
+                        "section-margin": "48px",
+                        "auth-column-width": "400px",
+                        "stack-gap": "24px",
+                        "input-height": "56px"
+                    },
+                    "fontFamily": {
+                        "body-base": ["Inter"],
+                        "button-text": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "body-base": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "button-text": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["16px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-pure-white text-on-surface min-h-screen flex flex-col items-center justify-center font-body-base antialiased">
+<!-- TopAppBar Shell -->
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 md:px-0">
+<div class="w-full max-w-[400px] border border-[#E5E7EB] rounded-[12px] bg-pure-white p-6 flex flex-col gap-6 mx-auto">
+<!-- Header Section -->
+<div class="text-center">
+<h1 class="font-headline-lg text-[32px] font-[700] tracking-[-0.02em] text-primary mb-1">Verify your email</h1>
+<p class="font-body-base text-[16px] text-on-surface-variant">
+                    We've sent a verification code to your email address.<br>
+<span class="font-semibold text-primary-container mt-1 block">john@example.com</span>
+</p>
+</div>
+<!-- OTP Form Section -->
+<form class="flex flex-col gap-6">
+<div class="flex justify-between gap-2">
+<input class="w-[52px] h-[56px] bg-surface-container-low border-transparent rounded-full text-center font-button-text text-button-text text-on-surface focus:border-outline-subtle focus:ring-0 transition-colors" maxlength="1" placeholder="0" type="text">
+<input class="w-[52px] h-[56px] bg-surface-container-low border-transparent rounded-full text-center font-button-text text-button-text text-on-surface focus:border-outline-subtle focus:ring-0 transition-colors" maxlength="1" placeholder="0" type="text">
+<input class="w-[52px] h-[56px] bg-surface-container-low border-transparent rounded-full text-center font-button-text text-button-text text-on-surface focus:border-outline-subtle focus:ring-0 transition-colors" maxlength="1" placeholder="0" type="text">
+<input class="w-[52px] h-[56px] bg-surface-container-low border-transparent rounded-full text-center font-button-text text-button-text text-on-surface focus:border-outline-subtle focus:ring-0 transition-colors" maxlength="1" placeholder="0" type="text">
+<input class="w-[52px] h-[56px] bg-surface-container-low border-transparent rounded-full text-center font-button-text text-button-text text-on-surface focus:border-outline-subtle focus:ring-0 transition-colors" maxlength="1" placeholder="0" type="text">
+<input class="w-[52px] h-[56px] bg-surface-container-low border-transparent rounded-full text-center font-button-text text-button-text text-on-surface focus:border-outline-subtle focus:ring-0 transition-colors" maxlength="1" placeholder="0" type="text">
+</div>
+<div class="text-center font-label-md text-label-md text-on-surface-variant">
+                    Didn't receive the code? <button class="text-outline cursor-not-allowed" disabled="" type="button">Resend in 00:35</button>
+</div>
+<button class="w-full h-input-height bg-surface-variant text-outline font-button-text text-button-text rounded-full cursor-not-allowed transition-colors" disabled="" type="button">
+                    Verify Email
+                </button>
+<div class="text-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer underline" href="#">Wrong email? Go back</a>
+</div>
+</form>
+</div>
+</main>
+<!-- Footer Shell -->
+<script>
+        // Simple auto-advance for OTP inputs
+        const inputs = document.querySelectorAll('input[type="text"]');
+        const verifyBtn = document.querySelector('button.bg-surface-variant');
+
+        inputs.forEach((input, index) => {
+            input.addEventListener('input', (e) => {
+                if (e.target.value.length === 1) {
+                    if (index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+                }
+                
+                // Check if all filled to enable button
+                const allFilled = Array.from(inputs).every(i => i.value.length === 1);
+                if (allFilled) {
+                    verifyBtn.classList.remove('bg-surface-variant', 'text-outline', 'cursor-not-allowed');
+                    verifyBtn.classList.add('bg-primary-container', 'text-on-primary', 'shadow-[0px_4px_12px_rgba(9,20,38,0.1)]', 'hover:opacity-90');
+                    verifyBtn.disabled = false;
+                } else {
+                    verifyBtn.classList.add('bg-surface-variant', 'text-outline', 'cursor-not-allowed');
+                    verifyBtn.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-[0px_4px_12px_rgba(9,20,38,0.1)]', 'hover:opacity-90');
+                    verifyBtn.disabled = true;
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && e.target.value.length === 0 && index > 0) {
+                    inputs[index - 1].focus();
+                }
+            });
+        });
+    </script>
+</body></html>
+
+<!-- ONE NIZAM - Refined App Selection (Unified Identity) -->

@@ -47,12 +47,17 @@ def resolve_route(path: str):
 
     if request_path.startswith("/screen/"):
         screen_name = request_path.split("/screen/", 1)[1]
-        if screen_name and screen_name.isdigit():
+        if screen_name and (screen_name.isdigit() or (screen_name.startswith("B") and screen_name[1:].isdigit())):
             file_name = f"{screen_name}.html"
             if (ROOT / file_name).exists():
                 return file_name
 
     if request_path.startswith("/") and request_path[1:].isdigit():
+        file_name = f"{request_path[1:]}.html"
+        if (ROOT / file_name).exists():
+            return file_name
+
+    if request_path.startswith("/B") and request_path[2:].isdigit():
         file_name = f"{request_path[1:]}.html"
         if (ROOT / file_name).exists():
             return file_name
@@ -70,17 +75,20 @@ def build_screen_nav(current_file_name: str):
     auth_labels = {num: f"A.{index}" for index, num in enumerate(auth_flow, start=1)}
     home_labels = {10: "H0", 9: "H1", 7: "H2", 4: "H3", 11: "H4"}
 
-    current = 1
-    try:
-        current = int(Path(current_file_name).stem)
-    except Exception:
-        current = 1
+    current = Path(current_file_name).stem
 
     links = ['<a class="screen-nav-link" href="/canvas">Canvas</a>']
     for num in numbers:
-        active = " is-active" if num == current else ""
+        active = " is-active" if str(num) == current else ""
         label = auth_labels.get(num, home_labels.get(num, str(num)))
         links.append(f'<a class="screen-nav-link{active}" href="/{num}">{label}</a>')
+
+    for index in range(1, 11):
+        screen = f"B{index}"
+        if not (ROOT / f"{screen}.html").exists():
+            continue
+        active = " is-active" if screen == current else ""
+        links.append(f'<a class="screen-nav-link{active}" href="/{screen}">{screen}</a>')
 
     return f"""
     <style>

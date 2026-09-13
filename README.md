@@ -2,7 +2,7 @@
 
 ## Deploy to Netlify
 
-Open `/canvas` to browse all 30 available screens on a draggable, zoomable
+Open `/canvas` to browse all 40 available screens on a draggable, zoomable
 canvas. Scroll or pinch to zoom, drag the background to pan, and drag previews
 to arrange them. Double-click / double-tap a preview (or use its Open link) to
 open the screen. Keyboard users can Tab to a screen and press Enter; `F` fits
@@ -21,7 +21,7 @@ The build generates `dist/_redirects` with explicit rewrites for named routes
 such as `/calendar`, numbered routes such as `/7`, and `/screen/7` aliases,
 including trailing slashes. Opening or refreshing these URLs serves the
 matching screen; query strings remain available to the frontend.
-The home URL opens Front Desk. Unknown URLs return Netlify's normal 404.
+The home URL opens the ONE NIZAM landing page. Unknown URLs return Netlify's normal 404.
 
 The static build includes the navigation and screen picker normally injected
 by `server.py`, without the local live-reload script. Run `python server.py`
