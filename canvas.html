@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Screen Canvas · One Nizam</title>
+  <link rel="stylesheet" href="/canvas.css">
+  <script defer src="/canvas.js"></script>
+</head>
+<body>
+  <header class="toolbar">
+    <a class="brand" href="/front-desk" aria-label="Open Front Desk">✳</a>
+    <div class="title"><strong>Screen canvas</strong><span>ONE NIZAM <b> / </b> <span id="count">30 screens</span></span></div>
+    <div class="controls">
+      <button id="reset" title="Restore the original screen positions">Reset layout</button>
+      <button id="fit" title="Fit all screens (F)">Fit all</button>
+      <div class="zoom"><button id="minus" aria-label="Zoom out">−</button><output id="zoom">100%</output><button id="plus" aria-label="Zoom in">+</button></div>
+    </div>
+  </header>
+  <main id="viewport" tabindex="0" aria-label="Screen canvas. Scroll to zoom, drag background to pan, drag a screen to move it. Double-click a screen to open it.">
+    <div id="world"></div>
+  </main>
+  <aside class="hint">Scroll to zoom <i>·</i> Drag to move <i>·</i> Space + drag to pan <i>·</i> Double-tap to open</aside>
+  <div id="status" class="sr-only" aria-live="polite"></div>
+</body>
+</html>

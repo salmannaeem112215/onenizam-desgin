@@ -35,39 +35,7 @@ LIVE_RELOAD_SCRIPT = """
 </script>
 """
 
-ROUTE_MAP = {
-    "/": "9.html",
-    "/index": "9.html",
-    "/login": "1.html",
-    "/forgot-password": "29.html",
-    "/create-account": "30.html",
-    "/verify-code": "31.html",
-    "/create-password": "2.html",
-    "/password-updated": "3.html",
-    "/sales": "4.html",
-    "/checkout": "5.html",
-    "/appointment": "6.html",
-    "/calendar": "7.html",
-    "/front-desk": "9.html",
-    "/hub": "10.html",
-    "/messages": "11.html",
-    "/services": "12.html",
-    "/resources": "13.html",
-    "/staff-create": "15.html",
-    "/staff": "16.html",
-    "/customers": "17.html",
-    "/customer-add": "18.html",
-    "/reviews": "19.html",
-    "/reports": "20.html",
-    "/service-new": "21.html",
-    "/settings": "22.html",
-    "/billing": "23.html",
-    "/business-setup": "24.html",
-    "/business-hours": "25.html",
-    "/contact-details": "26.html",
-    "/location-setup": "27.html",
-    "/media": "28.html",
-}
+ROUTE_MAP = json.loads((ROOT / "routes.json").read_text(encoding="utf-8"))
 
 
 def resolve_route(path: str):
@@ -108,7 +76,7 @@ def build_screen_nav(current_file_name: str):
     except Exception:
         current = 1
 
-    links = []
+    links = ['<a class="screen-nav-link" href="/canvas">Canvas</a>']
     for num in numbers:
         active = " is-active" if num == current else ""
         label = auth_labels.get(num, home_labels.get(num, str(num)))
@@ -253,7 +221,7 @@ class Handler(SimpleHTTPRequestHandler):
             text = content_bytes.decode("utf-8", errors="ignore")
             marker = "</body>"
             if marker.lower() in text.lower():
-                injection = build_screen_nav(Path(path).name)
+                injection = "" if Path(path).name == "canvas.html" else build_screen_nav(Path(path).name)
                 try:
                     screen_number = int(Path(path).stem)
                 except ValueError:

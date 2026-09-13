@@ -1,5 +1,37 @@
 # App Screen Feature Inventory
 
+## Deploy to Netlify
+
+Open `/canvas` to browse all 30 available screens on a draggable, zoomable
+canvas. Scroll or pinch to zoom, drag the background to pan, and drag previews
+to arrange them. Double-click / double-tap a preview (or use its Open link) to
+open the screen. Keyboard users can Tab to a screen and press Enter; `F` fits
+all screens and `+` / `-` zoom. Positions and zoom are saved in this browser.
+Use Reset layout to restore the grid. Screen 8 is not present in this project.
+
+Connect this GitHub repository to Netlify and deploy the `main` branch.
+The included `netlify.toml` sets the build command to `python build.py` and
+the publish directory to `dist`. No Python server runs on the hosted site.
+
+For a manual upload, run `python build.py` locally and upload the `dist`
+folder to Netlify Drop. Upload the built folder, not the repository root.
+
+`routes.json` is the shared route map for local development and deployment.
+The build generates `dist/_redirects` with explicit rewrites for named routes
+such as `/calendar`, numbered routes such as `/7`, and `/screen/7` aliases,
+including trailing slashes. Opening or refreshing these URLs serves the
+matching screen; query strings remain available to the frontend.
+The home URL opens Front Desk. Unknown URLs return Netlify's normal 404.
+
+The static build includes the navigation and screen picker normally injected
+by `server.py`, without the local live-reload script. Run `python server.py`
+for local development. After changing `routes.json`, restart the local server.
+
+Netlify is recommended for this project because the frontend uses root-relative
+links and server-style route aliases. GitHub Pages would need a separate build
+for route directories and repository subpath support; this configuration targets
+Netlify. Authentication and other prototype actions remain frontend demos.
+
 This README is a feature-focused inventory of the screens in this project. It intentionally ignores layout, styling, spacing, and visual design and focuses only on the functionality, buttons, forms, sections, and actions that exist on each screen.
 
 ## Screen 1 — Sign In
