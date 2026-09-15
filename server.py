@@ -9,12 +9,37 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parent
+WEB_ROOT = ROOT / "web"
 PORT = 8000
+ASSET_MAP = {
+    "shared-auth.css": "web/assets/css/shared-auth.css",
+    "auth-flow.js": "web/assets/js/auth-flow.js",
+    "canvas.css": "web/assets/css/canvas.css",
+    "canvas.js": "web/assets/js/canvas.js",
+    "app-nav.css": "web/assets/css/app-nav.css",
+    "app-nav.js": "web/assets/js/app-nav.js",
+}
 
 
 def project_version():
-    files = list(ROOT.glob("*.html")) + list(ROOT.glob("*.css")) + list(ROOT.glob("*.js")) + [Path(__file__)]
+    files = list(ROOT.glob("*.html")) + list(ROOT.glob("*.css")) + list(ROOT.glob("*.js"))
+    files += list(WEB_ROOT.rglob("*.html")) if WEB_ROOT.exists() else []
+    files += [Path(__file__)]
     return max((p.stat().st_mtime_ns for p in files if p.exists()), default=0)
+
+
+def find_site_file(filename: str):
+    if filename == "":
+        return None
+    candidates = [ROOT / filename, WEB_ROOT / filename]
+    if filename in ASSET_MAP:
+        candidates.append(ROOT / ASSET_MAP[filename])
+    for candidate in WEB_ROOT.rglob(filename):
+        candidates.append(candidate)
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
 
 
 LIVE_RELOAD_SCRIPT = """
@@ -42,31 +67,46 @@ def resolve_route(path: str):
     parsed = urlparse(path)
     request_path = parsed.path.rstrip("/") or "/"
 
+    if request_path in ASSET_MAP:
+        return ASSET_MAP[request_path]
+
+    if request_path.startswith("/web/assets/"):
+        return request_path.lstrip("/")
+
     if request_path in ROUTE_MAP:
-        return ROUTE_MAP[request_path]
+        mapped = ROUTE_MAP[request_path]
+        resolved = find_site_file(mapped)
+        if resolved is not None:
+            return resolved.relative_to(ROOT).as_posix()
 
     if request_path.startswith("/screen/"):
         screen_name = request_path.split("/screen/", 1)[1]
         if screen_name and (screen_name.isdigit() or (screen_name.startswith("B") and screen_name[1:].isdigit())):
             file_name = f"{screen_name}.html"
-            if (ROOT / file_name).exists():
-                return file_name
+            resolved = find_site_file(file_name)
+            if resolved is not None:
+                return resolved.relative_to(ROOT).as_posix()
 
     if request_path.startswith("/") and request_path[1:].isdigit():
         file_name = f"{request_path[1:]}.html"
-        if (ROOT / file_name).exists():
-            return file_name
+        resolved = find_site_file(file_name)
+        if resolved is not None:
+            return resolved.relative_to(ROOT).as_posix()
 
     if request_path.startswith("/B") and request_path[2:].isdigit():
         file_name = f"{request_path[1:]}.html"
-        if (ROOT / file_name).exists():
-            return file_name
+        resolved = find_site_file(file_name)
+        if resolved is not None:
+            return resolved.relative_to(ROOT).as_posix()
 
     return None
 
 
 def build_screen_nav(current_file_name: str):
-    available_numbers = [i for i in range(1, 32) if (ROOT / f"{i}.html").exists()]
+    available_numbers = []
+    for number in range(1, 32):
+        if find_site_file(f"{number}.html") is not None:
+            available_numbers.append(number)
     auth_flow = [1, 29, 30, 31, 2, 3]
     home_flow = [10, 9, 7, 4, 11]
     grouped_numbers = auth_flow + home_flow
@@ -85,7 +125,7 @@ def build_screen_nav(current_file_name: str):
 
     for index in range(1, 11):
         screen = f"B{index}"
-        if not (ROOT / f"{screen}.html").exists():
+        if find_site_file(f"{screen}.html") is None:
             continue
         active = " is-active" if screen == current else ""
         links.append(f'<a class="screen-nav-link{active}" href="/{screen}">{screen}</a>')
@@ -236,8 +276,8 @@ class Handler(SimpleHTTPRequestHandler):
                     screen_number = 0
                 if 4 <= screen_number <= 28 and screen_number != 6:
                     injection = (
-                        '<link rel="stylesheet" href="/app-nav.css">'
-                        f'<script src="/app-nav.js" data-screen="{screen_number}"></script>'
+                        '<link rel="stylesheet" href="/web/assets/css/app-nav.css">'
+                        f'<script src="/web/assets/js/app-nav.js" data-screen="{screen_number}"></script>'
                         + injection
                     )
                 text = text.replace(marker, injection + LIVE_RELOAD_SCRIPT + marker, 1)
@@ -253,7 +293,12 @@ class Handler(SimpleHTTPRequestHandler):
         return super().send_head()
 
     def build_index(self):
-        files = sorted(ROOT.glob("*.html"), key=lambda p: p.name)
+        files = []
+        if ROOT.exists():
+            files.extend(ROOT.glob("*.html"))
+        if WEB_ROOT.exists():
+            files.extend(WEB_ROOT.rglob("*.html"))
+        files = sorted({p: None for p in files}, key=lambda p: p.name)
         links = []
         for file in files:
             num = file.stem
